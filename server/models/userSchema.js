@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+var mongoose = require("mongoose");
 const validator = require("validator");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -83,4 +83,3 @@ const userdb = new mongoose.model("users", userSchema);
 module.exports = userdb;
 
 
-// if (this.isModified("password")) {    }

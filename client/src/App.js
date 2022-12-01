@@ -10,6 +10,7 @@ import Box from '@mui/material/Box';
 import { Routes, Route, useNavigate } from "react-router-dom"
 import { useEffect, useContext, useState } from "react";
 import { LoginContext } from "./components/ContextProvider/Context";
+import Companydetails from "./components/Companydetails"
 
 
 function App() {
@@ -66,6 +67,8 @@ function App() {
               <Route path="/password-reset" element={<PasswordReset />} />
               <Route path="/forgotpassword/:id/:token" element={<ForgotPassword />} />
               <Route path="*" element={<Error />} />
+              {/* <Route path="dash/addd" element={<Companydetails/>}/> */}
+             
             </Routes>
           </>
 

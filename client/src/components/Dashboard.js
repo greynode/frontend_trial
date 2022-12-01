@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { LoginContext } from './ContextProvider/Context';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
+import Companydetails from './Companydetails';
+    
 
 const Dashboard = () => {
 
@@ -31,6 +33,8 @@ const Dashboard = () => {
         } else {
             console.log("user verify");
             setLoginData(data)
+            
+            window.alert(JSON.stringify(data))
             history("/dash");
         }
     }
@@ -46,16 +50,7 @@ const Dashboard = () => {
 
     return (
         <>
-            {
-                data ? <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                    <img src="./man.png" style={{ width: "200px", marginTop: 20 }} alt="" />
-                    <h1>User Email:{logindata ? logindata.ValidUserOne.email : ""}</h1>
-                </div> : <Box sx={{ display: 'flex', justifyContent: "center", alignItems: "center", height: "100vh" }}>
-                    Loading... &nbsp;
-                    
-                    <CircularProgress />
-                </Box>
-            }
+           <Companydetails/>
 
         </>
 
