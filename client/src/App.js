@@ -11,7 +11,9 @@ import { Routes, Route, useNavigate } from "react-router-dom"
 import { useEffect, useContext, useState } from "react";
 import { LoginContext } from "./components/ContextProvider/Context";
 import Companydetails from "./components/Companydetails"
-
+import Subusradd from "./components/Subusradd";
+import Subusrrem from "./components/Subusrrem";
+import Subuserlogin from "./components/Subuserlogin";
 
 function App() {
 
@@ -67,8 +69,11 @@ function App() {
               <Route path="/password-reset" element={<PasswordReset />} />
               <Route path="/forgotpassword/:id/:token" element={<ForgotPassword />} />
               <Route path="*" element={<Error />} />
-              {/* <Route path="dash/addd" element={<Companydetails/>}/> */}
-             
+              <Route path="/addd" element={<Companydetails/>}/> 
+              <Route path="/addusr" element={<Subusradd/>}/>
+              <Route path="/remusr" element={<Subusrrem/>}/>
+              <Route path="/sublogin" element={<Subuserlogin/>}/>
+
             </Routes>
           </>
 

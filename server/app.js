@@ -7,6 +7,7 @@ const cors = require("cors");
 const cookiParser = require("cookie-parser")
 const port = 8010;
 const routers = require("./routes/companyroutes")
+const routeruser = require("./routes/subuser")
 
 
 
@@ -21,6 +22,7 @@ app.use(cookiParser());
 app.use(cors());
 app.use(router);
 app.use(routers);
+app.use(routeruser)
 
 
 

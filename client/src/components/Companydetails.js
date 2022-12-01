@@ -257,7 +257,7 @@ const Companydetails = () =>{
   
             <div className="--my" align="center" >
             <button className='--btn-primary' onClick={addCompanydata}>Submit</button>
-            <p>next page<NavLink to="/cpd">click me</NavLink></p>
+            <p>next page<NavLink to="/addusr">click me</NavLink></p>
             </div>
             <ToastContainer />
         </Card>  </form>
