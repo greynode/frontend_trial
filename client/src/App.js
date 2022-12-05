@@ -14,6 +14,12 @@ import Companydetails from "./components/Companydetails"
 import Subusradd from "./components/Subusradd";
 import Subusrrem from "./components/Subusrrem";
 import Subuserlogin from "./components/Subuserlogin";
+import Profile from "./components/Profile"
+import Subuserlist from "./components/Subuserlist"
+import Question from "./components/Question"
+
+
+
 
 function App() {
 
@@ -73,6 +79,9 @@ function App() {
               <Route path="/addusr" element={<Subusradd/>}/>
               <Route path="/remusr" element={<Subusrrem/>}/>
               <Route path="/sublogin" element={<Subuserlogin/>}/>
+              <Route path="/comp" element={<Profile/>}/>
+              <Route path="/sublist" element={<Subuserlist/>}/>
+              <Route path="/question" element={<Question/>}/>
 
             </Routes>
           </>

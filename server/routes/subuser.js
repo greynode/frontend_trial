@@ -95,5 +95,10 @@ routeruser.post("/sublogin", async (req, res) => {
     }
 });
 
+routeruser.get('/sublist', async (req, res) => {
+	const usr = await subuserdb.find();
+
+	res.json(usr);
+});
 
 module.exports = routeruser;

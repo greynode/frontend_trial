@@ -1,9 +1,7 @@
 import React, { useContext, useEffect ,useState} from 'react'
 import { Routes,Route, useNavigate,Link } from 'react-router-dom';
 import { LoginContext } from './ContextProvider/Context';
-import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
-import Companydetails from './Companydetails';
+
 import "./dash.css"
 
     
@@ -11,6 +9,7 @@ import "./dash.css"
 const Dashboard = () => {
 
     const { logindata, setLoginData } = useContext(LoginContext);
+    console.log(logindata);
 
     const [data, setData] = useState(false);
 
@@ -31,7 +30,7 @@ const Dashboard = () => {
         const data = await res.json();
 
         if (data.status == 401 || !data) {
-           history("*");
+          //  history("*");
         } else {
             console.log("user verify");
             setLoginData(data)
@@ -64,6 +63,12 @@ const Dashboard = () => {
         
         <Link to="/sublogin">
           <button id="bu">Subuser login</button>
+        </Link>
+        <Link to="/sublist">
+          <button id="bu">userlist</button>
+        </Link>
+        <Link to="/question">
+          <button id="bu">Measurement questions</button>
         </Link>
        </div>
     </>

@@ -30,7 +30,7 @@ routers.post("/addd", async (req, res) => {
         if(1===1){
             
         
-            const upp = await companydb.findOne({ email: email });
+           // const upp = await companydb.findOne({ email: email });
             
             const setnewcompanydetail = await companydb.updateMany({email:email},{
                    // name,user,currency, country, pointofcontact,productservices,id,employee,website,activity,address
@@ -92,6 +92,13 @@ routers.post("/addd", async (req, res) => {
 
 });
 
+
+routers.get('/comp', async (req, res) => {
+	const compp = await companydb.find();
+
+	res.json(compp);
+});
+
     
 
 
@@ -101,7 +108,7 @@ routers.post("/addd", async (req, res) => {
 
 
 
-// user logout
+
 
 
 
@@ -116,14 +123,6 @@ module.exports = routers;
 
 
 
-// 2 way connection
-// 12345 ---> e#@$hagsjd
-// e#@$hagsjd -->  12345
-
-// hashing compare
-// 1 way connection
-// 1234 ->> e#@$hagsjd
-// 1234->> (e#@$hagsjd,e#@$hagsjd)=> true
 
 
 

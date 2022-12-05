@@ -49,7 +49,7 @@ const Header = () => {
     }
 
     const goDash = () => {
-        history("/dash")
+        history("/comp")
     }
 
     const goError = () => {

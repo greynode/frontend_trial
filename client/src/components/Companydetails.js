@@ -2,7 +2,7 @@
 import "./CompanyForm.scss";
 import Card from "./card/Card";
 import React, { Component ,useState} from 'react';
-
+import { LoginContext } from './ContextProvider/Context';
 import axios from 'axios';
 import { NavLink,useNavigate} from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
@@ -257,7 +257,7 @@ const Companydetails = () =>{
   
             <div className="--my" align="center" >
             <button className='--btn-primary' onClick={addCompanydata}>Submit</button>
-            <p>next page<NavLink to="/addusr">click me</NavLink></p>
+            {/* <p>next page<NavLink to="/addusr">click me</NavLink></p> */}
             </div>
             <ToastContainer />
         </Card>  </form>
