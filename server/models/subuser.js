@@ -21,6 +21,12 @@ var subuserSchema = new mongoose.Schema({
         required: true,
         
     }
+    ,
+    active: {
+        type: Boolean,
+        required: true,
+        
+    }
 });
 
 

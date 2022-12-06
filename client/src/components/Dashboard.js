@@ -1,7 +1,7 @@
 import React, { useContext, useEffect ,useState} from 'react'
 import { Routes,Route, useNavigate,Link } from 'react-router-dom';
 import { LoginContext } from './ContextProvider/Context';
-
+import Service from "./Services"
 import "./dash.css"
 
     
@@ -36,7 +36,7 @@ const Dashboard = () => {
             setLoginData(data)
             
             //window.alert(JSON.stringify(data))
-           // history("/dash");
+            //history("/dash");
         }
     }
 
@@ -50,7 +50,9 @@ const Dashboard = () => {
     }, [])
 
     return (
-        <><div id ="hello" width="50%" margin="auto" padding="10px">
+        <>
+       
+        <div id ="hello" width="50%" margin="auto" padding="10px">
        <Link to="/addd" >
           <button id="bu">Add company details</button>
         </Link>
@@ -70,7 +72,12 @@ const Dashboard = () => {
         <Link to="/question">
           <button id="bu">Measurement questions</button>
         </Link>
+        <Link to="/subhome">
+          <button id="bu">subuser home page</button>
+        </Link>
        </div>
+       {/* <h1>user home page</h1>
+       <Service/> */}
     </>
     )
 }

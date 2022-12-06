@@ -13,14 +13,15 @@ const Subusradd = () =>{
   const [inpval, setInpval] = useState({
      
       email:"",
-      pass:""
+      pass:"",
+      active:""
      
   });
 
 
   const setVal = (e) => {
       
-      const {name, value } = e.target;
+      const {name, value} = e.target;
 
       setInpval(() => {
           return {
@@ -34,7 +35,7 @@ const Subusradd = () =>{
   const addCompanydata = async (e) => {
       e.preventDefault();
 
-      const { email,pass} = inpval;
+      const { email,pass,active} = inpval;
 
          // name,user,currency, country, pointofcontact,productservices,id,employee,website,activity,address
          if (email === "") {
@@ -44,7 +45,10 @@ const Subusradd = () =>{
           else if (pass === "") {
             toast.warning("password is required!", {
                 position: "top-center"
-            });
+            });}else if (active === "") {
+              toast.warning("password is required!", {
+                  position: "top-center"
+              });
             }else{
 
         
@@ -56,7 +60,7 @@ const Subusradd = () =>{
               },
               body: JSON.stringify({
                   
-                  email,pass
+                  email,pass,active
               })
           });
 
@@ -71,7 +75,8 @@ const Subusradd = () =>{
               setInpval({ ...inpval,  
                 
               email:"",
-              pass:""
+              pass:"",
+              active:""
              });}else {
               toast.error(" email already there!", {
                 position: "top-center"
@@ -108,6 +113,15 @@ const Subusradd = () =>{
               onChange={setVal}
               value={inpval.pass}
               id="pass"
+            />
+            <label>active status:</label>
+            <input
+              type="text"
+              placeholder="yes/no"
+              name="active"
+              onChange={setVal}
+              value={inpval.active}
+              id="active"
             />
           
              

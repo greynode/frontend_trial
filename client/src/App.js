@@ -17,6 +17,9 @@ import Subuserlogin from "./components/Subuserlogin";
 import Profile from "./components/Profile"
 import Subuserlist from "./components/Subuserlist"
 import Question from "./components/Question"
+import Service from "./components/Services"
+import Subuserhome from "./components/Subuserhome";
+
 
 
 
@@ -82,6 +85,8 @@ function App() {
               <Route path="/comp" element={<Profile/>}/>
               <Route path="/sublist" element={<Subuserlist/>}/>
               <Route path="/question" element={<Question/>}/>
+              <Route path="/service" element={<Service/>}/>
+              <Route path="/subhome" element={<Subuserhome/>}/>
 
             </Routes>
           </>

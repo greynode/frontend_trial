@@ -10,69 +10,81 @@ import 'react-toastify/dist/ReactToastify.css';
 const Subusrrem = () =>{
   
 
-  const [inpval, setInpval] = useState({
+    const [inpval, setInpval] = useState({
      
-      email:"",
-     
-  });
-
-
-  const setVal = (e) => {
-      
-      const {name, value } = e.target;
-
-      setInpval(() => {
-          return {
-              ...inpval,
-              [name]: value,
-            
-          }
-      })
-  };
-
-  const addCompanydata = async (e) => {
-      e.preventDefault();
-
-      const { email} = inpval;
-
-         // name,user,currency, country, pointofcontact,productservices,id,employee,website,activity,address
-         if (email === "") {
-          toast.warning("email is required!", {
-              position: "top-center"
-          });}
-
+        email:"",
+        pass:"",
+        active:""
+       
+    });
+  
+  
+    const setVal = (e) => {
         
-
-          const data = await fetch("/remusr", {
-              method: "DELETE",
-              headers: {
-                  "Content-Type": "application/json"
-              },
-              body: JSON.stringify({
+        const {name, value} = e.target;
+  
+        setInpval(() => {
+            return {
+                ...inpval,
+                [name]: value,
+              
+            }
+        })
+    };
+  
+    const addCompanydata = async (e) => {
+        e.preventDefault();
+  
+        const { email,pass,active} = inpval;
+  
+          
+           if (email === "") {
+            toast.warning("email is required!", {
+                position: "top-center"
+            });}
+            else if (pass === "") {
+              toast.warning("password is required!", {
+                  position: "top-center"
+              });}else if (active === "") {
+                toast.warning("password is required!", {
+                    position: "top-center"
+                });
+              }else{
+  
+          
+  
+            const data = await fetch("/remusr", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    
+                    email,pass,active
+                })
+            });
+  
+            const res = await data.json();
+            console.log(res)
+  
+  
+            if (res.status === 201) {
+                toast.success(" Data saved 😃!", {
+                    position: "top-center"
+                });
+                setInpval({ ...inpval,  
                   
-                  email
-              })
-          });
-
-          const res = await data.json();
-          console.log(res)
-
-
-          if (res.status === 201) {
-              toast.success(" User removed 😃!", {
+                email:"",
+                pass:"",
+                active:""
+               });}else {
+                toast.error(" email already there!", {
                   position: "top-center"
               });
-              setInpval({ ...inpval,  
-                
-              email:""
-             });}else {
-              toast.error(" No email exists!", {
-                position: "top-center"
-            });
-              }
-
-          
-  }
+                }
+  
+            
+    }}
 
 
     return(
@@ -82,7 +94,7 @@ const Subusrrem = () =>{
         <form>
          <Card cardClass={"card"}>
           
-          <h3 align="center">remove subuser</h3>
+          <h3 align="center">subuser activity control</h3>
           
           <label>User  Email:</label>
             <input
@@ -92,6 +104,24 @@ const Subusrrem = () =>{
               onChange={setVal}
               value={inpval.email}
               id="email"
+            />
+            <label>pass:</label>
+            <input
+              type="text"
+              placeholder="password"
+              name="pass"
+              onChange={setVal}
+              value={inpval.pass}
+              id="pass"
+            />
+            <label>active status:</label>
+            <input
+              type="text"
+              placeholder="active status"
+              name="active"
+              onChange={setVal}
+              value={inpval.active}
+              id="active"
             />
           
              

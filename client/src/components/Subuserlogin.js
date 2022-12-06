@@ -101,7 +101,7 @@ const Subuserlogin = () =>{
               value={inpval.email}
               id="email"
             />
-             <label>set the password:</label>
+             <label>password:</label>
             <input
               type="text"
               placeholder="set the password"
