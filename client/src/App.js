@@ -19,7 +19,8 @@ import Subuserlist from "./components/Subuserlist"
 import Question from "./components/Question"
 import Service from "./components/Services"
 import Subuserhome from "./components/Subuserhome";
-
+import Scomp from "./components/Scombution";
+import Test from "./components/Test";
 
 
 
@@ -87,6 +88,9 @@ function App() {
               <Route path="/question" element={<Question/>}/>
               <Route path="/service" element={<Service/>}/>
               <Route path="/subhome" element={<Subuserhome/>}/>
+              <Route path="/scomp" element={<Scomp/>}/>
+              <Route path="/test" element={<Test/>}/>
+            
 
             </Routes>
           </>
@@ -103,3 +107,4 @@ function App() {
 }
 
 export default App;
+

@@ -9,7 +9,7 @@ const port = 8010;
 const routers = require("./routes/companyroutes")
 const routeruser = require("./routes/subuser")
 const qrouter=require("./routes/questionrouts")
-
+const routerstation=require("./routes/emmisionroute")
 
 
 
@@ -24,6 +24,7 @@ app.use(router);
 app.use(routers);
 app.use(routeruser);
 app.use(qrouter);
+app.use(routerstation);
 
 
 

@@ -75,6 +75,15 @@ const Dashboard = () => {
         <Link to="/subhome">
           <button id="bu">subuser home page</button>
         </Link>
+        {/* <Link to="/example">
+          <button id="bu">example</button>
+        </Link> */}
+        <Link to="/scomp">
+          <button id="bu">stationay combution</button>
+        </Link>
+        <Link to="/test">
+          <button id="bu">Test</button>
+        </Link>
        </div>
        {/* <h1>user home page</h1>
        <Service/> */}

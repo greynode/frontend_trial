@@ -12,7 +12,7 @@ const Companydetails = () =>{
 
   const [inpval, setInpval] = useState({
      
-      name:"",
+      name:"suamn",
       user:"",
       email:"",
       currency:"",
