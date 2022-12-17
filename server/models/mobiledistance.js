@@ -3,7 +3,7 @@ var timestamps = require('mongoose-timestamp');
 
 
 
-var stationarySchema = new mongoose.Schema({
+var mobiledistance = new mongoose.Schema({
    
 
     code: {
@@ -18,20 +18,12 @@ var stationarySchema = new mongoose.Schema({
     }
     ,
    
-    quantity: {
+    distance: {
         type: String,
         required: true,
         
     }
-    ,type: {
-        type: String,
-        required: true,
-        
-    },weight: {
-        type: String,
-        required: true,
-        
-    },fuel: {
+    ,fuel: {
         type: String,
         required: true,
         
@@ -39,21 +31,22 @@ var stationarySchema = new mongoose.Schema({
         type: String,
         required: true,
         
-    },ch4: {
+    },
+    category: {
         type: String,
         required: true,
         
-    },no2: {
+    },subcat: {
         type: String,
         required: true,
         
     }
 
 });
-stationarySchema.plugin(timestamps);
+mobiledistance.plugin(timestamps);
 
 
 // createing model
-const stationdb = new mongoose.model("stationaries", stationarySchema);
+const mobiledistancedb = new mongoose.model("mobiledistances", mobiledistance);
 
-module.exports = stationdb;
+module.exports = mobiledistancedb;

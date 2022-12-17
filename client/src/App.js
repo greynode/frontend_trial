@@ -21,6 +21,13 @@ import Service from "./components/Services"
 import Subuserhome from "./components/Subuserhome";
 import Scomp from "./components/Scombution";
 import Test from "./components/Test";
+import Scombustiondash from "./components/Scombustiondash";
+import Mcomp from "./components/Mobilecombustion";
+import Mobiledash from "./components/Mobilecombustiondash";
+import Mcompdist from "./components/Mobilecombustiondistance";
+import Mobiledistdash from "./components/Mobiledistdash";
+import Mcompfreight from "./components/Mobilefreight";
+import Mobilefreightdash from "./components/Mobilefreightdash";
 
 
 
@@ -90,6 +97,18 @@ function App() {
               <Route path="/subhome" element={<Subuserhome/>}/>
               <Route path="/scomp" element={<Scomp/>}/>
               <Route path="/test" element={<Test/>}/>
+              <Route path="/scompp" element={<Scombustiondash/>}/>
+              <Route path="/mcomp" element={<Mcomp/>}/>
+              <Route path="/mcompp" element={<Mobiledash/>}/>
+              <Route path="/mcomppdist" element={<Mcompdist/>}/>
+              <Route path="/mcomppdistdash" element={<Mobiledistdash/>}/>
+              <Route path="/mcomppfreight" element={<Mcompfreight/>}/>
+              <Route path="/mcomppfreightdash" element={<Mobilefreightdash/>}/>
+
+
+
+
+
             
 
             </Routes>

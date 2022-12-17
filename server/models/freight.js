@@ -3,7 +3,7 @@ var timestamps = require('mongoose-timestamp');
 
 
 
-var stationarySchema = new mongoose.Schema({
+var fright = new mongoose.Schema({
    
 
     code: {
@@ -18,20 +18,16 @@ var stationarySchema = new mongoose.Schema({
     }
     ,
    
-    quantity: {
+    distance: {
+        type: String,
+        required: true,
+        
+    }, weight: {
         type: String,
         required: true,
         
     }
-    ,type: {
-        type: String,
-        required: true,
-        
-    },weight: {
-        type: String,
-        required: true,
-        
-    },fuel: {
+    ,fuel: {
         type: String,
         required: true,
         
@@ -39,21 +35,18 @@ var stationarySchema = new mongoose.Schema({
         type: String,
         required: true,
         
-    },ch4: {
-        type: String,
-        required: true,
-        
-    },no2: {
+    },
+    category: {
         type: String,
         required: true,
         
     }
 
 });
-stationarySchema.plugin(timestamps);
+fright.plugin(timestamps);
 
 
 // createing model
-const stationdb = new mongoose.model("stationaries", stationarySchema);
+const frightdb = new mongoose.model("frights", fright);
 
-module.exports = stationdb;
+module.exports = frightdb;
