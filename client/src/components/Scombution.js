@@ -1243,7 +1243,7 @@ function eats(calc){
 
       
                 
-let val=["wdf","dfsaf","sdf"]
+let val=["null","null","null"]
 
 
 
@@ -1353,7 +1353,7 @@ else if(fuel==="Orimulsion"){
 }else if(fuel==="Peat"){
   val =Peats(inpval.quantity)
 }else{
-  console.log("errr");
+  console.log("errrr");
 }
 
 }

@@ -28,7 +28,14 @@ import Mcompdist from "./components/Mobilecombustiondistance";
 import Mobiledistdash from "./components/Mobiledistdash";
 import Mcompfreight from "./components/Mobilefreight";
 import Mobilefreightdash from "./components/Mobilefreightdash";
-
+import Scope2energy from "./components/Scope2energy";
+import Scope1dash from"./components/Scope2energydash";
+import Mc1 from "./components/Mc1";
+import Fugitive from "./components/Fugitive";
+import Fugitivedash from "./components/Fugitivedash";
+import Scope3 from "./components/Scope3";
+import Scope3dash from "./components/Scope3dash";
+import Scope3goods from "./components/Scope3goods";
 
 
 
@@ -104,6 +111,19 @@ function App() {
               <Route path="/mcomppdistdash" element={<Mobiledistdash/>}/>
               <Route path="/mcomppfreight" element={<Mcompfreight/>}/>
               <Route path="/mcomppfreightdash" element={<Mobilefreightdash/>}/>
+              <Route path="/scope2" element={<Scope2energy/>}/>
+              <Route path="/scope2dash" element={<Scope1dash/>}/>
+              <Route path="/mc" element={<Mc1/>}/>
+              <Route path="/fugitive" element={<Fugitive/>}/>
+              <Route path="/fugitivedash" element={<Fugitivedash/>}/>
+              <Route path="/scope3" element={<Scope3/>}/>
+              <Route path="/scope3dash" element={<Scope3dash/>}/>
+              <Route path="/scope3goods" element={<Scope3goods/>}/>
+
+
+
+
+
 
 
 

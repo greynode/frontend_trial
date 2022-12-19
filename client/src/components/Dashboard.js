@@ -81,9 +81,9 @@ const Dashboard = () => {
         <Link to="/scomp">
           <button id="bu">stationay combution</button>
         </Link>
-        <Link to="/test">
+        {/* <Link to="/test">
           <button id="bu">Test</button>
-        </Link>
+        </Link> */}
         <Link to="/scompp">
           <button id="bu">stationay combustion dash</button>
         </Link>
@@ -104,6 +104,30 @@ const Dashboard = () => {
         </Link>
         <Link to="/mcomppfreightdash">
           <button id="bu">Mobilecombustion freight dash</button>
+        </Link>
+        <Link to="/scope2">
+          <button id="bu">Scope2 energy</button>
+        </Link>
+        <Link to="/scope2dash">
+          <button id="bu">Scope2 Dashboard</button>
+        </Link>
+        <Link to="/mc">
+          <button id="bu">Transport</button>
+        </Link>
+        <Link to="/fugitive">
+          <button id="bu">Fugitive emission</button>
+        </Link>
+        <Link to="/fugitivedash">
+          <button id="bu">Fugitive emission dash</button>
+        </Link>
+        <Link to="/scope3">
+          <button id="bu">Scope3 </button>
+        </Link>
+        <Link to="/scope3dash">
+          <button id="bu">Scope3 dash</button>
+        </Link>
+        <Link to="/scope3goods">
+          <button id="bu">Scope3 goods</button>
         </Link>
         
        </div>
