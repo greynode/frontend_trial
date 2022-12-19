@@ -126,8 +126,17 @@ const Dashboard = () => {
         <Link to="/scope3dash">
           <button id="bu">Scope3 dash</button>
         </Link>
-        <Link to="/scope3goods">
+        <Link to="/scope3good">
           <button id="bu">Scope3 goods</button>
+        </Link>
+        <Link to="/scope3gooddas">
+          <button id="bu">Scope3 goods dash</button>
+        </Link>
+        <Link to="/downstream">
+          <button id="bu">Downstream</button>
+        </Link>
+        <Link to="/upstream">
+          <button id="bu">Upstream</button>
         </Link>
         
        </div>

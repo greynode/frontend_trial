@@ -13,7 +13,7 @@ const Scope3goods = () =>{
   const [inpval, setInpval] = useState({
      
     period2:"",vendorlocation2:"",vendorname2:"",name2:"",code2:"",quantity:"",purchased:"",vendorlocation:"",
-    vendorname:"",namegoods:"",codegoods:""
+    vendorname:"",namegoods:"",codegoods:"",serviceavailed:""
      
   });
 
@@ -34,7 +34,7 @@ const Scope3goods = () =>{
   const addCompanydata = async (e) => {
       e.preventDefault();
 
-      const {period2,vendorlocation2,vendorname2,name2,code2,quantity,purchased,vendorlocation,vendorname,namegoods,codegoods} = inpval;
+      const {period2,vendorlocation2,vendorname2,name2,code2,quantity,purchased,vendorlocation,vendorname,namegoods,serviceavailed,codegoods} = inpval;
 
          // name,user,currency, country, pointofcontact,productservices,id,employee,website,activity,address
          if (name2 === "") {
@@ -60,14 +60,14 @@ const Scope3goods = () =>{
 
         
 
-          const data = await fetch("/scope3", {
+          const data = await fetch("/scope3goods", {
               method: "POST",
               headers: {
                   "Content-Type": "application/json"
               },
               body: JSON.stringify({
                   
-                period2,vendorlocation2,vendorname2,name2,code2,quantity,purchased,vendorlocation,vendorname,namegoods,codegoods
+                period2,vendorlocation2,vendorname2,name2,code2,quantity,purchased,vendorlocation,vendorname,namegoods,codegoods,serviceavailed
               })
           });
 
@@ -82,7 +82,7 @@ const Scope3goods = () =>{
               setInpval({ ...inpval,  
                 
                 period2:"",vendorlocation2:"",vendorname2:"",name2:"",code2:"",quantity:"",purchased:"",vendorlocation:"",
-    vendorname:"",namegoods:"",codegoods:""
+    vendorname:"",namegoods:"",codegoods:"",serviceavailed:""
              });}else {
               toast.error(" name already there!", {
                 position: "top-center"

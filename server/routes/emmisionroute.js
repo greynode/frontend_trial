@@ -8,8 +8,9 @@ const energydb=require("../models/scope2energy")
 const Mcdb=require("../models/mc1")
 const fugitiveDB= require("../models/fugitive")
 const scope3db=require("../models/scope3")
-
-
+const scope3goodsdb=require("../models/scope3goods")
+const downstreamdb=require("../models/downstream")
+const upstreamdb=require("../models/upstream")
 
 	//mobile station
 
@@ -309,5 +310,117 @@ routerstation.get('/scope3dash', async (req, res) => {
 
 	res.json(usr);
 });
+//scope3goods
+routerstation.post("/scope3goods", async (req, res) => {
+
+    const { period2,vendorlocation2,vendorname2,name2,code2,quantity,purchased,vendorlocation,vendorname,namegoods,codegoods,serviceavailed  } = req.body;
+
+   
+
+    try {
+
+    
+    
+            const saves = new scope3goodsdb({
+                period2,vendorlocation2,vendorname2,name2,code2,quantity,purchased,vendorlocation,vendorname,namegoods,codegoods,serviceavailed
+            });
+
+            
+
+            const storeDatadist = await saves.save();
+
+            // console.log(storeData);
+            res.status(201).json({ status: 201, storeDatadist })
+        
+
+    } catch (error) {
+        res.status(422).json(error);
+        console.log("catch block error");
+    }
+
+});
+routerstation.get('/scope3goodsdash', async (req, res) => {
+	const usr = await scope3goodsdb.find();
+
+
+	res.json(usr);
+});
+//downstream
+routerstation.post("/downstream", async (req, res) => {
+
+    const { distance,material,quantity,code,byername,byerlocation,facility,transport,vehicle,code2,byername2,byerlocation2,facility2
+        ,finalproduct,quantity2,process,material2,productname,usagetime,productname2,disposal,lease,namefranchise,location
+        ,franchiseperiod,location2    } = req.body;
+
+   
+
+    try {
+
+    
+    
+            const saves = new downstreamdb({
+                distance,material,quantity,code,byername,byerlocation,facility,transport,vehicle,code2,byername2,byerlocation2,facility2
+                ,finalproduct,quantity2,process,material2,productname,usagetime,productname2,disposal,lease,namefranchise,location
+                ,franchiseperiod,location2          });
+
+            
+
+            const storeDatadist = await saves.save();
+
+            // console.log(storeData);
+            res.status(201).json({ status: 201, storeDatadist })
+        
+
+    } catch (error) {
+        res.status(422).json(error);
+        console.log("catch block error");
+    }
+
+});
+routerstation.get('/downstreamdash', async (req, res) => {
+	const usr = await downstreamdb.find();
+
+
+	res.json(usr);
+});
+//upstream
+routerstation.post("/upstream", async (req, res) => {
+
+    const {  distance,material,quantity,code,byername,byerlocation,facility,transport,vehicle,facility2,code2,waste,dispose,quantity2,facility3,
+        code3,employeecode,employeename,from,to,employeecode2,employeename2,distance2,transport2,
+        vehicle2,facility4,code4,from2,to2,distance3,transport3,period,asset,vehicle3   } = req.body;
+
+   
+
+    try {
+
+    
+    
+            const saves = new upstreamdb({
+                distance,material,quantity,code,byername,byerlocation,facility,transport,vehicle,facility2,code2,waste,dispose,quantity2,facility3,
+                code3,employeecode,employeename,from,to,employeecode2,employeename2,distance2,transport2,
+                vehicle2,facility4,code4,from2,to2,distance3,transport3,period,asset,vehicle3        });
+
+            
+
+            const storeDatadist = await saves.save();
+
+            // console.log(storeData);
+            res.status(201).json({ status: 201, storeDatadist })
+        
+
+    } catch (error) {
+        res.status(422).json(error);
+        console.log("catch block error");
+    }
+
+});
+routerstation.get('/upstreamdash', async (req, res) => {
+	const usr = await upstreamdb.find();
+
+
+	res.json(usr);
+});
+
 
 module.exports =routerstation;  

@@ -36,6 +36,9 @@ import Fugitivedash from "./components/Fugitivedash";
 import Scope3 from "./components/Scope3";
 import Scope3dash from "./components/Scope3dash";
 import Scope3goods from "./components/Scope3goods";
+import Scope3goodsdash from "./components/scope3goodsdash";
+import Downstream from "./components/Downstream";
+import Upstream from "./components/Upstream";
 
 
 
@@ -118,7 +121,12 @@ function App() {
               <Route path="/fugitivedash" element={<Fugitivedash/>}/>
               <Route path="/scope3" element={<Scope3/>}/>
               <Route path="/scope3dash" element={<Scope3dash/>}/>
-              <Route path="/scope3goods" element={<Scope3goods/>}/>
+              <Route path="/scope3good" element={<Scope3goods/>}/>
+              <Route path="/scope3gooddas" element={<Scope3goodsdash/>}/>
+              <Route path="/downstream" element={<Downstream/>}/>
+              <Route path="/upstream" element={<Upstream/>}/>
+
+
 
 
 
