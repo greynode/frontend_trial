@@ -1,42 +1,14 @@
-
 const express = require("express");
-const routeruser = new express.Router();
-const subuserdb = require("../models/subuser");
-const tempusr=require("../models/tempsubusr")
+const router = new express.Router();
+const userdb = require("../models/userSchema");
 var bcrypt = require("bcryptjs");
 const authenticate = require("../middleware/authenticate");
 const nodemailer = require("nodemailer");
 const jwt  = require("jsonwebtoken");
 
+const tempadminusr = require("../models/tempclient");
+const tempusr = require("../models/tempsubusr");
 const keysecret = process.env.SECRET_KEY
-
-
-
-
-
-// routeruser.delete("/remusr", async (req, res) => {
-//     const { email } = req.body;
-//     if ( !email) {
-//       //  res.status(422).json({ error: "fill all the details" })
-//     }else{
-
-//     try {
-        
-//         const usrr = await subuserdb.findOne({ email: email });
-//         if(usrr){
-//         const usr = await subuserdb.findOneAndDelete({email:email});
-//         res.status(201).json({ status: 201, usr})
-     
-//      console.log(usr);}
-//      else{
-//         res.status(422).json(error);
-//      }
-   
-//     } catch (error) {
-//         res.send(error);
-       
-//     }}
-// });
 
 
 
@@ -50,10 +22,81 @@ const transporter = nodemailer.createTransport({
     }
 }) 
 
+//subusr add
 
+router.post("/addusr", async (req, res) => {
+
+    const { email ,pass,active} = req.body;
+
+    if ( !email || !pass|| !active) {
+        res.status(422).json({ error: "fill all the details" })
+    }
+
+    try {
+
+        const preuser = await tempusr.findOne({ email: email });
+
+        if (preuser) {
+            res.status(422).json({ error: "This Email is Already Exist" })
+        }
+         else {
+            const finalUser = new tempusr({
+                 email,pass,active
+            });
+
+            
+
+            const storeData = await finalUser.save();
+
+            // console.log(storeData);
+            res.status(201).json({ status: 201, storeData })
+        }
+
+    } catch (error) {
+        res.status(422).json(error);
+        console.log("catch block error");
+    }
+
+});
+//rem subusr
+router.post("/remusr", async (req, res) => {
+
+    const { email ,pass,active } = req.body;
+
+    if ( !email || !pass|| !active ) {
+        res.status(422).json({ error: "fill all the details" })
+    }
+
+    try {
+
+        const preuser = await tempusr.findOne({ email: email });
+
+        if (preuser) {
+            const users = await tempusr.updateMany({email:email},{
+                pass:pass,active:active});
+        
+
+            
+
+            const storeData = await users.save();
+
+        
+            res.status(201).json({status:201,storeData})
+
+        }
+        else{
+            res.status(401).json({status:401,message:"user not exist"})
+        }
+
+    } catch (error) {
+        res.status(201).json({status:201})
+        console.log("success");
+    }
+
+});
 // for user registration
 
-routeruser.post("/subuserregister", async (req, res) => {
+router.post("/register", async (req, res) => {
 
     const { fname, email, password, cpassword } = req.body;
 
@@ -63,23 +106,26 @@ routeruser.post("/subuserregister", async (req, res) => {
 
     try {
 
-        const preuser = await subuserdb.findOne({ email: email });
+        const preuser = await userdb.findOne({ email: email });
+        const adminpreuser = await tempadminusr.findOne({ email: email });
 
-      const users=await tempusr.findOne({email:email})
         if (preuser) {
             res.status(422).json({ error: "This Email is Already Exist" })
         } else if (password !== cpassword) {
             res.status(422).json({ error: "Password and Confirm Password Not Match" })
-        } else if(users && users.pass===password) {
-            const finalUser = new subuserdb({
+        } else if(adminpreuser && adminpreuser.pass===password){
+            const finalUser = new userdb({
                 fname, email, password, cpassword
             });
+
+            
+
             const storeData = await finalUser.save();
 
             // console.log(storeData);
             res.status(201).json({ status: 201, storeData })
         }else{
-            res.status(422).json({ error: "invalid" })
+            res.status(422).json({ error: "you have no access" })
         }
 
     } catch (error) {
@@ -94,7 +140,7 @@ routeruser.post("/subuserregister", async (req, res) => {
 
 // user Login
 
-routeruser.post("/subuserlogin", async (req, res) => {
+router.post("/login", async (req, res) => {
     console.log(req.body);
 
     const { email, password } = req.body;
@@ -104,8 +150,8 @@ routeruser.post("/subuserlogin", async (req, res) => {
     }
 
     try {
-       const userValid = await subuserdb.findOne({email:email});
-       const userValidtemp = await tempusr.findOne({email:email});
+       const userValid = await userdb.findOne({email:email});
+       const userValidtemp = await tempadminusr.findOne({email:email});
 
         if(userValid && userValidtemp.active===true){
 
@@ -143,9 +189,9 @@ routeruser.post("/subuserlogin", async (req, res) => {
 
 
 // user valid
-routeruser.get("/subuservaliduser",authenticate,async(req,res)=>{
+router.get("/validuser",authenticate,async(req,res)=>{
     try {
-        const ValidUserOne = await subuserdb.findOne({_id:req.userId});
+        const ValidUserOne = await userdb.findOne({_id:req.userId});
         res.status(201).json({status:201,ValidUserOne});
     } catch (error) {
         res.status(401).json({status:401,error});
@@ -155,7 +201,7 @@ routeruser.get("/subuservaliduser",authenticate,async(req,res)=>{
 
 // user logout
 
-routeruser.get("/subuserlogout",authenticate,async(req,res)=>{
+router.get("/logout",authenticate,async(req,res)=>{
     try {
         req.rootUser.tokens =  req.rootUser.tokens.filter((curelem)=>{
             return curelem.token !== req.token
@@ -175,7 +221,7 @@ routeruser.get("/subuserlogout",authenticate,async(req,res)=>{
 
 
 // send email Link For reset Password
-routeruser.post("/subusersendpasswordlink",async(req,res)=>{
+router.post("/sendpasswordlink",async(req,res)=>{
     console.log(req.body)
 
     const {email} = req.body;
@@ -185,14 +231,14 @@ routeruser.post("/subusersendpasswordlink",async(req,res)=>{
     }
 
     try {
-        const userfind = await subuserdb.findOne({email:email});
+        const userfind = await userdb.findOne({email:email});
 
         // token generate for reset password
         const token = jwt.sign({_id:userfind._id},keysecret,{
             expiresIn:"120s"
         });
         
-        const setusertoken = await subuserdb.findByIdAndUpdate({_id:userfind._id},{verifytoken:token},{new:true});
+        const setusertoken = await userdb.findByIdAndUpdate({_id:userfind._id},{verifytoken:token},{new:true});
 
 
         if(setusertoken){
@@ -200,7 +246,7 @@ routeruser.post("/subusersendpasswordlink",async(req,res)=>{
                 from:process.env.EMAIL,
                 to:email,
                 subject:"Sending Email For password Reset",
-                text:`This Link Valid For 2 MINUTES http://localhost:3000/subuserforgotpassword/${userfind.id}/${setusertoken.verifytoken}`
+                text:`This Link Valid For 2 MINUTES http://localhost:3000/forgotpassword/${userfind.id}/${setusertoken.verifytoken}`
             }
 
             transporter.sendMail(mailOptions,(error,info)=>{
@@ -223,11 +269,11 @@ routeruser.post("/subusersendpasswordlink",async(req,res)=>{
 
 
 // verify user for forgot password time
-routeruser.get("/subuserforgotpassword/:id/:token",async(req,res)=>{
+router.get("/forgotpassword/:id/:token",async(req,res)=>{
     const {id,token} = req.params;
 
     try {
-        const validuser = await subuserdb.findOne({_id:id,verifytoken:token});
+        const validuser = await userdb.findOne({_id:id,verifytoken:token});
         
         const verifyToken = jwt.verify(token,keysecret);
 
@@ -247,13 +293,13 @@ routeruser.get("/subuserforgotpassword/:id/:token",async(req,res)=>{
 
 // change password
 
-routeruser.post("/:id/subuser/:token",async(req,res)=>{
+router.post("/:id/:token",async(req,res)=>{
     const {id,token} = req.params;
 
     const {password} = req.body;
 
     try {
-        const validuser = await subuserdb.findOne({_id:id,verifytoken:token});
+        const validuser = await userdb.findOne({_id:id,verifytoken:token});
         
         const verifyToken = jwt.verify(token,keysecret);
 
@@ -261,7 +307,7 @@ routeruser.post("/:id/subuser/:token",async(req,res)=>{
             const newpassword = await bcrypt.hash(password,12);
             
 
-            const setnewuserpass = await subuserdb.findByIdAndUpdate({_id:id},{password:newpassword});
+            const setnewuserpass = await userdb.findByIdAndUpdate({_id:id},{password:newpassword});
 
             setnewuserpass.save();
             res.status(201).json({status:201,setnewuserpass})
@@ -276,7 +322,7 @@ routeruser.post("/:id/subuser/:token",async(req,res)=>{
 
 
 
-module.exports = routeruser;
+module.exports = router;
 
 
 
@@ -291,11 +337,3 @@ module.exports = routeruser;
 
 
 
-
-routeruser.get('/sublist', async (req, res) => {
-	const usr = await subuserdb.find();
-
-	res.json(usr);
-});
-
-module.exports = routeruser;

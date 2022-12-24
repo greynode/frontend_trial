@@ -1,19 +1,19 @@
-import Header from "./components/Header";
-import Login from "./components/Login";
-import Register from "./components/Register";
-import Dashboard from "./components/Dashboard";
-import Error from "./components/Error";
-import PasswordReset from "./components/PasswordReset";
-import ForgotPassword from "./components/ForgotPassword";
+import Header from "./components/Clientcontrol/Header";
+import Login from "./components/Clientcontrol/Login";
+import Register from "./components/Clientcontrol/Register";
+import Dashboard from "./components/Clientcontrol/Dashboard";
+import Error from "./components/Clientcontrol/Error";
+import PasswordReset from "./components/Clientcontrol/PasswordReset";
+import ForgotPassword from "./components/Clientcontrol/ForgotPassword";
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import { Routes, Route, useNavigate } from "react-router-dom"
 import { useEffect, useContext, useState } from "react";
-import { LoginContext } from "./components/ContextProvider/Context";
+import { LoginContext } from "./components/Clientcontrol/ContextProvider/Context";
 import Companydetails from "./components/Companydetails"
 import Subusradd from "./components/Subusradd";
 import Subusrrem from "./components/Subusrrem";
-import Subuserlogin from "./components/Subuserlogin";
+
 import Profile from "./components/Profile"
 import Subuserlist from "./components/Subuserlist"
 import Question from "./components/Question"
@@ -39,6 +39,22 @@ import Scope3goods from "./components/Scope3goods";
 import Scope3goodsdash from "./components/scope3goodsdash";
 import Downstream from "./components/Downstream";
 import Upstream from "./components/Upstream";
+import Capitalgoods from "./components/Capitalgoods";
+import Report from "./components/Report";
+import Fugitive2 from "./components/Fugitive2";
+import Subfirst from "./components/Subusrfirstlog";
+import Superregister from "./components/Superadmincontrol/Register";
+import Superreset from "./components/Superadmincontrol/PasswordReset";
+import Superlogin from "./components/Superadmincontrol/Login";
+import Superforgotpass from "./components/Superadmincontrol/ForgotPassword";
+import Superdash from "./components/Superadmincontrol/Superdash";
+
+import Subuserregister from "./components/Subusercontrol/Register";
+import Subuserdash from "./components/Subusercontrol/Superdash";
+import Subuserforgotpass from "./components/Subusercontrol/ForgotPassword";
+import Subuserreset from "./components/Subusercontrol/PasswordReset";
+import Subuserlogin from "./components/Subusercontrol/Login";
+import Clientusradd from "./components/Clientusradd";
 
 
 
@@ -64,13 +80,13 @@ function App() {
 
     const data = await res.json();
 
-    if (data.status == 401 || !data) {
-      console.log("user not valid");
-    } else {
-      console.log("user verify");
-      setLoginData(data)
-      history("/dash");
-    }
+    // if (data.status == 401 || !data) {
+    //   console.log("user not valid");
+    // } else {
+    //   console.log("user verify");
+    //   setLoginData(data)
+    //   history("/dash");
+    // }
   }
 
   useEffect(() => {
@@ -90,7 +106,7 @@ function App() {
 
             <Routes>
               <Route path="/" element={<Login />} />
-              <Route path="/"element={<Dashboard/>}/>
+              {/* <Route path="/"element={<Dashboard/>}/> */}
               <Route path="/register" element={<Register />} />
               <Route path="/dash" element={<Dashboard />} />
               <Route path="/password-reset" element={<PasswordReset />} />
@@ -125,13 +141,25 @@ function App() {
               <Route path="/scope3gooddas" element={<Scope3goodsdash/>}/>
               <Route path="/downstream" element={<Downstream/>}/>
               <Route path="/upstream" element={<Upstream/>}/>
+              <Route path="/capital" element={<Capitalgoods/>}/>
+              <Route path="/report" element={<Report/>}/>
+              <Route path="/fugitivetwo" element={<Fugitive2/>}/>
+              <Route path="/subfirst" element={<Subfirst/>}/>
+              <Route path="/Superregister" element={<Superregister/>}/>
+              <Route path="/Superreset" element={<Superreset/>}/>
+              <Route path="/Superlogin" element={<Superlogin/>}/>
+              <Route path="/superforgotpassword/:id/:token" element={<Superforgotpass/>}/>
+              <Route path="/superdash" element={<Superdash/>}/>
+              <Route path="/subuserregister" element={<Subuserregister/>}/>
+              <Route path="/subuserlogin" element={<Subuserlogin/>}/>
+              <Route path="/subuserreset" element={<Subuserreset/>}/>
+              <Route path="/subuserforgotpassword/:id/:token" element={<Subuserforgotpass/>}/>
+              <Route path="/subuserdash" element={<Subuserdash/>}/>
+              <Route path="/clientadd" element={<Clientusradd/>}/>
 
+                       
 
-
-
-
-
-
+              
 
 
 

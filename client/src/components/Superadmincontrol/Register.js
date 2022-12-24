@@ -4,16 +4,18 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./mix.css"
 
-const Register = () => {
+const Superregister = () => {
 
     const [passShow, setPassShow] = useState(false);
     const [cpassShow, setCPassShow] = useState(false);
+    const [passShowc, setPassShowc] = useState(false);
 
     const [inpval, setInpval] = useState({
         fname: "",
         email: "",
         password: "",
-        cpassword: ""
+        cpassword: "",
+        secretkey:""
     });
 
 
@@ -32,7 +34,7 @@ const Register = () => {
     const addUserdata = async (e) => {
         e.preventDefault();
 
-        const { fname, email, password, cpassword } = inpval;
+        const { fname, email, password, cpassword,secretkey } = inpval;
 
         if (fname === "") {
             toast.warning("fname is required!", {
@@ -71,13 +73,13 @@ const Register = () => {
             // console.log("user registration succesfully done");
 
 
-            const data = await fetch("/register", {
+            const data = await fetch("/superregister", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    fname, email, password, cpassword
+                    fname, email, password, cpassword,secretkey
                 })
             });
 
@@ -88,9 +90,9 @@ const Register = () => {
                 toast.success("Registration Successfully done 😃!", {
                     position: "top-center"
                 });
-                setInpval({ ...inpval, fname: "", email: "", password: "", cpassword: "" });
+                setInpval({ ...inpval, fname: "", email: "", password: "", cpassword: "",secretkey:"" });
             }else{
-                toast.error("user alredy exists!", {
+                toast.error("invalid!", {
                     position: "top-center"
                 });
             }
@@ -134,7 +136,19 @@ const Register = () => {
                                     {!cpassShow ? "Show" : "Hide"}
                                 </div>
                             </div>
+                        </div> <div className="form_input">
+                            <label htmlFor="password">Secret key</label>
+                            <div className="two">
+                                <input type={!passShowc ? "password" : "text"} onChange={setVal} value={inpval.secretkey} name="secretkey" id="secretkey" placeholder='Enter Your secretkey' />
+                                <div className="showpass" onClick={() => setPassShowc(!passShowc)}>
+                                    {!passShowc ? "Show" : "Hide"}
+                                </div>
+                            </div>
                         </div>
+                        {/* <div className="form_input">
+                            <label htmlFor="secretkey">Scretkey</label>
+                            <input type="text" onChange={setVal} value={inpval.secretkey} name="secretkey" id="secretkey" placeholder='Enter Your secretkey' />
+                        </div> */}
 
                         <button className='btn' onClick={addUserdata}>Sign Up</button>
                         <p>Already have an account? <NavLink to="/">Log In</NavLink></p>
@@ -146,4 +160,4 @@ const Register = () => {
     )
 }
 
-export default Register
+export default Superregister

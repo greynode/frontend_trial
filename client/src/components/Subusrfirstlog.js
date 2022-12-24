@@ -1,29 +1,28 @@
 
 import "./CompanyForm.scss";
 import Card from "./card/Card";
-import React, { Component ,useState, useContext} from 'react';
-import { LoginContext } from './Clientcontrol/ContextProvider/Context';
+import React, { Component ,useState} from 'react';
 
 import axios from 'axios';
 import { NavLink,useNavigate} from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-const Subusradd = () =>{
+const Subfirst = () =>{
   
-  const { logindata, setLoginData } = useContext(LoginContext); 
-  console.log(logindata);
+
   const [inpval, setInpval] = useState({
      
       email:"",
       pass:"",
-      active:""
+    
+      npass:""
      
   });
 
 
   const setVal = (e) => {
       
-      const {name, value} = e.target;
+      const {name, value } = e.target;
 
       setInpval(() => {
           return {
@@ -37,7 +36,7 @@ const Subusradd = () =>{
   const addCompanydata = async (e) => {
       e.preventDefault();
 
-      const { email,pass,active} = inpval;
+      const { email,pass,npass,cpass} = inpval;
 
          // name,user,currency, country, pointofcontact,productservices,id,employee,website,activity,address
          if (email === "") {
@@ -47,22 +46,23 @@ const Subusradd = () =>{
           else if (pass === "") {
             toast.warning("password is required!", {
                 position: "top-center"
-            });}else if (active === "") {
-              toast.warning("password is required!", {
-                  position: "top-center"
-              });
-            }else{
+            });
+            }else if (npass !== cpass) {
+                toast.warning("password not match!", {
+                    position: "top-center"
+                });
+                }else{
 
         
 
-          const data = await fetch("/addusr", {
+          const data = await fetch("/subadd", {
               method: "POST",
               headers: {
                   "Content-Type": "application/json"
               },
               body: JSON.stringify({
                   
-                  email,pass,active
+                  email,pass,npass
               })
           });
 
@@ -71,16 +71,17 @@ const Subusradd = () =>{
 
 
           if (res.status === 201) {
-              toast.success(" Data saved 😃!", {
+                
+              toast.success(" Created Success 😃!", {
                   position: "top-center"
               });
               setInpval({ ...inpval,  
                 
               email:"",
-              pass:"",
-              active:""
+              pass:"", cpass:"",
+              npass:""
              });}else {
-              toast.error(" email already there!", {
+              toast.error(" invalid details !", {
                 position: "top-center"
             });
               }
@@ -96,7 +97,7 @@ const Subusradd = () =>{
         <form>
          <Card cardClass={"card"}>
           
-          <h3 align="center">Add subuser</h3>
+          <h3 align="center">Subuser Login first time</h3>
           
           <label>User  Email:</label>
             <input
@@ -107,7 +108,7 @@ const Subusradd = () =>{
               value={inpval.email}
               id="email"
             />
-             <label>set the password:</label>
+             <label> temp password:</label>
             <input
               type="text"
               placeholder="set the password"
@@ -116,14 +117,23 @@ const Subusradd = () =>{
               value={inpval.pass}
               id="pass"
             />
-            <label>active status:</label>
+             <label>new pass:</label>
             <input
               type="text"
-              placeholder="yes/no"
-              name="active"
+              placeholder="npass"
+              name="npass"
               onChange={setVal}
-              value={inpval.active}
-              id="active"
+              value={inpval.npass}
+              id="npass"
+            />
+             <label>confirm pass:</label>
+            <input
+              type="text"
+              placeholder="cpass"
+              name="cpass"
+              onChange={setVal}
+              value={inpval.cpass}
+              id="cpass"
             />
           
              
@@ -139,4 +149,4 @@ const Subusradd = () =>{
   
     )}
 
-export default Subusradd;
+export default Subfirst;

@@ -1,21 +1,41 @@
-import React from 'react'
+import { useState,useContext } from 'react'
 import { useForm } from 'react-hook-form';
 import './style.css';
-
+import { LoginContext } from './Clientcontrol/ContextProvider/Context';
 function Questions() {
-  
+  const { logindata } = useContext(LoginContext);
+  console.log(logindata);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm()
-
-  const onClickSubmit = (res) => console.log(JSON.stringify(res))
+  let he="hello"
+const as = async()=>{he=(logindata.ValidUserOne.email)}
+  
+as();
+const onClickSubmit = async(res) => {
+  // 
+  const data = await fetch("/question",{
+    method:"POST",
+    headers:{
+        "Content-Type":"application/json"
+    },
+    body:JSON.stringify(
+         res
+    )
+   
+});
+console.log(res);}
   return (
     <div className="alignment">
       <form onSubmit={handleSubmit(onClickSubmit)}>
-        <h1>Questions</h1>
+        <h1>Questions</h1><br></br>
         <div>
+        <label><h2>Enter you Email:</h2></label><br></br>
+        <input value={he} {...register("email", { required: true })} />
+
+        
         <h2>Does your company measure the carbon emissions under Scope 1,2 & 3?</h2>
         <div className="questions-check mt-3">
           <label htmlFor="scope1">
@@ -63,7 +83,7 @@ function Questions() {
         </div>
         
         <div>
-        <h2>Does your company have KPIs for carbon emissions, Water consumption , waste reduction and other sustaianbility factors ?</h2>
+        <h2>Does your company have KPIs for carbon emissions, Water consumption , waste reduction and other sustainability factors ?</h2>
         <div className="questions-check mt-3">
           <label htmlFor="yesno1">
             <input

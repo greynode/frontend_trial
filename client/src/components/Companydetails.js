@@ -2,7 +2,7 @@
 import "./CompanyForm.scss";
 import Card from "./card/Card";
 import React, { Component ,useState} from 'react';
-import { LoginContext } from './ContextProvider/Context';
+import { LoginContext } from './Clientcontrol/ContextProvider/Context';
 import axios from 'axios';
 import { NavLink,useNavigate} from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';

@@ -8,7 +8,7 @@ import axios from 'axios';
 import { NavLink,useNavigate} from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-const Subusradd = () =>{
+const Clientusradd = () =>{
   
   const { logindata, setLoginData } = useContext(LoginContext); 
   console.log(logindata);
@@ -55,7 +55,7 @@ const Subusradd = () =>{
 
         
 
-          const data = await fetch("/addusr", {
+          const data = await fetch("/adminaddusr", {
               method: "POST",
               headers: {
                   "Content-Type": "application/json"
@@ -139,4 +139,4 @@ const Subusradd = () =>{
   
     )}
 
-export default Subusradd;
+export default Clientusradd;

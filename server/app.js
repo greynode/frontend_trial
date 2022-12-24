@@ -2,14 +2,15 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 require("./db/conn");
-const router = require("./routes/router");
+const router = require("./routes/clientrouter");
 const cors = require("cors");
 const cookiParser = require("cookie-parser")
 const port = 8010;
 const routers = require("./routes/companyroutes")
 const routeruser = require("./routes/subuser")
-const qrouter=require("./routes/questionrouts")
-const routerstation=require("./routes/emmisionroute")
+
+const routerstation=require("./routes/emmisionroute");
+const superouter = require("./routes/superadmin");
 
 
 
@@ -23,7 +24,7 @@ app.use(cors());
 app.use(router);
 app.use(routers);
 app.use(routeruser);
-app.use(qrouter);
+app.use(superouter)
 app.use(routerstation);
 
 

@@ -1,20 +1,21 @@
 import React, { useContext, useEffect ,useState} from 'react'
 import { Routes,Route, useNavigate,Link } from 'react-router-dom';
 import { LoginContext } from './ContextProvider/Context';
-import Service from "./Services"
+
 import "./dash.css"
 
     
 
 const Dashboard = () => {
+ 
 
     const { logindata, setLoginData } = useContext(LoginContext);
     console.log(logindata);
 
     const [data, setData] = useState(false);
 
-
-    const history = useNavigate();
+    //window.alert(data)
+      const history = useNavigate();
 
     const DashboardValid = async () => {
         let token = localStorage.getItem("usersdatatoken");
@@ -30,13 +31,13 @@ const Dashboard = () => {
         const data = await res.json();
 
         if (data.status == 401 || !data) {
-          //  history("*");
+            history("/");
         } else {
             console.log("user verify");
             setLoginData(data)
-            
-            //window.alert(JSON.stringify(data))
-            //history("/dash");
+          let va =logindata
+           // window.alert(va.ValidUserOne.email)
+            history("/dash");
         }
     }
 
@@ -45,7 +46,7 @@ const Dashboard = () => {
         setTimeout(() => {
             DashboardValid();
             setData(true)
-        }, 2000)
+        })//, 2000
 
     }, [])
 
@@ -81,9 +82,9 @@ const Dashboard = () => {
         <Link to="/scomp">
           <button id="bu">stationay combution</button>
         </Link>
-        {/* <Link to="/test">
+        <Link to="/test">
           <button id="bu">Test</button>
-        </Link> */}
+        </Link>
         <Link to="/scompp">
           <button id="bu">stationay combustion dash</button>
         </Link>
@@ -137,6 +138,23 @@ const Dashboard = () => {
         </Link>
         <Link to="/upstream">
           <button id="bu">Upstream</button>
+        </Link>
+        <Link to="/capital">
+          <button id="bu">Capital goods</button>
+        </Link>
+        <Link to="/report">
+          <button id="bu">Report</button>
+        </Link>
+        <Link to="/fugitivetwo">
+          <button id="bu">Fugitive 2</button>
+        </Link>
+        <Link to="/subreg">
+          <button id="bu">subregister</button>
+        </Link><Link to="/subfirst">
+          <button id="bu"> sublogin</button>
+        </Link>
+        <Link to="/main">
+          <button id="bu"> main</button>
         </Link>
         
        </div>

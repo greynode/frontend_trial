@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import "./Profile.css"
+
 const api_base = 'http://localhost:3000';
-
-
 function Profile() {
 	const [compp, setTodos] = useState([]);
 	

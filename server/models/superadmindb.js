@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 const keysecret = process.env.SECRET_KEY
 
 
-const userSchema = new mongoose.Schema({
+const superSchema = new mongoose.Schema({
     fname: {
         type: String,
         required: true,
@@ -51,7 +51,7 @@ const userSchema = new mongoose.Schema({
 
 // hash password
 
-userSchema.pre("save", async function (next) {
+superSchema.pre("save", async function (next) {
 
     if (this.isModified("password")) {
         this.password = await bcrypt.hash(this.password, 12);
@@ -62,7 +62,7 @@ userSchema.pre("save", async function (next) {
 
 
 // token generate
-userSchema.methods.generateAuthtoken = async function () {
+superSchema.methods.generateAuthtoken = async function () {
     try {
         let token23 = jwt.sign({ _id: this._id }, keysecret, {
             expiresIn: "1d"
@@ -78,8 +78,8 @@ userSchema.methods.generateAuthtoken = async function () {
 
 
 // createing model
-const subuserdb = new mongoose.model("subusers", userSchema);
+const superadmindb = new mongoose.model("superadmins", superSchema);
 
-module.exports = subuserdb;
+module.exports = superadmindb;
 
 

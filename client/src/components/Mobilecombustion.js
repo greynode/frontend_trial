@@ -158,7 +158,7 @@ let val="null"
 
 
 
-if(literdistance==="km"){
+
   if(fuel==="Crudeoil"){
  val =BiodieselDiesels(inpval.quantity)}
  else if(fuel==="Dieseloil"){
@@ -188,40 +188,6 @@ else if(fuel==="Orimulsion"){
   console.log("errr");
 }
 
-}
-else{
-
-  
-    if(fuel==="BiodieselDiesel"){
-        val =BiodieselDiesels(inpval.quantity)}
-        else if(fuel==="EthanolGasoline"){
-         val =EthanolGasolines(inpval.quantity)
-       }
-       else if(fuel==="Biodiesel"){
-         val =Biodiesels(inpval.quantity)
-       }else if(fuel==="Ethanol"){
-         val =Ethanols(inpval.quantity)
-       }else if(fuel==="LNG"){
-         val =LNGs(inpval.quantity)
-       }else if(fuel==="CNG"){
-         val =CNGs(inpval.quantity)
-       }else if(fuel==="LPG"){
-         val =LPGs(inpval.quantity)
-       }else if(fuel==="ResidualFuelOil"){
-         val =ResidualFuelOils(inpval.quantity)
-       }else if(fuel==="OnRoadDieselFuel"){
-         val =OnRoadDieselFuels(inpval.quantity)
-       }else if(fuel==="GasolinePetrol"){
-         val =GasolinePetrols(inpval.quantity)
-       }else if(fuel==="AviationGasoline"){
-         val =AviationGasolines(inpval.quantity)
-       }else if(fuel==="jetFuel"){
-         val =jetFuels(inpval.quantity)
-       }else{
-         console.log("errr");
-       }
-
-}
 
             let co2=val
            

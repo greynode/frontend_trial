@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Dropdown from 'react-bootstrap/Dropdown';
 
-const Upstream = () =>{
+const Capitalgoods = () =>{
  
 
   //const [type, setType] = useState(getInitialState);
@@ -24,10 +24,8 @@ const Upstream = () =>{
   
 const [inpval, setInpval] = useState({
      
-    distance:"",material:"",quantity:"",code:"",byername:"",byerlocation:"",facility:"",facility2:"",code2:"",
-    waste:"",dispose:"",quantity2:"",facility3:"",
-    code3:"",employeecode:"",employeename:"",from:"",to:"",employeecode2:"",employeename2:"",distance2:"",
-    facility4:"",code4:"",from2:"",to2:"",distance3:"",period:"",asset:""
+    energy:"",employeename:"",employeecode:"",code3:"",facility3:"",quantity2:"",code2:"",facility2:"",
+    quantity:"",material:"",distance:"",facility:"",byerlocation:"",byername:"",code:""
      
   });
 
@@ -63,9 +61,8 @@ const [inpval, setInpval] = useState({
   const addCompanydata = async (e) => {
       e.preventDefault();
 
-      const {  distance,material,quantity,code,byername,byerlocation,facility,facility2,code2,waste,dispose,quantity2,facility3,
-        code3,employeecode,employeename,from,to,employeecode2,employeename2,distance2
-        ,facility4,code4,from2,to2,distance3,period,asset} = inpval;
+      const {  energy,employeename,employeecode,code3,facility3,quantity2,code2,facility2,
+        quantity,material,distance,facility,byerlocation,byername,code} = inpval;
 
          
          if (code === "") {
@@ -84,16 +81,15 @@ const [inpval, setInpval] = useState({
 
 
 
-          const data = await fetch("/upstream", {
+          const data = await fetch("/cap", {
               method: "POST",
               headers: {
                   "Content-Type": "application/json"
               },
               body: JSON.stringify({
                   
-                distance,material,quantity,code,byername,byerlocation,facility,transport,vehicle,facility2,code2,waste,dispose,quantity2,facility3,
-                code3,employeecode,employeename,from,to,employeecode2,employeename2,distance2,transport2,
-                vehicle2,facility4,code4,from2,to2,distance3,transport3,period,asset,vehicle3
+                energy,employeename,employeecode,code3,facility3,vehicle2,transport2,quantity2,code2,facility2,
+quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
               })
           });
 
@@ -108,11 +104,8 @@ const [inpval, setInpval] = useState({
                   position: "top-center"
               });
               setInpval({ ...inpval,  
-                
-                distance:"",material:"",quantity:"",code:"",byername:"",byerlocation:"",facility:"",facility2:"",code2:"",
-                waste:"",dispose:"",quantity2:"",facility3:"",
-                code3:"",employeecode:"",employeename:"",from:"",to:"",employeecode2:"",employeename2:"",distance2:"",
-                facility4:"",code4:"",from2:"",to2:"",distance3:"",period:"",asset:""
+                energy:"",employeename:"",employeecode:"",code3:"",facility3:"",quantity2:"",code2:"",facility2:"",
+                quantity:"",material:"",distance:"",facility:"",byerlocation:"",byername:"",code:""
 
                 
              });}else {
@@ -124,9 +117,9 @@ const [inpval, setInpval] = useState({
           
   }}
   
-//distance,material,quantity,code,byername,byerlocation,facility,transport,vehicle,facility2,code2,waste,dispose,quantity2,facility3
-//code3,employeecode,employeename,from,to,distance2,employeecode2,employeename2,distance2,transport2,
-//vehicle2,facility4,code4,from2,to2,distance3,transport3,period,asset,vehicle3
+//energy,employeename,employeename,employeecode,code3,facility3,vehicle2,transport2,quantity2,code2,facility2,
+//quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
+
 
     return(
         <>
@@ -135,7 +128,7 @@ const [inpval, setInpval] = useState({
         <form>
          <Card cardClass={"card"}>
           
-          <h3 align="center">Upstream</h3>
+          <h3 align="center">Capital goods</h3>
           
           <label>facality code:</label>
             <input
@@ -155,7 +148,7 @@ const [inpval, setInpval] = useState({
               value={inpval.byername}
               id="byername"
             />
-            <label>buyerlocation:</label>
+            <label>byerlocation:</label>
             
             <input
               type="text"
@@ -219,7 +212,7 @@ const [inpval, setInpval] = useState({
               value={inpval.distance}
               id="distance"
             />
-     <label>material:</label>
+     <label>material purchased:</label>
             <input
               type="text"
               placeholder="material"
@@ -238,7 +231,7 @@ const [inpval, setInpval] = useState({
               id="quantity"
             />
           
-          <h1>waste generated</h1>
+          <h1>vehicles</h1>
           <label>facility name:</label>
             <input
               type="text"
@@ -256,24 +249,8 @@ const [inpval, setInpval] = useState({
               value={inpval.code2}
               id="code2"
             />
-             <label>type of waste generated:</label>
-            <input
-              type="text"
-              placeholder="waste"
-              name="waste"
-              onChange={setVal}
-              value={inpval.waste}
-              id="waste"
-            />   <label>method of dispose:</label>
-            <input
-              type="string"
-              placeholder="dispose"
-              name="dispose"
-              onChange={setVal}
-              value={inpval.dispose}
-              id="dispose"
-            />
-            <label>quantity:</label>
+             
+            <label>distance travelled in KM:</label>
             <input
               type="number"
               placeholder="quantity"
@@ -282,66 +259,7 @@ const [inpval, setInpval] = useState({
               value={inpval.quantity2}
               id="quantity2"
             />
-          <h1>Business travel </h1>
-          <label>facility name:</label>
-            <input
-              type="text"
-              placeholder="facility"
-              name="facility3"
-              onChange={setVal}
-              value={inpval.facility3}
-              id="pass3"
-            /> <label>facality code:</label>
-            <input
-              type="text"
-              placeholder="Facility code"
-              name="code3"
-              onChange={setVal}
-              value={inpval.code3}
-              id="code3"
-            /><label>employee code:</label>
-            <input
-              type="text"
-              placeholder="employee code"
-              name="employeecode"
-              onChange={setVal}
-              value={inpval.employeecode}
-              id="employeecode"
-            /><label>name of the employee:</label>
-            <input
-              type="text"
-              placeholder="name of the employee"
-              name="employeename"
-              onChange={setVal}
-              value={inpval.employeename}
-              id="employeename"
-            /><label>From:</label>
-            <input
-              type="text"
-              placeholder="from"
-              name="from"
-              onChange={setVal}
-              value={inpval.from}
-              id="from"
-            /><label>To:</label>
-            <input
-              type="text"
-              placeholder="to"
-              name="to"
-              onChange={setVal}
-              value={inpval.to}
-              id="to"
-            />
-             <label>distance travelled in KM:</label>
-            <input
-              type="number"
-              placeholder="distance"
-              name="distance2"
-              onChange={setVal}
-              value={inpval.distance2}
-              id="distance2"
-            />
-            <label>select mode of transport:</label>
+                  <label>select mode of transport:</label>
              <div>
       <select value={transport2} onChange={setValss2}>
         <option value="road">Road</option>
@@ -377,123 +295,48 @@ const [inpval, setInpval] = useState({
       </select>
     
     </div>
-    <h1>Employee commuting</h1>
-    <label>facility name:</label>
+          <h1>building as facilities</h1>
+          <label>facility name:</label>
             <input
               type="text"
               placeholder="facility"
-              name="facility4"
+              name="facility3"
               onChange={setVal}
-              value={inpval.facility4}
-              id="pass4"
+              value={inpval.facility3}
+              id="pass3"
             /> <label>facality code:</label>
             <input
               type="text"
               placeholder="Facility code"
-              name="code4"
+              name="code3"
               onChange={setVal}
-              value={inpval.code4}
-              id="code4"
-            /><label>employee code:</label>
+              value={inpval.code3}
+              id="code3"
+            /><label>size of building:</label>
             <input
               type="text"
               placeholder="employee code"
-              name="employeecode2"
+              name="employeecode"
               onChange={setVal}
-              value={inpval.employeecode2}
-              id="employeecode2"
-            /><label>name of the employee:</label>
+              value={inpval.employeecode}
+              id="employeecode"
+            /><label>Location:</label>
             <input
               type="text"
               placeholder="name of the employee"
-              name="employeename2"
+              name="employeename"
               onChange={setVal}
-              value={inpval.employeename2}
-              id="employeename2"
-            /><label>From:</label>
+              value={inpval.employeename}
+              id="employeename"
+            /><label>Energy consumption in kw:</label>
             <input
               type="text"
-              placeholder="from"
-              name="from2"
+              placeholder="energy"
+              name="energy"
               onChange={setVal}
-              value={inpval.from2}
-              id="from2"
-            /><label>To:</label>
-            <input
-              type="text"
-              placeholder="to"
-              name="to2"
-              onChange={setVal}
-              value={inpval.to2}
-              id="to2"
+              value={inpval.energy}
+              id="energy"
             />
-             <label>distance travelled in KM:</label>
-            <input
-              type="number"
-              placeholder="distance"
-              name="distance3"
-              onChange={setVal}
-              value={inpval.distance3}
-              id="distance3"
-            />
-            <label>select mode of transport:</label>
-             <div>
-      <select value={transport3} onChange={setValss3}>
-        <option value="road">Road</option>
-        <option value="rail">Rail</option>
-        <option value="air">Air</option>
-        <option value="water">Water</option>
-       
-        
-       
-      </select>
-    
-    </div><label>select type of vehicle:</label>
-             <div>
-      <select value={vehicle3} onChange={setVals3}>
-        <option value="twowheelerpetrol">two wheeler petrol</option>
-        <option value="twowheelerelectric">two wheeler electric</option>
-        <option value="carpetrol">car petrol</option>
-        <option value="carelectric">car electric</option>
-        <option value="truck">truck</option>
-        <option value="bus">bus</option>
-        <option value="van">van</option>
-        <option value="auto">auto</option>
-        <option value="airplane">airplane</option>
-        <option value="train">train</option>
-        <option value="ship">ship</option>
-        <option value="boat">boat</option>
-        <option value="combinevahicle">combinevahicle</option>
-     
-   
-       
-        
-       
-      </select>
-    
-    </div>
-
-    <h1>Leased assets </h1>
-
-             <label>Type of leased asset:</label>
-            <input
-              type="text"
-              placeholder="type of leased asset"
-              name="asset"
-              onChange={setVal}
-              value={inpval.asset}
-              id="asset"
-            />
-             <label>Lease period:</label>
-            <input
-              type="number"
-              placeholder="period"
-              name="period"
-              onChange={setVal}
-              value={inpval.period}
-              id="period"
-            />
-            
   
             <div className="--my" align="center" >
             <button className='--btn-primary' onClick={addCompanydata}>Submit</button>
@@ -505,4 +348,4 @@ const [inpval, setInpval] = useState({
   
     )}
 
-export default Upstream;
+export default Capitalgoods;

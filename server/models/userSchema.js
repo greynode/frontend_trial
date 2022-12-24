@@ -78,7 +78,7 @@ userSchema.methods.generateAuthtoken = async function () {
 
 
 // createing model
-const userdb = new mongoose.model("users", userSchema);
+const userdb = new mongoose.model("clients", userSchema);
 
 module.exports = userdb;
 

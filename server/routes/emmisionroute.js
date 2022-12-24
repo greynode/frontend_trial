@@ -10,8 +10,9 @@ const fugitiveDB= require("../models/fugitive")
 const scope3db=require("../models/scope3")
 const scope3goodsdb=require("../models/scope3goods")
 const downstreamdb=require("../models/downstream")
-const upstreamdb=require("../models/upstream")
-
+const upstreamdb=require("../models/upstream");
+const capitaldb = require("../models/capitalgoods");
+const fugitivedb= require("../models/fugitive2")
 	//mobile station
 
 
@@ -60,7 +61,7 @@ routerstation.get('/scompp', async (req, res) => {
 //mobile distance
 routerstation.post("/mcomp", async (req, res) => {
 
-    const { code,facility,quantity,literdistance,fuel,co2,category,weight} = req.body;
+    const { code,facility,quantity,literdistance,fuel,co2,category,subcat } = req.body;
 
    
 
@@ -69,7 +70,7 @@ routerstation.post("/mcomp", async (req, res) => {
     
     
             const saves = new mobiledb({
-                code,facility,quantity,literdistance,fuel,co2,category,weight
+                code,facility,quantity,literdistance,fuel,co2,category,subcat
             });
 
             
@@ -421,6 +422,62 @@ routerstation.get('/upstreamdash', async (req, res) => {
 
 	res.json(usr);
 });
+//capital goods
+routerstation.post("/cap", async (req, res) => {
+
+    const {  energy,employeename,employeecode,code3,facility3,vehicle2,transport2,quantity2,code2,facility2,
+        quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code  } = req.body;
+
+   
+
+    try {
+
+    
+    
+            const saves = new capitaldb({
+                energy,employeename,employeecode,code3,facility3,vehicle2,transport2,quantity2,code2,facility2,
+                quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code        });
+
+            
+
+            const storeDatadist = await saves.save();
+
+            // console.log(storeData);
+            res.status(201).json({ status: 201, storeDatadist })
+        
+
+    } catch (error) {
+        res.status(422).json(error);
+        console.log("catch block error");
+    }
+
+});
+routerstation.get('/capdash', async (req, res) => {
+	const usr = await capitaldb.find();
+
+
+	res.json(usr);
+});
+//fugitive 2
+
+routerstation.post("/fugitive2",async(req,res) => {
+    const { gases, code, facility, fuel, quantity, yesno, code2, 
+            facility2, fire, typegas, capacity, co2, co3} = req.body
+
+
+            const testdetail = new fugitivedb({
+                gases, code, facility, fuel, quantity, yesno, code2, 
+            facility2, fire, typegas, capacity, co2, co3 
+            });
+
+            const data= await testdetail.save();
+
+            res.status(201).json({ status: 201, data})
+        }
+);
+
+    
+
 
 
 module.exports =routerstation;  

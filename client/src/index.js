@@ -5,10 +5,12 @@ import App from './App';
 import Context from './components/ContextProvider/Context';
 import { BrowserRouter } from "react-router-dom"
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Context>
     <BrowserRouter>
+    
       <App />
     </BrowserRouter>
   </Context>
