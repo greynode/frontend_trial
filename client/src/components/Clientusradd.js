@@ -2,7 +2,7 @@
 import "./CompanyForm.scss";
 import Card from "./card/Card";
 import React, { Component ,useState, useContext} from 'react';
-import { LoginContext } from './Clientcontrol/ContextProvider/Context';
+import { LoginContext } from './ContextProvider/Context';
 
 import axios from 'axios';
 import { NavLink,useNavigate} from "react-router-dom"
@@ -96,7 +96,7 @@ const Clientusradd = () =>{
         <form>
          <Card cardClass={"card"}>
           
-          <h3 align="center">Add subuser</h3>
+          <h3 align="center">Add client</h3>
           
           <label>User  Email:</label>
             <input

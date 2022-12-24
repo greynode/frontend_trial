@@ -98,9 +98,9 @@ router.post("/remusr", async (req, res) => {
 
 router.post("/register", async (req, res) => {
 
-    const { fname, email, password, cpassword } = req.body;
+    const { fname, email, password, cpassword,temppass } = req.body;
 
-    if (!fname || !email || !password || !cpassword) {
+    if (!fname || !email || !password || !cpassword||!temppass) {
         res.status(422).json({ error: "fill all the details" })
     }
 
@@ -113,7 +113,7 @@ router.post("/register", async (req, res) => {
             res.status(422).json({ error: "This Email is Already Exist" })
         } else if (password !== cpassword) {
             res.status(422).json({ error: "Password and Confirm Password Not Match" })
-        } else if(adminpreuser && adminpreuser.pass===password){
+        } else if(adminpreuser && adminpreuser.pass===temppass){
             const finalUser = new userdb({
                 fname, email, password, cpassword
             });

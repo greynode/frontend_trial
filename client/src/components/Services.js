@@ -1,6 +1,6 @@
 import React, { useContext, useEffect ,useState} from 'react'
 import { Routes,Route, useNavigate,Link } from 'react-router-dom';
-import { LoginContext } from './Clientcontrol/ContextProvider/Context';
+import { LoginContext } from './ContextProvider/Context';
 
 // import "./dash.css"
 

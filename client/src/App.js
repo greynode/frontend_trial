@@ -1,4 +1,4 @@
-import Header from "./components/Clientcontrol/Header";
+import Header from "./components/Header";
 import Login from "./components/Clientcontrol/Login";
 import Register from "./components/Clientcontrol/Register";
 import Dashboard from "./components/Clientcontrol/Dashboard";
@@ -9,7 +9,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import { Routes, Route, useNavigate } from "react-router-dom"
 import { useEffect, useContext, useState } from "react";
-import { LoginContext } from "./components/Clientcontrol/ContextProvider/Context";
+import { LoginContext } from "./components/ContextProvider/Context";
 import Companydetails from "./components/Companydetails"
 import Subusradd from "./components/Subusradd";
 import Subusrrem from "./components/Subusrrem";

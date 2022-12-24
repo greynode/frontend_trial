@@ -92,6 +92,7 @@ const Login = () => {
                             <label htmlFor="email">Email</label>
                             <input type="email" value={inpval.email} onChange={setVal} name="email" id="email" placeholder='Enter Your Email Address' />
                         </div>
+                        
                         <div className="form_input">
                             <label htmlFor="password">Password</label>
                             <div className="two">

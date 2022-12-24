@@ -1,7 +1,7 @@
 import { useState,useContext } from 'react'
 import { useForm } from 'react-hook-form';
 import './style.css';
-import { LoginContext } from './Clientcontrol/ContextProvider/Context';
+import { LoginContext } from './ContextProvider/Context';
 function Questions() {
   const { logindata } = useContext(LoginContext);
   console.log(logindata);

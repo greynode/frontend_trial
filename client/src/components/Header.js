@@ -38,14 +38,14 @@ const Header = () => {
         const data = await res.json();
         console.log(data);
 
-        if (data.status === 201) {
-            console.log("use logout");
-            localStorage.removeItem("usersdatatoken");
-            setLoginData(false)
-            history("/");
-        } else {
-            console.log("error");
-        }
+        // if (data.status === 201) {
+        //     console.log("use logout");
+        //     localStorage.removeItem("usersdatatoken");
+        //     setLoginData(false)
+        //     history("/");
+        // } else {
+        //     console.log("error");
+        // }
     }
 
     const goDash = () => {

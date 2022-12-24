@@ -8,12 +8,14 @@ const Register = () => {
 
     const [passShow, setPassShow] = useState(false);
     const [cpassShow, setCPassShow] = useState(false);
+    const [cpassSho, setCPassSho] = useState(false);
 
     const [inpval, setInpval] = useState({
         fname: "",
         email: "",
         password: "",
-        cpassword: ""
+        cpassword: "",
+        temppass:""
     });
 
 
@@ -32,7 +34,7 @@ const Register = () => {
     const addUserdata = async (e) => {
         e.preventDefault();
 
-        const { fname, email, password, cpassword } = inpval;
+        const { fname, email, password, cpassword,temppass } = inpval;
 
         if (fname === "") {
             toast.warning("fname is required!", {
@@ -77,7 +79,7 @@ const Register = () => {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    fname, email, password, cpassword
+                    fname, email, password, cpassword,temppass
                 })
             });
 
@@ -88,7 +90,7 @@ const Register = () => {
                 toast.success("Registration Successfully done 😃!", {
                     position: "top-center"
                 });
-                setInpval({ ...inpval, fname: "", email: "", password: "", cpassword: "" });
+                setInpval({ ...inpval, fname: "", email: "", password: "", cpassword: "",temppass:"" });
             }else{
                 toast.error("invalid!", {
                     position: "top-center"
@@ -115,6 +117,15 @@ const Register = () => {
                         <div className="form_input">
                             <label htmlFor="email">Email</label>
                             <input type="email" onChange={setVal} value={inpval.email} name="email" id="email" placeholder='Enter Your Email Address' />
+                        </div>
+                        <div className="form_input">
+                            <label htmlFor="password">Tempass</label>
+                            <div className="two">
+                                <input type={!cpassSho ? "password" : "text"} value={inpval.temppass} onChange={setVal} name="temppass" id="temppass" placeholder='Enter Your temppass' />
+                                <div className="showpass" onClick={() => setCPassSho(!cpassSho)}>
+                                    {!cpassSho ? "Show" : "Hide"}
+                                </div>
+                            </div>
                         </div>
                         <div className="form_input">
                             <label htmlFor="password">Password</label>
