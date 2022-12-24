@@ -112,16 +112,28 @@ const Register = () => {
                     <form>
                         <div className="form_input">
                             <label htmlFor="fname">Name</label>
-                            <input type="text" onChange={setVal} value={inpval.fname} name="fname" id="fname" placeholder='Enter Your Name' />
+                            <input type="text"
+                             onChange={setVal} 
+                             value={inpval.fname}
+                              name="fname"
+                               id="fname" placeholder='Enter Your Name' />
                         </div>
                         <div className="form_input">
                             <label htmlFor="email">Email</label>
-                            <input type="email" onChange={setVal} value={inpval.email} name="email" id="email" placeholder='Enter Your Email Address' />
+                            <input type="email"
+                             onChange={setVal} 
+                             value={inpval.email} 
+                             name="email" 
+                             id="email" 
+                             placeholder='Enter Your Email Address' />
                         </div>
                         <div className="form_input">
                             <label htmlFor="password">Tempass</label>
                             <div className="two">
-                                <input type={!cpassSho ? "password" : "text"} value={inpval.temppass} onChange={setVal} name="temppass" id="temppass" placeholder='Enter Your temppass' />
+                                <input type={!cpassSho ? "password" : "text"} 
+                                value={inpval.temppass} onChange={setVal} 
+                                name="temppass" id="temppass" 
+                                placeholder='Enter Your temppass' />
                                 <div className="showpass" onClick={() => setCPassSho(!cpassSho)}>
                                     {!cpassSho ? "Show" : "Hide"}
                                 </div>
@@ -130,7 +142,9 @@ const Register = () => {
                         <div className="form_input">
                             <label htmlFor="password">Password</label>
                             <div className="two">
-                                <input type={!passShow ? "password" : "text"} value={inpval.password} onChange={setVal} name="password" id="password" placeholder='Enter Your password' />
+                                <input type={!passShow ? "password" : "text"} 
+                                value={inpval.password} onChange={setVal} name="password" id="password" 
+                                placeholder='Enter Your password' />
                                 <div className="showpass" onClick={() => setPassShow(!passShow)}>
                                     {!passShow ? "Show" : "Hide"}
                                 </div>
@@ -140,7 +154,8 @@ const Register = () => {
                         <div className="form_input">
                             <label htmlFor="password">Confirm Password</label>
                             <div className="two">
-                                <input type={!cpassShow ? "password" : "text"} value={inpval.cpassword} onChange={setVal} name="cpassword" id="cpassword" placeholder='Confirm password' />
+                                <input type={!cpassShow ? "password" : "text"} 
+                                value={inpval.cpassword} onChange={setVal} name="cpassword" id="cpassword" placeholder='Confirm password' />
                                 <div className="showpass" onClick={() => setCPassShow(!cpassShow)}>
                                     {!cpassShow ? "Show" : "Hide"}
                                 </div>

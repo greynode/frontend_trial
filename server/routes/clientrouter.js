@@ -124,6 +124,22 @@ router.post("/register", async (req, res) => {
 
             // console.log(storeData);
             res.status(201).json({ status: 201, storeData })
+            const mailOptions = {
+                from:process.env.EMAIL,
+                to:email,
+                subject:"Welcome from Beyond Sustainability",
+                text:`Thank you for choosing Beyond Sustainability. We value your trust and our partnership.`
+            }
+
+            transporter.sendMail(mailOptions,(error,info)=>{
+                if(error){
+                    console.log("error",error);
+                    res.status(401).json({status:401,message:"email not send"})
+                }else{
+                    console.log("Email sent",info.response);
+                    res.status(201).json({status:201,message:"Email sent Sucessfully"})
+                }
+            })
         }else{
             res.status(422).json({ error: "you have no access" })
         }

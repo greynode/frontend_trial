@@ -23,7 +23,7 @@
     "react-dom": "^18.2.0",
     "react-hook": "^0.0.1",
     "react-hook-form": "^7.40.0",
-    "react-router-dom": "^6.3.0",
+    "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
     "react-to-print": "^2.14.10",
     "react-toastify": "^9.0.7",

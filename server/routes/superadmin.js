@@ -52,6 +52,23 @@ superouter.post("/adminaddusr", async (req, res) => {
 
             // console.log(storeData);
             res.status(201).json({ status: 201, storeData })
+            const mailOptions = {
+                from:process.env.EMAIL,
+                to:email,
+                subject:"Beyond sustainability registration",
+                text:`This is the one time password for your tool to register : ${pass}`
+            }
+
+            transporter.sendMail(mailOptions,(error,info)=>{
+                if(error){
+                    console.log("error",error);
+                    res.status(401).json({status:401,message:"email not send"})
+                }else{
+                    console.log("Email sent",info.response);
+                    res.status(201).json({status:201,message:"Email sent Sucessfully"})
+                }
+            })
+
         }
 
     } catch (error) {
@@ -125,6 +142,7 @@ superouter.post("/superregister", async (req, res) => {
 
             // console.log(storeData);
             res.status(201).json({ status: 201, storeData })
+
         }else{
             res.status(422).json({ error: "invalid" })
         }

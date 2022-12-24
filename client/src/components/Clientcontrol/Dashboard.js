@@ -1,6 +1,7 @@
 import React, { useContext, useEffect ,useState} from 'react'
 import { Routes,Route, useNavigate,Link } from 'react-router-dom';
 import { LoginContext } from '../ContextProvider/Context';
+import Header from '../Header';
 
 import "./dash.css"
 
@@ -52,7 +53,7 @@ const Dashboard = () => {
 
     return (
         <>
-       
+       <Header/>
         <div id ="hello" width="50%" margin="auto" padding="10px">
        <Link to="/addd" >
           <button id="bu">Add company details</button>

@@ -55,7 +55,9 @@ import Subuserforgotpass from "./components/Subusercontrol/ForgotPassword";
 import Subuserreset from "./components/Subusercontrol/PasswordReset";
 import Subuserlogin from "./components/Subusercontrol/Login";
 import Clientusradd from "./components/Clientusradd";
+import Logins from "./components/Pages/Clientcontrol/Login";
 
+import Registers from "./components/Pages/Clientcontrol/Register";
 
 
 function App() {
@@ -80,13 +82,13 @@ function App() {
 
     const data = await res.json();
 
-    // if (data.status == 401 || !data) {
-    //   console.log("user not valid");
-    // } else {
-    //   console.log("user verify");
-    //   setLoginData(data)
-    //   history("/dash");
-    // }
+    if (data.status == 401 || !data) {
+      console.log("user not valid");
+    } else {
+      console.log("user verify");
+      setLoginData(data)
+      history("/dash");
+    }
   }
 
   useEffect(() => {
@@ -102,12 +104,14 @@ function App() {
       {
         data ? (
           <>
-            <Header />
+     
 
             <Routes>
-              <Route path="/" element={<Login />} />
+              {/* <Route path="/" element={<Login />} /> */}
               {/* <Route path="/"element={<Dashboard/>}/> */}
-              <Route path="/register" element={<Register />} />
+              {/* <Route path="/register" element={<Register />} /> */}
+              <Route path="/" element={<Logins />} />
+              <Route path="/register" element={<Registers />} />
               <Route path="/dash" element={<Dashboard />} />
               <Route path="/password-reset" element={<PasswordReset />} />
               <Route path="/forgotpassword/:id/:token" element={<ForgotPassword />} />
@@ -156,6 +160,10 @@ function App() {
               <Route path="/subuserforgotpassword/:id/:token" element={<Subuserforgotpass/>}/>
               <Route path="/subuserdash" element={<Subuserdash/>}/>
               <Route path="/clientadd" element={<Clientusradd/>}/>
+              {/* <Route path="/clientlogin" element={<Logins/>}/>
+              <Route path="/clientregister" element={<Registers/>}/> */}
+
+
 
                        
 
@@ -168,6 +176,7 @@ function App() {
             
 
             </Routes>
+            
           </>
 
         ) : <Box sx={{ display: 'flex', justifyContent: "center", alignItems: "center", height: "100vh" }}>

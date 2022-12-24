@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink ,useNavigate} from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
+import Header from '../Header';
 import "./mix.css"
 
 const Login = () => {
@@ -78,7 +79,7 @@ const Login = () => {
     }
 
     return (
-        <>
+        <>       <Header />
             <section>
                 <div className="form_data">
                     <div className="form_heading">
@@ -90,13 +91,19 @@ const Login = () => {
                     <form>
                         <div className="form_input">
                             <label htmlFor="email">Email</label>
-                            <input type="email" value={inpval.email} onChange={setVal} name="email" id="email" placeholder='Enter Your Email Address' />
+                            <input type="email"
+                             value={inpval.email} 
+                            onChange={setVal} name="email"
+                             id="email" 
+                             placeholder='Enter Your Email Address' />
                         </div>
                         
                         <div className="form_input">
                             <label htmlFor="password">Password</label>
                             <div className="two">
-                                <input type={!passShow ? "password" : "text"} onChange={setVal} value={inpval.password} name="password" id="password" placeholder='Enter Your password' />
+                                <input type={!passShow ? "password" : "text"}
+                                 onChange={setVal} value={inpval.password} name="password"
+                                  id="password" placeholder='Enter Your password' />
                                 <div className="showpass" onClick={() => setPassShow(!passShow)}>
                                     {!passShow ? "Show" : "Hide"}
                                 </div>
