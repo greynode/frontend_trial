@@ -2,15 +2,7 @@ import React,{useRef} from 'react';
 import { useReactToPrint } from "react-to-print";
 import { useEffect, useState } from 'react';
 import "./Profile.css"
-import {
-  Chart,
-  ChartTitle,
-  ChartLegend,
-  ChartTooltip, // <-- Add this line
-  ChartSeries,
-  ChartSeriesItem,
-  ChartSeriesLabels,
-} from "@progress/kendo-react-charts";
+
  
 const api_base = 'http://localhost:3000';
 const renderTooltip = context => {
@@ -50,12 +42,7 @@ const Report = () => {
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-			<Chart>
- 	<ChartTitle text="Applications status - this month" />
-  <ChartLegend visible={false} />
-  <ChartTooltip render={renderTooltip} />
-  {/* ChartSeries components */}
-</Chart>
+			
           <h1>Printing and download PDF file in React</h1>
           <button onClick={handlePrint} className="print__button">Download</button> 
           <div ref={componentRef} className="card">
