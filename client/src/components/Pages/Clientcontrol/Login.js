@@ -148,7 +148,7 @@ const Login = () => {
       </Link>
       <img className="ezgif-2-icon" alt="" src="../one.gif" />
       <img
-        className="whatsapp-image-2022-12-22-at-91"
+        className="whatsap"
         alt=""
         src="../whatsapp-image-20221222-at-923-1@2x.png"
       />

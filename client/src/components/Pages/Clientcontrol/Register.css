@@ -32,6 +32,13 @@
   top: 510px;
   left: 112px;
 }
+.rectangle-textfieldc {
+  border: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 510px;
+  left: 112px;
+}
 .arroba-2-2-icon,
 .arroba-2-4-icon {
   position: absolute;
@@ -60,6 +67,12 @@
   left: 209px;
   cursor: pointer;
 }
+.rectangle-buttonlog {
+  position: absolute;
+  top: 630px;
+  left: 209px;
+  cursor: pointer;
+}
 .forgot-password {
   text-decoration: none;
   position: absolute;
@@ -71,7 +84,7 @@
   width: 240px;
   height: 24px;
 }
-.whatsapp-image-2022-12-22-at-9 {
+.whatsapp {
   position: absolute;
   top: 50px;
   left: 187px;

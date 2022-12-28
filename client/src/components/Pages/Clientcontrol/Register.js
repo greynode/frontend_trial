@@ -171,7 +171,7 @@ const Register = () => {
       />
       <img className="arroba-2-3-icon" alt="" src="../arroba2-3@2x.png" />
       <TextField
-        className="rectangle-textfield"
+        className="rectangle-textfieldc"
         sx={{ width: 421 }}
         color="primary"
         variant="outlined"
@@ -187,7 +187,7 @@ const Register = () => {
       <img className="arroba-2-4-icon" alt="" src="../arroba2-2@2x.png" />
       <div className="sign-up">Sign Up</div>
       <Button
-        className="rectangle-button"
+        className="rectangle-buttonlog"
         sx={{ width: 233 }}
         variant="contained"
         color="primary"
@@ -198,7 +198,7 @@ const Register = () => {
       </Button>
       <a className="forgot-password">Forgot password ?</a>
       <img
-        className="whatsapp-image-2022-12-22-at-9"
+        className="whatsapp"
         alt=""
         src="../whatsapp-image-20221222-at-923-1@2x.png"
       />
