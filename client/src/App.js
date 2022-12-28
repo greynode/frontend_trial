@@ -58,6 +58,9 @@ import Clientusradd from "./components/Clientusradd";
 import Logins from "./components/Pages/Clientcontrol/Login";
 
 import Registers from "./components/Pages/Clientcontrol/Register";
+import AssetDeclaration from "./components/Clientpages/AssetDeclaration";
+import CompanyDetails from "./components/Clientpages/CompanyDetails";
+
 
 
 function App() {
@@ -162,7 +165,8 @@ function App() {
               <Route path="/clientadd" element={<Clientusradd/>}/>
               {/* <Route path="/clientlogin" element={<Logins/>}/>
               <Route path="/clientregister" element={<Registers/>}/> */}
-
+    <Route path="/companyadd2" element={<AssetDeclaration/>}/>
+    <Route path="/companyadd" element={<CompanyDetails/>}/>
 
 
                        

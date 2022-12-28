@@ -1,9 +1,223 @@
 const express = require("express");
+const companyasset = require("../models/companyasset");
+const companydetail1 = require("../models/companydetails1");
+const companyproductdb = require("../models/companyproduct");
 const routers = new express.Router();
 const companydb = require("../models/companySchema");
+const companyservice = require("../models/companyservice");
 const questiondb = require("../models/questionmodel");
 
 
+//get asset service
+routers.post("/getassets", async (req, res) => {
+
+    const { email} = req.body;
+
+    if ( !email ) {
+        res.status(422).json({ error: "nomatch" })
+    }
+
+  else{
+   
+        const usr = await companyservice.find({email:email});
+            
+      res.json(usr)
+  }
+});
+//getassetproduct
+routers.post("/getassetp", async (req, res) => {
+
+    const { email} = req.body;
+
+    if ( !email ) {
+        res.status(422).json({ error: "nomatch" })
+    }
+
+  else{
+   
+        const usr = await companyproductdb.find({email:email});
+            
+      res.json(usr)
+  }
+});
+//companyget
+routers.post("/getasset", async (req, res) => {
+
+    const { email} = req.body;
+
+    if ( !email ) {
+        res.status(422).json({ error: "nomatch" })
+    }
+
+  else{
+
+        
+       
+        const usr = await companyasset.find({email:email});
+            
+
+         
+
+             // console.log(storeData);
+            //  res.status(201).json({ status: 201, usr})
+      res.json(usr)
+     
+        
+
+    
+  }
+});
+
+
+//companyasset
+routers.post("/addasset", async (req, res) => {
+
+    const {email, assetid,assetname,assettype,latitude,longitude} = req.body;
+
+    if ( !email ) {
+        res.status(422).json({ error: "fill all the details" })
+    }
+
+    try {
+
+        
+       
+            const finalUser = new companyasset({
+              email,  assetid,assetname,assettype,latitude,longitude
+            });
+
+            
+
+            const storeData = await finalUser.save();
+
+            // console.log(storeData);
+            res.status(201).json({ status: 201, storeData })
+        
+
+    } catch (error) {
+        res.status(422).json(error);
+        console.log("catch block error");
+    }
+
+});
+//addassetproduct
+routers.post("/addassetp", async (req, res) => {
+
+    const {email, productid,productdescription} = req.body;
+
+    if ( !email ) {
+        res.status(422).json({ error: "fill all the details" })
+    }
+
+    try {
+
+        
+       
+            const finalUser = new companyproductdb({
+                email, productid,productdescription
+            });
+
+            
+
+            const storeData = await finalUser.save();
+
+            // console.log(storeData);
+            res.status(201).json({ status: 201, storeData })
+        
+
+    } catch (error) {
+        res.status(422).json(error);
+        console.log("catch block error");
+    }
+
+});
+//addasset service
+routers.post("/addassets", async (req, res) => {
+
+    const {email, serviceid,servicedescription} = req.body;
+
+    if ( !email ) {
+        res.status(422).json({ error: "fill all the details" })
+    }
+
+    try {
+
+        
+       
+            const finalUser = new companyservice({
+                email, serviceid,servicedescription
+            });
+
+            
+
+            const storeData = await finalUser.save();
+
+            // console.log(storeData);
+            res.status(201).json({ status: 201, storeData })
+        
+
+    } catch (error) {
+        res.status(422).json(error);
+        console.log("catch block error");
+    }
+
+});
+//addcompany1
+
+routers.post("/addcompany1", async (req, res) => {
+
+    const {  cname,email,currency, pocnumber, pocname,noemployees,website,address,description} = req.body;
+
+   
+    try {
+
+        const comp = await companydetail1.findOne({ email: email });
+ 
+          if(comp){
+            
+
+    try {
+      
+
+            const setnewcompanydetail = await companydetail1.updateMany({email:email},{
+                   // name,user,currency, country, pointofcontact,productservices,id,employee,website,activity,address
+                   cname:cname,currency:currency, pocnumber:pocnumber, pocname:pocname,noemployees:noemployees,website:website,
+                   address:address,description:description
+
+            });
+
+          await  setnewcompanydetail.save();
+            res.status(201).json({status:201,setnewcompanydetail})
+           
+
+        
+    } catch (error) {
+        res.status(401).json({status:401,error})
+    }
+
+          }
+      
+         else {
+
+            const companydetail = new companydetail1({
+
+                   cname,email,currency, pocnumber, pocname,noemployees,website,address,description
+            });
+
+            
+
+            const Data = await companydetail.save();
+
+        
+            res.status(201).json({ status: 201, Data })
+        }
+
+    } catch (error) {
+        res.status(422).json(error);
+        console.log("catch block error");
+    }
+
+});
 
 // for user registration
 

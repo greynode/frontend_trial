@@ -157,6 +157,11 @@ const Dashboard = () => {
         <Link to="/main">
           <button id="bu"> main</button>
         </Link>
+        <Link to="/companyadd">
+          <button id="bu"> company add</button>
+        </Link> <Link to="/companyadd2">
+          <button id="bu"> company add2</button>
+        </Link>
         
        </div>
        {/* <h1>user home page</h1>
