@@ -3,11 +3,20 @@ h1{
   padding:20px;
   width:100%;
 }
-.alignment{
+h5{
   margin: auto;
-width: 50%;
-background-color: burlywood;
+  padding:25px;
+  width:100%;
+}
+.alignment{
+  position: absolute;
+top: 250px;
+left: 300px;
+  margin: auto;
+width: 70%;
+background-color: white;
 padding: 10px;
+height:  5400px;
 }
 /* .button{
   background-color: firebrick;
@@ -61,4 +70,43 @@ transform: translateY(2px);
 
 .error{
   text-decoration-color: crimson;
+}
+.hell{
+
+
+ padding: 20px;
+ padding-left: 200px;
+}
+.questionarre-child,
+.whatsapp-image-2022-12-22-at-9 {
+  position: absolute;
+  top: 50px;
+  left: 1215px;
+  width: 195px;
+  height: 61px;
+  object-fit: cover;
+}
+.questionarre-child {
+  top: 150px;
+  left: 103px;
+  width: 137px;
+  height: 137px;
+}
+.line{
+  position: absolute;
+  top: 80px;
+  left: 350px;
+}
+.buttonsumit {
+  width: 233px;
+  position: absolute;
+  top: 5300px;
+  left: 800px;
+  cursor: pointer;
+  background-color: lightgreen;
+  border-radius: 6px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  color: black;
+  
 }

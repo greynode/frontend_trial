@@ -16,7 +16,7 @@ import Subusrrem from "./components/Subusrrem";
 
 import Profile from "./components/Profile"
 import Subuserlist from "./components/Subuserlist"
-import Question from "./components/Question"
+import Question from "./components/Clientpages/Question"
 import Service from "./components/Services"
 import Subuserhome from "./components/Subuserhome";
 import Scomp from "./components/Scombution";

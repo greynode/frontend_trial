@@ -1,7 +1,10 @@
 import { useState,useContext } from 'react'
 import { useForm } from 'react-hook-form';
 import './style.css';
-import { LoginContext } from './ContextProvider/Context';
+import { LoginContext } from '../ContextProvider/Context';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function Questions() {
   const { logindata } = useContext(LoginContext);
   console.log(logindata);
@@ -26,19 +29,33 @@ const onClickSubmit = async(res) => {
     )
    
 });
-console.log(res);}
-  return (
+console.log(res);
+toast.success("Thank you for your answer 😃!", {
+  position: "top-center"
+});
+window.location.reload(false);
+}
+  return (<>   
+   <img
+    className="whatsapp-image-2022-12-22-at-9"
+    alt=""
+    src="../whatsapp-image-20221222-at-923-2@2x.png"
+  />
+      <img className="questionarre-child" alt="" src="../ellipse-9@2x.png" />
+      <img className="line" alt="" src="../line.png" />
     <div className="alignment">
       <form onSubmit={handleSubmit(onClickSubmit)}>
-        <h1>Questions</h1><br></br>
+  
+ 
+   
         <div>
-        <label><h2>Enter you Email:</h2></label><br></br>
-        <input value={he} {...register("email", { required: true })} />
+
+        <input value={he} type="hidden" {...register("email", { required: true })} />
 
         
-        <h2>Does your company measure the carbon emissions under Scope 1,2 & 3?</h2>
+        <h5>1. Does your company measure the carbon emissions under Scope 1,2 & 3?</h5>
         <div className="questions-check mt-3">
-          <label htmlFor="scope1">
+          <label htmlFor="scope1" class="hell">
             <input
               {...register('scope', { required: true })}
               type="radio"
@@ -51,7 +68,7 @@ console.log(res);}
           </label>
         </div>
         <div className="questions-check">
-          <label htmlFor="scope2">
+          <label htmlFor="scope2" class="hell">
             <input
               {...register('scope', { required: true })}
               type="radio"
@@ -64,7 +81,7 @@ console.log(res);}
           </label>
         </div>
         <div className="questions-check">
-          <label htmlFor="scope3">
+          <label htmlFor="scope3" class="hell">
             <input
               {...register('scope', { required: true })}
               type="radio"
@@ -83,9 +100,9 @@ console.log(res);}
         </div>
         
         <div>
-        <h2>Does your company have KPIs for carbon emissions, Water consumption , waste reduction and other sustainability factors ?</h2>
+        <h5>2.Does your company have KPIs for carbon emissions, Water consumption , waste reduction and other sustainability factors ?</h5>
         <div className="questions-check mt-3">
-          <label htmlFor="yesno1">
+          <label htmlFor="yesno1" class="hell">
             <input
               {...register('yesno1', { required: true })}
               type="radio"
@@ -98,7 +115,7 @@ console.log(res);}
           </label>
         </div>
         <div className="questions-check">
-          <label htmlFor="yesno1">
+          <label htmlFor="yesno1" class="hell">
             <input
               {...register('yesno1', { required: true })}
               type="radio"
@@ -117,9 +134,9 @@ console.log(res);}
         </div>
 
         <div>
-        <h2>Does the company perform Environmental Impact analysis and measure it's impacts on land, water and air ?</h2>
+        <h5>3. Does the company perform Environmental Impact analysis and measure it's impacts on land, water and air ?</h5>
         <div className="questions-check mt-3">
-          <label htmlFor="yesno2">
+          <label htmlFor="yesno2" class="hell">
             <input
               {...register('yesno2', { required: true })}
               type="radio"
@@ -132,7 +149,7 @@ console.log(res);}
           </label>
         </div>
         <div className="questions-check">
-          <label htmlFor="yesno2">
+          <label htmlFor="yesno2" class="hell">
             <input
               {...register('yesno2', { required: true })}
               type="radio"
@@ -151,9 +168,9 @@ console.log(res);}
         </div>
 
         <div>
-        <h2>Does your company have a sustainable procurement policy in place?</h2>
+        <h5>4. Does your company have a sustainable procurement policy in place?</h5>
         <div className="questions-check mt-3">
-          <label htmlFor="yesno3">
+          <label htmlFor="yesno3" class="hell">
             <input
               {...register('yesno3', { required: true })}
               type="radio"
@@ -166,7 +183,7 @@ console.log(res);}
           </label>
         </div>
         <div className="questions-check">
-          <label htmlFor="yesno3">
+          <label htmlFor="yesno3" class="hell">
             <input
               {...register('yesno3', { required: true })}
               type="radio"
@@ -185,9 +202,9 @@ console.log(res);}
         </div>
 
         <div>
-        <h2> Does your company have a committee for sustainability?</h2>
+        <h5> 5. Does your company have a committee for sustainability?</h5>
         <div className="questions-check mt-3">
-          <label htmlFor="yesno4">
+          <label htmlFor="yesno4" class="hell">
             <input
               {...register('yesno4', { required: true })}
               type="radio"
@@ -200,7 +217,7 @@ console.log(res);}
           </label>
         </div>
         <div className="questions-check">
-          <label htmlFor="yesno4">
+          <label htmlFor="yesno4" class="hell">
             <input
               {...register('yesno4', { required: true })}
               type="radio"
@@ -219,9 +236,9 @@ console.log(res);}
         </div>
 
         <div>
-        <h2>Is your company eligible for CSR and has a CSR committee?</h2>
+        <h5>6. Is your company eligible for CSR and has a CSR committee?</h5>
         <div className="questions-check mt-3">
-          <label htmlFor="yesno5">
+          <label htmlFor="yesno5" class="hell">
             <input
               {...register('yesno5', { required: true })}
               type="radio"
@@ -234,7 +251,7 @@ console.log(res);}
           </label>
         </div>
         <div className="questions-check">
-          <label htmlFor="yesno5">
+          <label htmlFor="yesno5" class="hell">
             <input
               {...register('yesno5', { required: true })}
               type="radio"
@@ -253,9 +270,9 @@ console.log(res);}
         </div>
 
         <div>
-        <h2>Is there Extended Producer Responsibility (EPR) plan in place, if it applies? </h2>
+        <h5>7. Is there Extended Producer Responsibility (EPR) plan in place, if it applies? </h5>
         <div className="questions-check mt-3">
-          <label htmlFor="yesno6">
+          <label htmlFor="yesno6" class="hell">
             <input
               {...register('yesno6', { required: true })}
               type="radio"
@@ -268,7 +285,7 @@ console.log(res);}
           </label>
         </div>
         <div className="questions-check">
-          <label htmlFor="yesno6">
+          <label htmlFor="yesno6" class="hell">
             <input
               {...register('yesno6', { required: true })}
               type="radio"
@@ -287,9 +304,9 @@ console.log(res);}
         </div>
 
         <div>
-        <h2> Has the company performed Life Cycle Assessement (LCA) for all of it's products? </h2>
+        <h5>9.  Has the company performed Life Cycle Assessement (LCA) for all of it's products? </h5>
         <div className="questions-check mt-3">
-          <label htmlFor="yesno7">
+          <label htmlFor="yesno7" class="hell">
             <input
               {...register('yesno7', { required: true })}
               type="radio"
@@ -302,7 +319,7 @@ console.log(res);}
           </label>
         </div>
         <div className="questions-check">
-          <label htmlFor="yesno7">
+          <label htmlFor="yesno7" class="hell">
             <input
               {...register('yesno7', { required: true })}
               type="radio"
@@ -321,9 +338,9 @@ console.log(res);}
         </div>
 
         <div>
-        <h2>  Has the company performed Social Impact Assessment ?  </h2>
+        <h5>10.   Has the company performed Social Impact Assessment ?  </h5>
         <div className="questions-check mt-3">
-          <label htmlFor="yesno8">
+          <label htmlFor="yesno8" class="hell">
             <input
               {...register('yesno8', { required: true })}
               type="radio"
@@ -336,7 +353,7 @@ console.log(res);}
           </label>
         </div>
         <div className="questions-check">
-          <label htmlFor="yesno8">
+          <label htmlFor="yesno8" class="hell">
             <input
               {...register('yesno8', { required: true })}
               type="radio"
@@ -355,9 +372,9 @@ console.log(res);}
         </div>
 
         <div>
-        <h2>Is there board-level oversight of climate-related issues within your organization? </h2>
+        <h5>11. Is there board-level oversight of climate-related issues within your organization? </h5>
         <div className="questions-check mt-3">
-          <label htmlFor="yesno9">
+          <label htmlFor="yesno9" class="hell">
             <input
               {...register('yesno9', { required: true })}
               type="radio"
@@ -370,7 +387,7 @@ console.log(res);}
           </label>
         </div>
         <div className="questions-check">
-          <label htmlFor="yesno9">
+          <label htmlFor="yesno9" class="hell">
             <input
               {...register('yesno9', { required: true })}
               type="radio"
@@ -389,9 +406,9 @@ console.log(res);}
         </div>
 
         <div>
-        <h2>Does your organization’s strategy include a transition plan that aligns with a 1.5°C world?</h2>
+        <h5>12 .Does your organization’s strategy include a transition plan that aligns with a 1.5°C world?</h5>
         <div className="questions-check mt-3">
-          <label htmlFor="yesno10">
+          <label htmlFor="yesno10" class="hell">
             <input
               {...register('yesno10', { required: true })}
               type="radio"
@@ -404,7 +421,7 @@ console.log(res);}
           </label>
         </div>
         <div className="questions-check">
-          <label htmlFor="yesno10">
+          <label htmlFor="yesno10" class="hell">
             <input
               {...register('yesno10', { required: true })}
               type="radio"
@@ -423,9 +440,9 @@ console.log(res);}
         </div>
 
         <div>
-        <h2> Has the company performed climate risk assessment and have adaptation & mitigation strategies in place?</h2>
+        <h5>13.  Has the company performed climate risk assessment and have adaptation & mitigation strategies in place?</h5>
         <div className="questions-check mt-3">
-          <label htmlFor="yesno11">
+          <label htmlFor="yesno11" class="hell">
             <input
               {...register('yesno11', { required: true })}
               type="radio"
@@ -438,7 +455,7 @@ console.log(res);}
           </label>
         </div>
         <div className="questions-check">
-          <label htmlFor="yesno11">
+          <label htmlFor="yesno11" class="hell">
             <input
               {...register('yesno11', { required: true })}
               type="radio"
@@ -457,9 +474,9 @@ console.log(res);}
         </div>
 
         <div>
-        <h2> Do you engage with your value chain on climate-related issues?</h2>
+        <h5> 14 .Do you engage with your value chain on climate-related issues?</h5>
         <div className="questions-check mt-3">
-          <label htmlFor="yesno12">
+          <label htmlFor="yesno12" class="hell">
             <input
               {...register('yesno12', { required: true })}
               type="radio"
@@ -472,7 +489,7 @@ console.log(res);}
           </label>
         </div>
         <div className="questions-check">
-          <label htmlFor="yesno12">
+          <label htmlFor="yesno12" class="hell">
             <input
               {...register('yesno12', { required: true })}
               type="radio"
@@ -491,9 +508,9 @@ console.log(res);}
         </div>
 
         <div>
-        <h2> Has your organization made a public commitment and/or endorsed any initiatives related to biodiversity?</h2>
+        <h5> 15. Has your organization made a public commitment and/or endorsed any initiatives related to biodiversity?</h5>
         <div className="questions-check mt-3">
-          <label htmlFor="yesno13">
+          <label htmlFor="yesno13" class="hell">
             <input
               {...register('yesno13', { required: true })}
               type="radio"
@@ -506,7 +523,7 @@ console.log(res);}
           </label>
         </div>
         <div className="questions-check">
-          <label htmlFor="yesno13">
+          <label htmlFor="yesno13" class="hell">
             <input
               {...register('yesno13', { required: true })}
               type="radio"
@@ -525,9 +542,9 @@ console.log(res);}
         </div>
 
         <div>
-        <h2> Does your organization assess the impact of its value chain on biodiversity?</h2>
+        <h5> 16 .Does your organization assess the impact of its value chain on biodiversity?</h5>
         <div className="questions-check mt-3">
-          <label htmlFor="yesno14">
+          <label htmlFor="yesno14" class="hell">
             <input
               {...register('yesno14', { required: true })}
               type="radio"
@@ -540,7 +557,7 @@ console.log(res);}
           </label>
         </div>
         <div className="questions-check">
-          <label htmlFor="yesno14">
+          <label htmlFor="yesno14" class="hell">
             <input
               {...register('yesno14', { required: true })}
               type="radio"
@@ -559,9 +576,9 @@ console.log(res);}
         </div>
 
         <div>
-        <h2>Does your organization use biodiversity indicators to monitor performance across its activities?</h2>
+        <h5>17. Does your organization use biodiversity indicators to monitor performance across its activities?</h5>
         <div className="questions-check mt-3">
-          <label htmlFor="yesno15">
+          <label htmlFor="yesno15" class="hell">
             <input
               {...register('yesno15', { required: true })}
               type="radio"
@@ -574,7 +591,7 @@ console.log(res);}
           </label>
         </div>
         <div className="questions-check">
-          <label htmlFor="yesno15">
+          <label htmlFor="yesno15" class="hell">
             <input
               {...register('yesno15', { required: true })}
               type="radio"
@@ -593,9 +610,9 @@ console.log(res);}
         </div>
 
         <div>
-        <h2> Name of the national and international codes/certifications/labels/ standards (e.g. Forest Stewardship Council, Fairtrade, Rainforest Alliance, Trustea) standards (e.g. SA 8000, OHSAS, ISO, BIS) adopted by your organisation</h2>
+        <h5> 18. Name of the national and international codes/certifications/labels/ standards (e.g. Forest Stewardship Council, Fairtrade, Rainforest Alliance, Trustea) standards (e.g. SA 8000, OHSAS, ISO, BIS) adopted by your organisation</h5>
         <div className="questions-check mt-3">
-          <label htmlFor="standard">
+          <label htmlFor="standard" class="hell">
             <input
               {...register('standard', { required: true })}
               type="radio"
@@ -608,7 +625,7 @@ console.log(res);}
           </label>
         </div>
         <div className="questions-check">
-          <label htmlFor="standard">
+          <label htmlFor="standard" class="hell">
             <input
               {...register('standard', { required: true })}
               type="radio"
@@ -621,7 +638,7 @@ console.log(res);}
           </label>
         </div>
         <div className="questions-check">
-          <label htmlFor="standard">
+          <label htmlFor="standard" class="hell">
             <input
               {...register('standard', { required: true })}
               type="radio"
@@ -634,7 +651,7 @@ console.log(res);}
           </label>
         </div>
         <div className="questions-check">
-          <label htmlFor="standard">
+          <label htmlFor="standard" class="hell">
             <input
               {...register('standard', { required: true })}
               type="radio"
@@ -653,9 +670,9 @@ console.log(res);}
         </div>
 
         <div>
-        <h2> Is there a mechanism for zero liquid discharge?</h2>
+        <h5>18 . Is there a mechanism for zero liquid discharge?</h5>
         <div className="questions-check mt-3">
-          <label htmlFor="yesno16">
+          <label htmlFor="yesno16" class="hell">
             <input
               {...register('yesno16', { required: true })}
               type="radio"
@@ -668,7 +685,7 @@ console.log(res);}
           </label>
         </div>
         <div className="questions-check">
-          <label htmlFor="yesno16">
+          <label htmlFor="yesno16" class="hell">
             <input
               {...register('yesno16', { required: true })}
               type="radio"
@@ -687,9 +704,9 @@ console.log(res);}
         </div>
 
         <div>
-        <h2>Has the organisation applied for science based target initiatives (SBTi)?</h2>
+        <h5>19 .Has the organisation applied for science based target initiatives (SBTi)?</h5>
         <div className="questions-check mt-3">
-          <label htmlFor="yesno17">
+          <label htmlFor="yesno17" class="hell">
             <input
               {...register('yesno17', { required: true })}
               type="radio"
@@ -702,7 +719,7 @@ console.log(res);}
           </label>
         </div>
         <div className="questions-check">
-          <label htmlFor="yesno17">
+          <label htmlFor="yesno17" class="hell">
             <input
               {...register('yesno17', { required: true })}
               type="radio"
@@ -721,9 +738,9 @@ console.log(res);}
         </div>
 
         <div>
-        <h2> Does the organisation apply for any ratings system to measure it's sustainability performance ? (Eg: CDP, Ecovadis, B corp etc)</h2>
+        <h5> 20 .Does the organisation apply for any ratings system to measure it's sustainability performance ? (Eg: CDP, Ecovadis, B corp etc)</h5>
         <div className="questions-check mt-3">
-          <label htmlFor="yesno18">
+          <label htmlFor="yesno18" class="hell">
             <input
               {...register('yesno18', { required: true })}
               type="radio"
@@ -736,7 +753,7 @@ console.log(res);}
           </label>
         </div>
         <div className="questions-check">
-          <label htmlFor="yesno18">
+          <label htmlFor="yesno18" class="hell">
             <input
               {...register('yesno18', { required: true })}
               type="radio"
@@ -755,9 +772,9 @@ console.log(res);}
         </div>
 
         <div>
-        <h2> Does your organisation make a yearly ESG or sustainability report publicly available ? </h2>
+        <h5> 21. Does your organisation make a yearly ESG or sustainability report publicly available ? </h5>
         <div className="questions-check mt-3">
-          <label htmlFor="yesno19">
+          <label htmlFor="yesno19" class="hell">
             <input
               {...register('yesno19', { required: true })}
               type="radio"
@@ -770,7 +787,7 @@ console.log(res);}
           </label>
         </div>
         <div className="questions-check">
-          <label htmlFor="yesno19">
+          <label htmlFor="yesno19" class="hell">
             <input
               {...register('yesno19', { required: true })}
               type="radio"
@@ -789,11 +806,11 @@ console.log(res);}
         </div>
 
 
-        <button type="submit" class="button">
+        <button type="submit" class="buttonsumit">
           Submit
         </button>
       </form>
-    </div>
+    </div>   <ToastContainer /></>
   )
 }
 export default Questions

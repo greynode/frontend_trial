@@ -15,7 +15,7 @@ const AssetDeclaration = () => {
   const [calculation, setCalculation] = useState(0);
 
   const onRectangleButton3Click = useCallback(() => {
-    navigate("/companyadd");
+    navigate("/question");
   }, [navigate]);
 
 
