@@ -2,10 +2,10 @@ import { useCallback ,useState,useContext} from "react";
 
 import { Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { LoginContext } from "../../ContextProvider/Context";
+import "./CompanyDetails.css";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import "./CompanyDetails.css";
+import { LoginContext } from "../ContextProvider/Context";
 
 const CompanyDetails = () => {
   const navigate = useNavigate();
@@ -103,7 +103,7 @@ const addCompanydata = async (e) => {
 
   return (
     <div className="company-details">
-      <Form.Group className="wrapper">
+      <Form.Group className="wrapper001">
         <Form.Control as="textarea" rows={7} 
  name="description"
  onChange={setVal}
@@ -111,11 +111,11 @@ const addCompanydata = async (e) => {
  id="description"/>
       </Form.Group>
       <img
-        className="whatsapp-image-2022-12-22-at-9"
+        className="whatsapp-imag"
         alt=""
         src="../whatsapp-image-20221222-at-923-2@2x.png"
       />
-      <Form.Group className="container">
+      <Form.Group className="contain">
         <Form.Control type="text"
         placeholder="company name "
         name="cname"
@@ -123,7 +123,7 @@ const addCompanydata = async (e) => {
         value={inpval.cname}
         id="cname" />
       </Form.Group>
-      <Form.Group className="frame">
+      <Form.Group className="fram">
         <Form.Control as="textarea" rows={3} 
        placeholder="Enter Address"
        margin="none"
@@ -132,14 +132,14 @@ const addCompanydata = async (e) => {
        value={inpval.address}
        id="address"/>
       </Form.Group>
-      <Form.Group className="rectangle-formgroup">
+      <Form.Group className="rectangle-go">
         <Form.Control type="text" 
           name="noemployees"
           onChange={setVal}
           value={inpval.noemployees}
           id="noemployees"/>
       </Form.Group>
-      <Form.Group className="wrapper1">
+      <Form.Group className="wrap">
         <Form.Control type="text"
          name="website"
          onChange={setVal}
@@ -150,7 +150,7 @@ const addCompanydata = async (e) => {
       <div className="registered-address">{`Registered Address* `}</div>
       <div className="no-of-employees">No. of Employees*</div>
       <div className="website">Website</div>
-      <Form.Group className="wrapper2">
+      <Form.Group className="wrapperhell">
         <Form.Control type="text" 
         name="pocnumber"
         onChange={setVal}
@@ -158,7 +158,7 @@ const addCompanydata = async (e) => {
         id="pocnumber"/>
       </Form.Group>
       <div className="phone-no-of-poc">Phone no. of POC</div>
-      <Form.Group className="wrapper3">
+      <Form.Group className="wr">
         <Form.Control type="text"
          name="pocname"
          onChange={setVal}
@@ -197,7 +197,7 @@ const addCompanydata = async (e) => {
         Save Details
       </Button>
       <img className="company-details-inner" alt="" src="../ellipse-10.svg" />
-      <img className="ellipse-icon" alt="" src="../ellipse-11.svg" />
+      <img className="ellipse-iconn" alt="" src="../ellipse-11.svg" />
       <img className="company-details-child1" alt="" src="../ellipse-11.svg" />
       <div className="line-div" />
       <div className="company-details-child2" />

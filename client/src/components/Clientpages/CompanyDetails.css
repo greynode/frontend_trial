@@ -1,10 +1,10 @@
-.wrapper {
+.wrapper001 {
   width: 490px;
   position: absolute;
   top: 300px;
   left: 278px;
 }
-.whatsapp-image-2022-12-22-at-9 {
+.whatsapp-imag {
   position: absolute;
   top: 50px;
   left: 1215px;
@@ -12,7 +12,7 @@
   height: 61px;
   object-fit: cover;
 }
-.container {
+.contain {
   width: 999px;
   border: 0;
   background-color: transparent;
@@ -20,14 +20,14 @@
   top: 181px;
   left: 278px;
 }
-.frame {
+.fram {
   width: 490px;
   position: absolute;
   top: 300px;
   left: 787px;
 }
-.rectangle-formgroup,
-.wrapper1 {
+.rectangle-go,
+.wrap{
   width: 490px;
   border: 0;
   background-color: transparent;
@@ -35,7 +35,7 @@
   top: 632px;
   left: 278px;
 }
-.wrapper1 {
+.wrap{
   top: 503px;
   left: 787px;
 }
@@ -60,7 +60,7 @@
   left: 278px;
 }
 .website,
-.wrapper2 {
+.wrapperhell {
   width: 490px;
   position: absolute;
   left: 787px;
@@ -71,7 +71,7 @@
   display: inline-block;
   height: 31px;
 }
-.wrapper2 {
+.wrapperhell{
   border: 0;
   background-color: transparent;
   top: 769px;
@@ -85,12 +85,12 @@
 }
 .name-of-point-of-contact,
 .phone-no-of-poc,
-.wrapper3 {
+.wr {
   position: absolute;
   left: 787px;
   width: 490px;
 }
-.wrapper3 {
+.wr {
   border: 0;
   background-color: transparent;
   top: 632px;
@@ -153,7 +153,7 @@
 }
 .company-details-child1,
 .company-details-inner,
-.ellipse-icon {
+.ellipse-iconn {
   position: absolute;
   top: 70px;
   left: 506px;
@@ -161,7 +161,7 @@
   height: 28px;
 }
 .company-details-child1,
-.ellipse-icon {
+.ellipse-iconn {
   left: 755px;
 }
 .company-details-child1 {

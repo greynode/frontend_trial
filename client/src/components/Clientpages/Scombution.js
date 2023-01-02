@@ -5,7 +5,7 @@ import React, { Component ,useCallback ,useState,useContext, useEffect} from 're
 import { NavLink,useNavigate} from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { LoginContext } from "../../ContextProvider/Context";
+import { LoginContext } from "../ContextProvider/Context";
 import "./Home1Add.css";
 const Scomp = () =>{
   const [usrs, setTodoss] = useState([]);
