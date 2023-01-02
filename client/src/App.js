@@ -60,7 +60,7 @@ import Logins from "./components/Pages/Clientcontrol/Login";
 import Registers from "./components/Pages/Clientcontrol/Register";
 import AssetDeclaration from "./components/Clientpages/AssetDeclaration";
 import CompanyDetails from "./components/Clientpages/CompanyDetails";
-
+import Scombustion2 from "./components/Clientpages/Scombution";
 
 
 function App() {
@@ -168,6 +168,7 @@ function App() {
     <Route path="/companyadd2" element={<AssetDeclaration/>}/>
     <Route path="/companyadd" element={<CompanyDetails/>}/>
 
+    <Route path="/home" element={<Scombustion2/>}/>
 
                        
 

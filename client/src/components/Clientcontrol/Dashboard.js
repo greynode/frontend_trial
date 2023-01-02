@@ -80,7 +80,7 @@ const Dashboard = () => {
         {/* <Link to="/example">
           <button id="bu">example</button>
         </Link> */}
-        <Link to="/scomp">
+        <Link to="/home">
           <button id="bu">stationay combution</button>
         </Link>
         <Link to="/test">
@@ -162,6 +162,7 @@ const Dashboard = () => {
         </Link> <Link to="/companyadd2">
           <button id="bu"> company add2</button>
         </Link>
+    
         
        </div>
        {/* <h1>user home page</h1>
