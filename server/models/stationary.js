@@ -1,11 +1,14 @@
 const mongoose = require("mongoose");
-var timestamps = require('mongoose-timestamp');
+
 
 
 
 var stationarySchema = new mongoose.Schema({
    
-
+email:{
+    type: String,
+    required: true
+},
     code: {
         type: String,
         required: true,
@@ -36,7 +39,7 @@ var stationarySchema = new mongoose.Schema({
         required: true,
         
     },co2: {
-        type: String,
+        type: Number,
         required: true,
         
     },ch4: {
@@ -47,10 +50,14 @@ var stationarySchema = new mongoose.Schema({
         type: String,
         required: true,
         
+    },date: {
+        type: String,
+        required: true,
+        
     }
 
 });
-stationarySchema.plugin(timestamps);
+
 
 
 // createing model

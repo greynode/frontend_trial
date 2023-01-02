@@ -6,6 +6,9 @@ import { LoginContext } from "../ContextProvider/Context";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
+
+
 const AssetDeclaration = () => {
   const navigate = useNavigate();
   const [usr, setTodos] = useState([]);
@@ -422,7 +425,7 @@ useEffect(() => {
 
      
       <Button
-        className="rectangle-button"
+        className="rectangle-button001"
         sx={{ width: 138 }}
         variant="contained"
         color="success"

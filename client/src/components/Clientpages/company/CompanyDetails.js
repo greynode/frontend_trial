@@ -2,10 +2,10 @@ import { useCallback ,useState,useContext} from "react";
 
 import { Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import "./CompanyDetails.css";
+import { LoginContext } from "../../ContextProvider/Context";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { LoginContext } from "../ContextProvider/Context";
+import "./CompanyDetails.css";
 
 const CompanyDetails = () => {
   const navigate = useNavigate();

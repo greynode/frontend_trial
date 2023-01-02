@@ -1,17 +1,16 @@
 
 import { Form, Button } from "react-bootstrap";
 
-import React, { Component ,useCallback ,useState,useContext} from 'react';
+import React, { Component ,useCallback ,useState,useContext, useEffect} from 'react';
 import { NavLink,useNavigate} from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { LoginContext } from "../ContextProvider/Context";
-
-
+import { LoginContext } from "../../ContextProvider/Context";
 import "./Home1Add.css";
 const Scomp = () =>{
-
-
+  const [usrs, setTodoss] = useState([]);
+  const [count, setCount] = useState(0);
+  const [calculation, setCalculation] = useState(0);
   const { logindata } = useContext(LoginContext);
   console.log(logindata);
   let he="hello"
@@ -1496,7 +1495,7 @@ else{
             const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
 
             const email=he;
-
+            setCount((c) => c + 1)
 
           const data = await fetch("/scomp", {
               method: "POST",
@@ -1536,16 +1535,45 @@ else{
 
           
   }}
+  const hellos =async(e)=>{
+const email=he
+    const datap = await fetch("/getstation", {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+           email
+      })
+  });
+  const res = await datap.json();
+  console.log(res);
+  setTodoss(res);
+  }
+  let element = 0 ;
+
+  for (let index = 0; index < usrs.length; index++) {
+
+
+     element += (usrs[index].co2)
+    console.log(index);
+  }
   const current = new Date();
   const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
   
 let suman=234.7
+useEffect(() => {
+ 
+  hellos();
+setCalculation(() => count * 2);
+}, [count]);
+
 
     return(
         
         
         
-      <div className="home1-add">
+      <div className="home1-hello">
       <img className="home1-add-child" alt="" src="../vector-4.svg" />
       <img className="home1-add-item" alt="" src="../vector-4.svg" />
       <div className="home1-add-inner" />
@@ -1580,7 +1608,7 @@ let suman=234.7
         <p className="mobile">{`Process `}</p>
         <p className="combustion">Emissions</p>
       </a>
-      <div className="div">{suman}</div>
+      <div className="div">{Math.round(element)}</div>
       <div className="tonnes-of-co2eq">Tonnes of CO2eq</div>
       <p className="this-section-captures-any-emis">
         This section captures any emissions made from stationary combustion

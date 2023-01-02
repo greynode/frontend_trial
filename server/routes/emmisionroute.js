@@ -13,12 +13,27 @@ const downstreamdb=require("../models/downstream")
 const upstreamdb=require("../models/upstream");
 const capitaldb = require("../models/capitalgoods");
 const fugitivedb= require("../models/fugitive2")
-	//mobile station
 
+//getstationary
+routerstation.post("/getstation", async (req, res) => {
 
+    const { email} = req.body;
+
+    if ( !email ) {
+        res.status(422).json({ error: "nomatch" })
+    }
+
+  else{
+   
+        const usr = await stationdb.find({email:email});
+            
+      res.json(usr)
+  }
+});
+//stationary
 routerstation.post("/scomp", async (req, res) => {
 
-    const { code,facility,quantity,type,weight,fuel,co2,ch4,no2} = req.body;
+    const { code,facility,quantity,type,weight,fuel,co2,ch4,no2,email,date} = req.body;
 
    
 
@@ -27,7 +42,7 @@ routerstation.post("/scomp", async (req, res) => {
     
     
             const finalUser = new stationdb({
-                code,facility,quantity,type,weight,fuel,co2,ch4,no2
+                code,facility,quantity,type,weight,fuel,co2,ch4,no2,email,date
             });
 
             
