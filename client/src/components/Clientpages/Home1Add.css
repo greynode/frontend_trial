@@ -329,6 +329,22 @@ top: 1290px;
   top: 1170px;
   left: 639px;
 }
+.wrap0{
+  width: 421px;
+  border: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 1400px;
+  left: 639px;
+}
+.cotainer1{
+  width: 421px;
+  border: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 1090px;
+  left: 639px;
+}
 .rectangle-formgroup {
   top: 1251px;
   left: 640px;
@@ -459,9 +475,36 @@ top: 1290px;
   top: 1397px;
   left: 1107px;
 }
+
+.rectangle-buttonl{
+  width: 198px;
+  position: absolute;
+  top: 1300px;
+  left: 1107px;
+}
 .view-data {
   text-decoration: underline;
   top: 1505px;
+  left: 918px;
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  font-family: var(--font-sarabun);
+  color: var(--color-black);
+  text-align: center;
+  display: inline-block;
+  width: 174px;
+  height: 59px;
+  cursor: pointer;
+}
+.view-datas {
+  width: 198px;
+  position: absolute;
+  top: 1397px;
+  left: 1107px;
+}
+.view-datas {
+  text-decoration: underline;
+  top: 1310px;
   left: 918px;
   font-size: var(--font-size-base);
   font-weight: 700;

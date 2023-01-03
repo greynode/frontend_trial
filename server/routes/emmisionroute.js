@@ -12,8 +12,52 @@ const scope3goodsdb=require("../models/scope3goods")
 const downstreamdb=require("../models/downstream")
 const upstreamdb=require("../models/upstream");
 const capitaldb = require("../models/capitalgoods");
-const fugitivedb= require("../models/fugitive2")
+const fugitivedb= require("../models/fugitive2");
+const processdb = require("../models/process");
+//process
+routerstation.post("/process", async (req, res) => {
 
+    const { code,facility,quantity,fuel,email,date} = req.body;
+
+   
+
+    try {
+
+    
+    
+            const finalUser = new processdb({
+                code,facility,quantity,fuel,email,date
+            });
+
+            
+
+            const storeData = await finalUser.save();
+
+            // console.log(storeData);
+            res.status(201).json({ status: 201, storeData })
+        
+
+    } catch (error) {
+        res.status(422).json(error);
+        console.log("catch block error");
+    }
+
+});
+routerstation.post("/getprocess", async (req, res) => {
+
+    const { email} = req.body;
+
+    if ( !email ) {
+        res.status(422).json({ error: "nomatch" })
+    }
+
+  else{
+   
+        const usr = await processdb.find({email:email});
+            
+      res.json(usr)
+  }
+});
 //getstationary
 routerstation.post("/getstation", async (req, res) => {
 
@@ -268,7 +312,7 @@ routerstation.get('/mcdash', async (req, res) => {
 
 routerstation.post("/fug", async (req, res) => {
 
-    const {      code,facility,i,f,g,h,j,refrigerant,refrigeration,co2} = req.body;
+    const {      code,facility,i,f,g,h,j,refrigerant,refrigeration,co2,date,email} = req.body;
 
    
 
@@ -277,7 +321,7 @@ routerstation.post("/fug", async (req, res) => {
     
     
             const saves = new fugitiveDB({
-                code,facility,i,f,g,h,j,refrigerant,refrigeration,co2
+                code,facility,i,f,g,h,j,refrigerant,refrigeration,co2,date,email
             });
 
             
@@ -294,11 +338,20 @@ routerstation.post("/fug", async (req, res) => {
     }
 
 });
-routerstation.get('/fugdash', async (req, res) => {
-	const usr = await fugitiveDB.find();
+routerstation.post("/fugdash", async (req, res) => {
 
+    const { email} = req.body;
 
-	res.json(usr);
+    if ( !email ) {
+        res.status(422).json({ error: "nomatch" })
+    }
+
+  else{
+   
+        const usr = await fugitiveDB.find({email:email});
+            
+      res.json(usr)
+  }
 });
 //scope3
 routerstation.post("/scope3", async (req, res) => {

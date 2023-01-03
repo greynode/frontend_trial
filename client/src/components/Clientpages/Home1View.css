@@ -553,3 +553,15 @@ table.infoo {
   border-spacing: 0;
   border: 1px solid black;
 }
+table.infooo {
+  width: 1200px;
+  
+  /* border-collapse: collapse; */
+  border-spacing: 0;
+  border: 1px solid black;
+}
+.infooo{
+  position: absolute;
+  top: 1000px;
+  left: 130px;
+}

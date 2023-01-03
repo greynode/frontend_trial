@@ -83,9 +83,9 @@ const Dashboard = () => {
         <Link to="/home">
           <button id="bu">stationay combution</button>
         </Link>
-        {/* <Link to="/mcomp">
-          <button id="bu">Test</button>
-        </Link> */}
+        <Link to="/processemission">
+          <button id="bu">process emission</button>
+        </Link>
         <Link to="/homeview">
           <button id="bu">stationay combustion dash</button>
         </Link>
@@ -105,10 +105,10 @@ const Dashboard = () => {
         <Link to="/mc">
           <button id="bu">Transport</button>
         </Link>
-        <Link to="/fugitive">
+        <Link to="/fug">
           <button id="bu">Fugitive emission</button>
         </Link>
-        <Link to="/fugitivedash">
+        <Link to="/fugdash">
           <button id="bu">Fugitive emission dash</button>
         </Link>
         <Link to="/scope3">

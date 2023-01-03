@@ -64,6 +64,12 @@ import Scombustion2 from "./components/Clientpages/Scombution";
 import Scombustionhome from "./components/Clientpages/Scombustiondash";
 import Mobile from "./components/Clientpages/Mobilecombustion";
 import Home1View from "./components/Clientpages/Mobilecombustiondash";
+import Process from "./components/Clientpages/Processemission";
+import Processdash from "./components/Clientpages/processemissiondash";
+import Fugi from "./components/Clientpages/Fugitiveemmision";
+import Fugidash from "./components/Clientpages/Fugitiveemissiondash";
+
+
 
 
 
@@ -176,6 +182,11 @@ function App() {
     <Route path="/homeview" element={<Scombustionhome/>}/>
     <Route path="/mobilecombustion" element={<Mobile/>}/>
     <Route path="/mobiledash" element={<Home1View/>}/>
+    <Route path="/processemission" element={<Process/>}/>
+    <Route path="/processdash" element={<Processdash/>}/>
+    <Route path="/fug" element={<Fugi/>}/>
+    <Route path="/fugdash" element={<Fugidash/>}/>
+
 
 
                        

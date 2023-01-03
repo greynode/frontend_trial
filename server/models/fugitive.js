@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-var timestamps = require('mongoose-timestamp');
+
 
 
 
@@ -41,7 +41,7 @@ var fugitiveSchema = new mongoose.Schema({
         required: true,
         
     },co2: {
-        type: String,
+        type: Number,
         required: true,
         
     },refrigeration: {
@@ -52,10 +52,18 @@ var fugitiveSchema = new mongoose.Schema({
         type: String,
         required: true,
         
+    },email: {
+        type: String,
+        required: true,
+        
+    },date: {
+        type: String,
+        required: true,
+        
     }
 
 });
-fugitiveSchema.plugin(timestamps);
+
 
 
 // createing model
