@@ -1,11 +1,20 @@
 const mongoose = require("mongoose");
-var timestamps = require('mongoose-timestamp');
+
 
 
 
 var mobileSchema = new mongoose.Schema({
    
-
+    mode:{
+        type: String,
+        required: true,
+    },date:{
+        type: String,
+        required: true,
+    },email:{
+        type: String,
+        required: true,
+    },
     code: {
         type: String,
         required: true,
@@ -32,7 +41,7 @@ var mobileSchema = new mongoose.Schema({
         required: true,
         
     },co2: {
-        type: String,
+        type: Number,
         required: true,
         
     },
@@ -44,10 +53,14 @@ var mobileSchema = new mongoose.Schema({
         type: String,
         required: true,
         
+    },air:{
+        type:String
+    },weight:{
+type:String
     }
 
 });
-mobileSchema.plugin(timestamps);
+
 
 
 // createing model

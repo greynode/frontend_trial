@@ -1578,6 +1578,11 @@ setCalculation(() => count * 2);
         
         
       <div className="home1-hello">
+              {/* <img className="home1-vew-child3" alt="" src="../rectangle-52@2x.png" /> */}
+      {/* <img className="home1-vew-child4" alt="" src="../rectangle-52@2x.png" />
+      <img className="home1-vew-child5" alt="" src="../rectangle-52@2x.png" />
+      <img className="home1-vew-child" alt="" src="../rectangle-52@2x.png" /> */}
+
       <img className="home1-add-child" alt="" src="../vector-4.svg" />
       <img className="home1-add-item" alt="" src="../vector-4.svg" />
       <div className="home1-add-inner" />
@@ -1599,7 +1604,7 @@ setCalculation(() => count * 2);
       <a className="scope-2">Scope 2</a>
       <a className="scope-3">Scope 3</a>
       <section className="rectangle-section" />
-      <a className="stationary-combustion">Stationary Combustion</a>
+      <a className="stationary-c">Stationary Combustion</a>
       <a className="mobile-combustion">
         <p className="mobile">{`Mobile `}</p>
         <p className="combustion">Combustion</p>

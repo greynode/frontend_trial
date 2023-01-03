@@ -14,11 +14,12 @@
   position: absolute;
   top: 21px;
   left: 124px;
-  border-radius: var(--br-lg);
+  border-radius: 10px;
   background-color: var(--color-white);
   box-shadow: 2px 1px 6px rgba(0, 0, 0, 0.25);
   width: 1194px;
   height: 85px;
+
 }
 .ellipse-icon,
 .whatsapp-image-2022-12-22-at-9 {
@@ -136,9 +137,20 @@
 .mobile {
   margin-block-start: 0;
   margin-block-end: 0;
+
+}
+.mobile1 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  color: green;
 }
 .combustion {
   margin: 0;
+  
+}
+.combustion1 {
+  margin: 0;
+  color: green;
 }
 .mobile-combustion {
   position: absolute;
@@ -400,7 +412,7 @@
 }
 .add-data {
   text-decoration: underline;
-  top: 1563px;
+  top: 963px;
   left: 1153px;
   font-size: var(--font-size-base);
   font-weight: 700;
@@ -461,6 +473,18 @@
   color: var(--color-gray-600);
   font-family: var(--font-sarabun);
 }
+.home1-vie{
+  position: relative;
+  border-radius: var(--br-md);
+  background-color: #f4f6f9;
+  width: 100%;
+  height: 1721px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-lg);
+  color: var(--color-gray-600);
+  font-family: var(--font-sarabun);
+}
 tbody {
   border-top: 1px solid black;
   
@@ -509,4 +533,23 @@ table.info tbody {
   position: absolute;
   top: 1000px;
   left: 70px;
+}
+.infoo{
+  position: absolute;
+  top: 1000px;
+  left: 70px;
+}
+
+td {
+  text-align:center;
+}
+
+
+
+table.infoo {
+  width: 1400px;
+  
+  /* border-collapse: collapse; */
+  border-spacing: 0;
+  border: 1px solid black;
 }

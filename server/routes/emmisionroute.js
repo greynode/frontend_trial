@@ -2,8 +2,8 @@ const express = require("express");
 const routerstation = new express.Router();
 const stationdb = require("../models/stationary");
 const mobiledb=require("../models/mobile")
-const mobiledistancedb=require("../models/mobiledistance")
-const freightdb=require("../models/freight")
+// const mobiledistancedb=require("../models/mobiledistance")
+// const freightdb=require("../models/freight")
 const energydb=require("../models/scope2energy")
 const Mcdb=require("../models/mc1")
 const fugitiveDB= require("../models/fugitive")
@@ -73,10 +73,10 @@ routerstation.get('/scompp', async (req, res) => {
 
 	res.json(usr);
 });
-//mobile distance
+//mobile 
 routerstation.post("/mcomp", async (req, res) => {
 
-    const { code,facility,quantity,literdistance,fuel,co2,category,subcat } = req.body;
+    const { code,facility,quantity,literdistance,fuel,co2,category,subcat,mode,date,email ,air,weight} = req.body;
 
    
 
@@ -85,7 +85,7 @@ routerstation.post("/mcomp", async (req, res) => {
     
     
             const saves = new mobiledb({
-                code,facility,quantity,literdistance,fuel,co2,category,subcat
+                code,facility,quantity,literdistance,fuel,co2,category,subcat,mode,date,email,air,weight
             });
 
             
@@ -103,86 +103,95 @@ routerstation.post("/mcomp", async (req, res) => {
 
 });
 
-routerstation.get('/mcompp', async (req, res) => {
-	const usr = await mobiledb.find();
+routerstation.post("/getmobile", async (req, res) => {
 
+    const { email} = req.body;
 
-	res.json(usr);
+    if ( !email ) {
+        res.status(422).json({ error: "nomatch" })
+    }
+
+  else{
+   
+        const usr = await mobiledb.find({email:email});
+            
+      res.json(usr)
+  }
 });
 
 
-//mobile distance
+// //mobile distance
 
-routerstation.post("/mcompdist", async (req, res) => {
+// routerstation.post("/mcompdist", async (req, res) => {
 
-    const { code,facility,distance,fuel,co2,category,subcat} = req.body;
+//     const { code,facility,distance,fuel,co2,category,subcat} = req.body;
 
    
 
-    try {
+//     try {
 
     
     
-            const saves = new mobiledistancedb({
-                code,facility,distance,fuel,co2,category,subcat
-            });
+//             const saves = new mobiledistancedb({
+//                 code,facility,distance,fuel,co2,category,subcat
+//             });
 
             
 
-            const storeDatadist = await saves.save();
+//             const storeDatadist = await saves.save();
 
-            // console.log(storeData);
-            res.status(201).json({ status: 201, storeDatadist })
+//             // console.log(storeData);
+//             res.status(201).json({ status: 201, storeDatadist })
         
 
-    } catch (error) {
-        res.status(422).json(error);
-        console.log("catch block error");
-    }
+//     } catch (error) {
+//         res.status(422).json(error);
+//         console.log("catch block error");
+//     }
 
-});
-routerstation.get('/mcomppdistdash', async (req, res) => {
-	const usr = await mobiledistancedb.find();
+// });
+// routerstation.get('/mcomppdistdash', async (req, res) => {
+// 	const usr = await mobiledistancedb.find();
 
 
-	res.json(usr);
-});
+// 	res.json(usr);
+// });
 
-//freight
-routerstation.post("/mcompfreight", async (req, res) => {
+// //freight
+// routerstation.post("/mcompfreight", async (req, res) => {
 
-    const { code,facility,distance,fuel,co2,category,weight} = req.body;
+//     const { code,facility,distance,fuel,co2,category,weight} = req.body;
 
    
 
-    try {
+//     try {
 
     
     
-            const saves = new freightdb({
-                code,facility,distance,fuel,co2,category,weight
-            });
+//             const saves = new freightdb({
+//                 code,facility,distance,fuel,co2,category,weight
+//             });
 
             
 
-            const storeDatadist = await saves.save();
+//             const storeDatadist = await saves.save();
 
-            // console.log(storeData);
-            res.status(201).json({ status: 201, storeDatadist })
+//             // console.log(storeData);
+//             res.status(201).json({ status: 201, storeDatadist })
         
 
-    } catch (error) {
-        res.status(422).json(error);
-        console.log("catch block error");
-    }
+//     } catch (error) {
+//         res.status(422).json(error);
+//         console.log("catch block error");
+//     }
 
-});
-routerstation.get('/mcomppfreight', async (req, res) => {
-	const usr = await freightdb.find();
+// });
+// routerstation.get('/mcomppfreight', async (req, res) => {
+// 	const usr = await freightdb.find();
 
 
-	res.json(usr);
-});
+// 	res.json(usr);
+// });
 //scope2 energy
 
 routerstation.post("/energy", async (req, res) => {

@@ -159,30 +159,30 @@ let val="null"
 
 
 
-  if(fuel==="Crudeoil"){
+  if(fuel==="BiodieselDiesel"){
  val =BiodieselDiesels(inpval.quantity)}
- else if(fuel==="Dieseloil"){
+ else if(fuel==="EthanolGasoline"){
   val =EthanolGasolines(inpval.quantity)
 }
-else if(fuel==="Orimulsion"){
+else if(fuel==="Biodiesel"){
   val =Biodiesels(inpval.quantity)
-}else if(fuel==="NaturalGasLiquids"){
+}else if(fuel==="Ethanol"){
   val =Ethanols(inpval.quantity)
-}else if(fuel==="Motorgasoline"){
+}else if(fuel==="LNG"){
   val =LNGs(inpval.quantity)
-}else if(fuel==="Aviationgasoline"){
+}else if(fuel==="CNG"){
   val =CNGs(inpval.quantity)
-}else if(fuel==="Jetgasoline"){
+}else if(fuel==="LPG"){
   val =LPGs(inpval.quantity)
-}else if(fuel==="Jetkerosene"){
+}else if(fuel==="ResidualFuelOil"){
   val =ResidualFuelOils(inpval.quantity)
-}else if(fuel==="Otherkerosene"){
+}else if(fuel==="OnRoadDieselFuel"){
   val =OnRoadDieselFuels(inpval.quantity)
-}else if(fuel==="Shaleoil"){
+}else if(fuel==="GasolinePetrol"){
   val =GasolinePetrols(inpval.quantity)
-}else if(fuel==="Gas/Dieseloil"){
+}else if(fuel==="AviationGasoline"){
   val =AviationGasolines(inpval.quantity)
-}else if(fuel==="Residualfueloil"){
+}else if(fuel==="JetFuel"){
   val =jetFuels(inpval.quantity)
 }else{
   console.log("errr");

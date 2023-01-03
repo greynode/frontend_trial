@@ -94,6 +94,7 @@ const HeavygoodsvehicleEthanol	=0.39
 
 
 
+
 function BusEthanols(calc){
     var result=(calc*(BusEthanol))
     return result

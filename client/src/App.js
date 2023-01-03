@@ -62,6 +62,8 @@ import AssetDeclaration from "./components/Clientpages/AssetDeclaration";
 import CompanyDetails from "./components/Clientpages/CompanyDetails";
 import Scombustion2 from "./components/Clientpages/Scombution";
 import Scombustionhome from "./components/Clientpages/Scombustiondash";
+import Mobile from "./components/Clientpages/Mobilecombustion";
+import Home1View from "./components/Clientpages/Mobilecombustiondash";
 
 
 
@@ -172,6 +174,8 @@ function App() {
 
     <Route path="/home" element={<Scombustion2/>}/>
     <Route path="/homeview" element={<Scombustionhome/>}/>
+    <Route path="/mobilecombustion" element={<Mobile/>}/>
+    <Route path="/mobiledash" element={<Home1View/>}/>
 
 
                        

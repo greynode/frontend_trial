@@ -17,11 +17,11 @@ asuser();
   const navigate = useNavigate();
 
   const onAddDataClick = useCallback(() => {
-    navigate("/home");
+    navigate("/mobilecombustion");
   }, [navigate]);
   const hellos =async(e)=>{
     const email=he
-        const datap = await fetch("/getstation", {
+        const datap = await fetch("/getmobile", {
           method: "POST",
           headers: {
               "Content-Type": "application/json"
@@ -49,7 +49,7 @@ setCalculation(() => count * 2);
 let i=0;
 
   return (
-    <div className="home1-view">
+    <div className="home1-vie">
       <img className="home1-view-child" alt="" src="../vector-4.svg" />
       <img className="home1-view-item" alt="" src="../vector-4.svg" />
       <div className="home1-view-inner" />
@@ -131,7 +131,7 @@ let i=0;
       <Link className="dashboard" to="/home1add">
         Dashboard
       </Link>
-      <table class="info">
+      <table class="infoo">
 
 	
 <thead>
@@ -139,10 +139,19 @@ let i=0;
     <th>S.NO</th>
     <th>Facility Name</th>
     <th>Type of fuel</th>
-    <th>Quantity</th>
-    <th>Source of emission</th>
+    <th>Input type</th>
+   
+  
+    <th>Quantity/distance</th>
+    <th>Category</th>
+    <th>Sub Category</th>
+    <th>mode of transport</th>
+   
+   
     <th>Date</th>
     <th>Carbonfootprint</th>
+   
+    
   </tr>
 </thead>
 
@@ -156,10 +165,15 @@ let i=0;
         <td  key="{qaait}">{i=i+1}</td>
         <td  key="{quantity}">{todo.facility}</td>
         <td  key="{quantity">{todo.fuel}</td>
+        <td  key="quantity">{todo.literdistance}</td>
         <td  key="{quantit}">{todo.quantity}</td>
-        <td  key="quantity">{todo.type}</td>
-        <td  key="{quantt}">{todo.date}</td>
-        <td  key="{quantt}">{Math.round(todo.co2)}</td>
+        <td  key="{quantt}">{todo.category}</td>
+        <td  key="{quantt}">{todo.subcat}</td>
+        <td  key="{quntit}">{todo.air}</td>
+       
+ 
+        <td  key="{quantt">{todo.date}</td>
+        <td  key="{qtt}">{Math.round(todo.co2)}</td>
     
         </tr>
         )) : (
