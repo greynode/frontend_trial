@@ -312,7 +312,7 @@ useEffect(() => {
         id="assetname"
       
       />
-      <div className="facility-name">{`Facility Name `}</div>
+      <div className="facility-n">{`Facility Name `}</div>
       <TextField
         className="asset-declaration-inner"
         sx={{ width: 222 }}

@@ -37,7 +37,7 @@ window.location.reload(false);
 }
   return (<>   
    <img
-    className="whatsapp-image-2022-12-22-at-9"
+    className="whatsapp-im"
     alt=""
     src="../whatsapp-image-20221222-at-923-2@2x.png"
   />

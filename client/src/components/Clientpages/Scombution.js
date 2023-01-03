@@ -1560,8 +1560,12 @@ const email=he
   }
   const current = new Date();
   const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
-  
-let suman=234.7
+
+  const navigate = useNavigate();
+  const onAddDataClick = useCallback(() => {
+    navigate("/homeview");
+  }, [navigate]);
+
 useEffect(() => {
  
   hellos();
@@ -1608,8 +1612,8 @@ setCalculation(() => count * 2);
         <p className="mobile">{`Process `}</p>
         <p className="combustion">Emissions</p>
       </a>
-      <div className="div">{Math.round(element)}</div>
-      <div className="tonnes-of-co2eq">Tonnes of CO2eq</div>
+      <div className="di">{Math.round(element)}</div>
+      <div className="tonnes-of">Tonnes of CO2eq</div>
       <p className="this-section-captures-any-emis">
         This section captures any emissions made from stationary combustion
         sources that are either owned or operated by the reporting organization.
@@ -1720,7 +1724,7 @@ setCalculation(() => count * 2);
    
  
       <h2 className="stationary-combustion1">Stationary Combustion</h2>
-      <h4 className="emission-source">Emission Source</h4>
+      <h4 className="emission-s">Emission Source</h4>
       <Form.Group className="wrapper2">
         <Form.Control type="text" placeholder="Facility Code"  name="code"
               onChange={setVal}
@@ -1735,11 +1739,11 @@ setCalculation(() => count * 2);
       </Form.Group>
       <h4 className="facility">{`Facility `}</h4>
       <h4 className="fuel">Fuel</h4>
-      <h4 className="date">SI Unit</h4>
+      <h4 className="dat">SI Unit</h4>
       <Button className="rectangle-button" variant="primary" onClick={addCompanydata}>
         Add Data
       </Button>
-      <a className="view-data" onClick={onViewDataClick}>
+      <a className="view-data" onClick={onAddDataClick}>
         View Data
       </a>
       <img

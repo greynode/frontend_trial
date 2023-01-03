@@ -86,7 +86,7 @@ const Dashboard = () => {
         <Link to="/test">
           <button id="bu">Test</button>
         </Link>
-        <Link to="/scompp">
+        <Link to="/homeview">
           <button id="bu">stationay combustion dash</button>
         </Link>
         <Link to="/mcomp">

@@ -20,7 +20,7 @@ import Question from "./components/Clientpages/Question"
 import Service from "./components/Services"
 import Subuserhome from "./components/Subuserhome";
 import Scomp from "./components/Scombution";
-import Test from "./components/Test";
+
 import Scombustiondash from "./components/Scombustiondash";
 import Mcomp from "./components/Mobilecombustion";
 import Mobiledash from "./components/Mobilecombustiondash";
@@ -61,6 +61,8 @@ import Registers from "./components/Pages/Clientcontrol/Register";
 import AssetDeclaration from "./components/Clientpages/AssetDeclaration";
 import CompanyDetails from "./components/Clientpages/CompanyDetails";
 import Scombustion2 from "./components/Clientpages/Scombution";
+import Scombustionhome from "./components/Clientpages/Scombustiondash";
+
 
 
 function App() {
@@ -129,7 +131,7 @@ function App() {
               <Route path="/service" element={<Service/>}/>
               <Route path="/subhome" element={<Subuserhome/>}/>
               <Route path="/scomp" element={<Scomp/>}/>
-              <Route path="/test" element={<Test/>}/>
+            
               <Route path="/scompp" element={<Scombustiondash/>}/>
               <Route path="/mcomp" element={<Mcomp/>}/>
               <Route path="/mcompp" element={<Mobiledash/>}/>
@@ -169,6 +171,8 @@ function App() {
     <Route path="/companyadd" element={<CompanyDetails/>}/>
 
     <Route path="/home" element={<Scombustion2/>}/>
+    <Route path="/homeview" element={<Scombustionhome/>}/>
+
 
                        
 
