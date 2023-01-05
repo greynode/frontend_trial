@@ -1,12 +1,11 @@
 const mongoose = require("mongoose");
-var timestamps = require('mongoose-timestamp');
-
-
 
 
 var Scope2energy = new mongoose.Schema({
    
-
+email:{
+    type:String
+},
     code: {
         type: String,
         required: true,
@@ -18,7 +17,7 @@ var Scope2energy = new mongoose.Schema({
         
     }
    ,co2: {
-        type: String,
+        type: Number,
         required: true,
         
     },
@@ -30,10 +29,12 @@ var Scope2energy = new mongoose.Schema({
         type: String,
         required: true,
         
+    },date:{
+        type:String
     }
 
 });
-Scope2energy.plugin(timestamps);
+
 
 
 // createing model

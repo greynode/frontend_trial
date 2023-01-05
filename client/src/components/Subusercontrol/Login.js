@@ -2,10 +2,9 @@ import React, { useState ,useContext,useEffect} from 'react'
 import { NavLink ,useNavigate} from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
 import "./mix.css"
-import { LoginContext } from './ContextProvider/Context';
+
 const Subuserlogin = () => {
-    const { logindata, setLoginData } = useContext(LoginContext);
-    console.log(logindata);
+  
     const [passShow, setPassShow] = useState(false);
 
     const [inpval, setInpval] = useState({
@@ -67,8 +66,8 @@ const Subuserlogin = () => {
             //  console.log(res);
 
             if(res.status === 201){
-                localStorage.setItem("usersdatatoken",res.result.token);
-                history("/superdash")
+                localStorage.setItem("susersdatatoken",res.result.token);
+                history("/dash")
                 setInpval({...inpval,email:"",password:""});
             }else{
                 toast.error("Invalid Credentials", {
@@ -81,7 +80,9 @@ const Subuserlogin = () => {
     return (
         <>
             <section>
+            <h1 align="center">Subuser login</h1>
                 <div className="form_data">
+              
                     <div className="form_heading">
                         <h2>Login</h2>
                         {/* <h1>Welcome Back, Log In</h1>

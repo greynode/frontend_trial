@@ -307,10 +307,20 @@ routers.post("/addd", async (req, res) => {
 });
 
 
-routers.get('/comp', async (req, res) => {
-	const compp = await companydb.find();
+routers.post("/comp", async (req, res) => {
 
-	res.json(compp);
+    const { email} = req.body;
+
+    if ( !email ) {
+        res.status(422).json({ error: "nomatch" })
+    }
+
+  else{
+   
+        const usr = await companydetail1.find({email:email});
+            
+      res.json(usr)
+  }
 });
 
     //question route

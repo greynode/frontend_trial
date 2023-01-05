@@ -8,8 +8,9 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { Form, Button } from "react-bootstrap";
 import { LoginContext } from "../ContextProvider/Context";
 import "./Home1Add.css";
-
+import DatePicker from 'react-date-picker';
 const Fugitive = () =>{
+    const [dte, onChange] = useState(new Date());
     const [usrs, setTodoss] = useState([]);
     const [count, setCount] = useState(0);
     const [calculation, setCalculation] = useState(0);
@@ -366,10 +367,9 @@ let val=0
 
 const email=he;
 
-const current = new Date();
-const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+let date=(dte.toLocaleDateString());
 
-setCount((c) => c + 1)
+
 let co2=val
           const data = await fetch("/fug", {
               method: "POST",
@@ -384,7 +384,7 @@ let co2=val
 
           const res = await data.json();
           console.log(res)
-    
+          setCount((c) => c + 1)
 
 
           if (res.status === 201) {
@@ -531,7 +531,7 @@ let co2=val
          {/* <p>{`You selected ${type}`}</p> */}
        </div>
    
-   
+       <div>  <DatePicker onChange={onChange} value={dte} className="datee" /></div>
         
   
          <Form.Group className="wrape">

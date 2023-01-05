@@ -23,8 +23,12 @@ var tempusrschema = new mongoose.Schema({
     }
     ,
     active: {
-        type: Boolean,
+        type: String,
         required: true,
+        
+    },
+    eemail:{
+        type:String,
         
     }
 });

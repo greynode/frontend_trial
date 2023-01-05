@@ -2,10 +2,9 @@ import React, { useState ,useContext,useEffect} from 'react'
 import { NavLink ,useNavigate} from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
 import "./mix.css"
-import { LoginContext } from './ContextProvider/Context';
+
 const Superlogin = () => {
-    const { logindata, setLoginData } = useContext(LoginContext);
-    console.log(logindata);
+   
     const [passShow, setPassShow] = useState(false);
 
     const [inpval, setInpval] = useState({
@@ -67,8 +66,8 @@ const Superlogin = () => {
             //  console.log(res);
 
             if(res.status === 201){
-                localStorage.setItem("usersdatatoken",res.result.token);
-                history("/superdash")
+                localStorage.setItem("ausersdatatoken",res.result.token);
+                history("/dash")
                 setInpval({...inpval,email:"",password:""});
             }else{
                 toast.error("Invalid Credentials", {

@@ -4,16 +4,18 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./mix.css"
 
-const Subuserregister = () => {
+const Superregister = () => {
 
     const [passShow, setPassShow] = useState(false);
     const [cpassShow, setCPassShow] = useState(false);
+    const [passShowc, setPassShowc] = useState(false);
 
     const [inpval, setInpval] = useState({
         fname: "",
         email: "",
         password: "",
-        cpassword: ""
+        cpassword: "",
+        temppass:""
     });
 
 
@@ -32,7 +34,7 @@ const Subuserregister = () => {
     const addUserdata = async (e) => {
         e.preventDefault();
 
-        const { fname, email, password, cpassword } = inpval;
+        const { fname, email, password, cpassword,temppass } = inpval;
 
         if (fname === "") {
             toast.warning("fname is required!", {
@@ -77,7 +79,7 @@ const Subuserregister = () => {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    fname, email, password, cpassword
+                    fname, email, password, cpassword,temppass
                 })
             });
 
@@ -88,9 +90,9 @@ const Subuserregister = () => {
                 toast.success("Registration Successfully done 😃!", {
                     position: "top-center"
                 });
-                setInpval({ ...inpval, fname: "", email: "", password: "", cpassword: "" });
+                setInpval({ ...inpval, fname: "", email: "", password: "", cpassword: "",temppass:"" });
             }else{
-                toast.error("invalid!", {
+                toast.error("Contact admin to register!", {
                     position: "top-center"
                 });
             }
@@ -102,9 +104,8 @@ const Subuserregister = () => {
             <section>
                 <div className="form_data">
                     <div className="form_heading">
-                        <h2>Sign Up</h2>
-                        <p style={{ textAlign: "center" }}>We are glad that you will be using Project Cloud to manage <br />
-                            your tasks! We hope that you will get like it.</p>
+                        <h2> Subuser Sign Up</h2>
+                      
                     </div>
 
                     <form>
@@ -134,7 +135,19 @@ const Subuserregister = () => {
                                     {!cpassShow ? "Show" : "Hide"}
                                 </div>
                             </div>
+                        </div> <div className="form_input">
+                            <label htmlFor="password">Temporary Password</label>
+                            <div className="two">
+                                <input type={!passShowc ? "password" : "text"} onChange={setVal} value={inpval.temppass} name="temppass" id="temppass" placeholder='Enter Your temppass' />
+                                <div className="showpass" onClick={() => setPassShowc(!passShowc)}>
+                                    {!passShowc ? "Show" : "Hide"}
+                                </div>
+                            </div>
                         </div>
+                        {/* <div className="form_input">
+                            <label htmlFor="temppass">Scretkey</label>
+                            <input type="text" onChange={setVal} value={inpval.temppass} name="temppass" id="temppass" placeholder='Enter Your temppass' />
+                        </div> */}
 
                         <button className='btn' onClick={addUserdata}>Sign Up</button>
                         <p>Already have an account? <NavLink to="/">Log In</NavLink></p>
@@ -146,4 +159,4 @@ const Subuserregister = () => {
     )
 }
 
-export default Subuserregister
+export default Superregister

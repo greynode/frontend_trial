@@ -524,8 +524,8 @@ top: 1290px;
 }
 .view-dat {
   text-decoration: underline;
-  top: 1555px;
-  left: 918px;
+  top: 1455px;
+  left: 1118px;
   font-size: var(--font-size-base);
   font-weight: 700;
   font-family: var(--font-sarabun);
@@ -587,4 +587,78 @@ top: 1290px;
   font-size: var(--font-size-sm);
   color: var(--color-teal);
   font-family: var(--font-montserrat);
+}
+.datee{
+  width: auto;
+  height: auto;
+  position: absolute;
+  top:1300px;
+  left:1110px;
+}
+.dae{
+  width: auto;
+  height: auto;
+  position: absolute;
+  top:1090px;
+  left:1110px;
+}
+.subuser{
+  position: absolute;
+  top:130px;
+  left: 600px;
+}
+.subpass{
+  position: absolute; top: 350px; left: 200px ; width: 400px;
+}
+.subact{
+  position: absolute; top: 450px; left: 200px ; width: 400px;
+}
+.subemail{
+  position: absolute; top: 250px; left: 200px ; width: 400px;
+}
+.subhead{
+  position: absolute; top: 210px; left: 200px ; width: 400px;
+}
+.subhead2{
+  position: absolute; top: 310px; left: 200px ; width: 400px;
+}
+.subhead3{
+  position: absolute; top: 410px; left: 200px ; width: 400px;
+}
+.saa
+{height: 40px;
+ width: 400px;
+ border-radius: 3px;
+}
+.subbutton{
+  position: absolute; top: 550px; left: 310px ; width: 150px;
+}
+table.subusertable {
+  width: 700px;
+  
+  /* border-collapse: collapse; */
+  border-spacing: 0;
+  border: 1px solid black;
+}
+.subusertable{
+  position: absolute;
+  top: 350px;
+  left: 730px;
+}
+.subremail{
+  position: absolute; top: 250px; left: 730px ; width: 400px;
+}
+.subhead4{
+  position: absolute; top: 410px; left: 200px ; width: 400px;
+}
+.subract{
+  position: absolute; top: 250px; left: 1150px ; width: 400px;
+}
+.subrbutton{
+  position: absolute; top: 250px; left: 1270px ; width: 150px;
+}
+.rsaa
+{height: 40px;
+ width: 100px;
+ border-radius: 3px;
 }

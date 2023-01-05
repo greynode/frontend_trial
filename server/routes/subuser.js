@@ -7,6 +7,7 @@ var bcrypt = require("bcryptjs");
 const authenticate = require("../middleware/authenticate");
 const nodemailer = require("nodemailer");
 const jwt  = require("jsonwebtoken");
+const sauthenticate = require("../middleware/subauth");
 
 const keysecret = process.env.SECRET_KEY
 
@@ -50,36 +51,53 @@ const transporter = nodemailer.createTransport({
     }
 }) 
 
-
-// for user registration
-
+//reg
 routeruser.post("/subuserregister", async (req, res) => {
 
-    const { fname, email, password, cpassword } = req.body;
+    const { fname, email, password, cpassword,temppass } = req.body;
 
-    if (!fname || !email || !password || !cpassword) {
+    if (!fname || !email || !password || !cpassword||!temppass) {
         res.status(422).json({ error: "fill all the details" })
     }
 
     try {
 
         const preuser = await subuserdb.findOne({ email: email });
+        const adminpreuser = await tempusr.findOne({ email: email });
 
-      const users=await tempusr.findOne({email:email})
         if (preuser) {
             res.status(422).json({ error: "This Email is Already Exist" })
         } else if (password !== cpassword) {
             res.status(422).json({ error: "Password and Confirm Password Not Match" })
-        } else if(users && users.pass===password) {
+        } else if(adminpreuser && adminpreuser.pass===temppass){
             const finalUser = new subuserdb({
                 fname, email, password, cpassword
             });
+
+            
+
             const storeData = await finalUser.save();
 
             // console.log(storeData);
             res.status(201).json({ status: 201, storeData })
+            const mailOptions = {
+                from:process.env.EMAIL,
+                to:email,
+                subject:"Welcome from Beyond Sustainability",
+                text:`Thank you for choosing Beyond Sustainability. We value your trust and our partnership.`
+            }
+
+            transporter.sendMail(mailOptions,(error,info)=>{
+                if(error){
+                    console.log("error",error);
+                    res.status(401).json({status:401,message:"email not send"})
+                }else{
+                    console.log("Email sent",info.response);
+                    res.status(201).json({status:201,message:"Email sent Sucessfully"})
+                }
+            })
         }else{
-            res.status(422).json({ error: "invalid" })
+            res.status(422).json({ error: "you have no access" })
         }
 
     } catch (error) {
@@ -88,6 +106,44 @@ routeruser.post("/subuserregister", async (req, res) => {
     }
 
 });
+
+// for user registration
+
+// routeruser.post("/subuserregister", async (req, res) => {
+
+//     const { fname, email, password, cpassword } = req.body;
+
+//     if (!fname || !email || !password || !cpassword) {
+//         res.status(422).json({ error: "fill all the details" })
+//     }
+
+//     try {
+
+//         const preuser = await subuserdb.findOne({ email: email });
+
+//       const users=await tempusr.findOne({email:email})
+//         if (preuser) {
+//             res.status(422).json({ error: "This Email is Already Exist" })
+//         } else if (password !== cpassword) {
+//             res.status(422).json({ error: "Password and Confirm Password Not Match" })
+//         } else if(users && users.pass===password) {
+//             const finalUser = new subuserdb({
+//                 fname, email, password, cpassword
+//             });
+//             const storeData = await finalUser.save();
+
+//             // console.log(storeData);
+//             res.status(201).json({ status: 201, storeData })
+//         }else{
+//             res.status(422).json({ error: "invalid" })
+//         }
+
+//     } catch (error) {
+//         res.status(422).json(error);
+//         console.log("catch block error");
+//     }
+
+// });
 
 
 
@@ -107,7 +163,7 @@ routeruser.post("/subuserlogin", async (req, res) => {
        const userValid = await subuserdb.findOne({email:email});
        const userValidtemp = await tempusr.findOne({email:email});
 
-        if(userValid && userValidtemp.active===true){
+        if(userValid && userValidtemp.active==="active"){
 
             const isMatch = await bcrypt.compare(password,userValid.password);
 
@@ -143,7 +199,7 @@ routeruser.post("/subuserlogin", async (req, res) => {
 
 
 // user valid
-routeruser.get("/subuservaliduser",authenticate,async(req,res)=>{
+routeruser.get("/subuservaliduser",sauthenticate,async(req,res)=>{
     try {
         const ValidUserOne = await subuserdb.findOne({_id:req.userId});
         res.status(201).json({status:201,ValidUserOne});
@@ -155,7 +211,7 @@ routeruser.get("/subuservaliduser",authenticate,async(req,res)=>{
 
 // user logout
 
-routeruser.get("/subuserlogout",authenticate,async(req,res)=>{
+routeruser.get("/subuserlogout",sauthenticate,async(req,res)=>{
     try {
         req.rootUser.tokens =  req.rootUser.tokens.filter((curelem)=>{
             return curelem.token !== req.token
@@ -290,12 +346,26 @@ module.exports = routeruser;
 // 1234->> (e#@$hagsjd,e#@$hagsjd)=> true
 
 
+routeruser.post("/sublist", async (req, res) => {
 
+    const { eemail} = req.body;
 
-routeruser.get('/sublist', async (req, res) => {
-	const usr = await subuserdb.find();
+    if ( !eemail ) {
+        res.status(422).json({ error: "nomatch" })
+    }
 
-	res.json(usr);
+  else{
+   
+        const usr = await tempusr.find({eemail:eemail});
+            
+      res.json(usr)
+  }
 });
+
+// routeruser.get('/sublist', async (req, res) => {
+// 	const usr = await subuserdb.find();
+
+// 	res.json(usr);
+// });
 
 module.exports = routeruser;

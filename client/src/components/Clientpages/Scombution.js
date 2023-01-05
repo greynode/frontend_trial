@@ -7,7 +7,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { LoginContext } from "../ContextProvider/Context";
 import "./Home1Add.css";
+import DatePicker from 'react-date-picker';
 const Scomp = () =>{
+  const [dte, onChange] = useState(new Date());
   const [usrs, setTodoss] = useState([]);
   const [count, setCount] = useState(0);
   const [calculation, setCalculation] = useState(0);
@@ -1491,11 +1493,13 @@ else{
             
 
 
-            const current = new Date();
-            const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+   
 
             const email=he;
-            setCount((c) => c + 1)
+            
+          
+            let date=(dte.toLocaleDateString());
+
 
           const data = await fetch("/scomp", {
               method: "POST",
@@ -1511,7 +1515,7 @@ else{
           const res = await data.json();
           console.log(res)
           console.log(weight)
-          
+          setCount((c) => c + 1)
 
 
           if (res.status === 201) {
@@ -1558,8 +1562,7 @@ const email=he
      element += (usrs[index].co2)
     console.log(index);
   }
-  const current = new Date();
-  const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+
 
   const navigate = useNavigate();
   const onAddDataClick = useCallback(() => {
@@ -1578,6 +1581,9 @@ setCalculation(() => count * 2);
         
         
       <div className="home1-hello">
+
+
+
               {/* <img className="home1-vew-child3" alt="" src="../rectangle-52@2x.png" /> */}
       {/* <img className="home1-vew-child4" alt="" src="../rectangle-52@2x.png" />
       <img className="home1-vew-child5" alt="" src="../rectangle-52@2x.png" />
@@ -1692,8 +1698,9 @@ setCalculation(() => count * 2);
       </select>
       {/* <p>{`You selected ${type}`}</p> */}
     </div>
-
+    <div>     <DatePicker onChange={onChange} value={dte} className="datee" /></div>
              <div className="wrapper" >
+      
       <select value={type} onChange={setValsss} className="hello1" >
         <option value="Boilers">Boilers</option>
         <option value="Furnace">Furnace</option>
@@ -1708,8 +1715,7 @@ setCalculation(() => count * 2);
       {/* <p>{`You selected ${type}`}</p> */}
     </div>
       <div className="home1-add-child8" />
-     
-    
+   
       <Form.Group className="frame">
         <Form.Control  type="number"
               placeholder="quantity"

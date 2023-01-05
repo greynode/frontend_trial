@@ -1,14 +1,18 @@
-import React, { useState } from 'react'
-import { NavLink } from "react-router-dom"
+import { useCallback,useState } from "react";
+import { TextField, Input, Icon, Button } from "@mui/material";
+import { useNavigate, Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import "./mix.css"
+import "./Register.css";
 
 const Register = () => {
+  const navigate = useNavigate();
 
-    const [passShow, setPassShow] = useState(false);
-    const [cpassShow, setCPassShow] = useState(false);
-    const [cpassSho, setCPassSho] = useState(false);
+
+
+  const onLoginHereClick = useCallback(() => {
+    navigate("/clientlogin");
+  }, [navigate]);
 
     const [inpval, setInpval] = useState({
         fname: "",
@@ -37,11 +41,11 @@ const Register = () => {
         const { fname, email, password, cpassword,temppass } = inpval;
 
         if (fname === "") {
-            toast.warning("fname is required!", {
+            toast.warning("Company name is required!", {
                 position: "top-center"
             });
         } else if (email === "") {
-            toast.error("email is required!", {
+            toast.warning("email is required!", {
                 position: "top-center"
             });
         } else if (!email.includes("@")) {
@@ -49,27 +53,31 @@ const Register = () => {
                 position: "top-center"
             });
         } else if (password === "") {
-            toast.error("password is required!", {
+            toast.warning("password is required!", {
                 position: "top-center"
             });
         } else if (password.length < 6) {
-            toast.error("password must be 6 char!", {
+            toast.warning("password must be 6 char!", {
                 position: "top-center"
             });
         } else if (cpassword === "") {
-            toast.error("cpassword is required!", {
+            toast.warning("cpassword is required!", {
                 position: "top-center"
             });
         }
         else if (cpassword.length < 6) {
-            toast.error("confirm password must be 6 char!", {
+            toast.warning("confirm password must be 6 char!", {
                 position: "top-center"
             });
         } else if (password !== cpassword) {
-            toast.error("pass and Cpass are not matching!", {
+            toast.warning("password and Confirm password are not matching!", {
                 position: "top-center"
             });
-        } else {
+        }else if (temppass==="") {
+          toast.warning("Enter the Temporary password !", {
+              position: "top-center"
+          });
+      } else {
             // console.log("user registration succesfully done");
 
 
@@ -98,78 +106,113 @@ const Register = () => {
             }
         }
     }
+  return (
+    <>
+    <div className="wireframe-8">
+      <TextField
+        className="wireframe-8-child"
+        sx={{ width: 421 }}
+        color="primary"
+        variant="outlined"
+        type="password"
+        label="Password"
+        placeholder="Enter Password "
+        size="medium"
+        margin="none"
+        value={inpval.password} onChange={setVal} name="password" id="password" 
+        required
+      />
+       <TextField
+        className="wireframe-8-hell"
+        sx={{ width: 421 }}
+        color="primary"
+        variant="outlined"
+        type="password"
+        label=" Temporary Password"
+  
+        size="medium"
+        margin="none"
+        value={inpval.temppass} onChange={setVal} 
+        name="temppass" id="temppass" 
+        placeholder='Enter Your Temporary password'
+        required
+      />
+      <TextField
+        className="wireframe-8-item"
+        sx={{ width: 421 }}
+        color="primary"
+        variant="outlined"
+        type="text"
+        label="Company Name"
+        placeholder="Enter Company Name"
+        size="medium"
+        margin="none"
+        onChange={setVal} 
+        value={inpval.fname}
+         name="fname"
+          id="fname"
+        required
+      />
+      <TextField
+        className="wireframe-8-inner"
+        sx={{ width: 421 }}
+        color="primary"
+        variant="outlined"
+        type="email"
+        label="Email"
+        placeholder="Enter your Email"
+        size="medium"
+        margin="none"
+        onChange={setVal} 
+        value={inpval.email} 
+        name="email" 
+        id="email" 
+        required
+      />
+      <img className="arroba-2-3-icon" alt="" src="../arroba2-3@2x.png" />
+      <TextField
+        className="rectangle-textfieldc"
+        sx={{ width: 421 }}
+        color="primary"
+        variant="outlined"
+        type="password"
+        label="Confirm Password "
+        placeholder="Confirm Password "
+        size="medium"
+        margin="none"
+        value={inpval.cpassword} onChange={setVal} name="cpassword" id="cpassword"
+        required
+      />
+      <img className="arroba-2-2-icon" alt="" src="../arroba2-2@2x.png" />
+      <img className="arroba-2-4-icon" alt="" src="../arroba2-2@2x.png" />
+      <div className="sign-up">Sign Up</div>
+      <Button
+        className="rectangle-buttonlog"
+        sx={{ width: 233 }}
+        variant="contained"
+        color="primary"
+        href="/Login"
+        onClick={addUserdata}
+      >
+        Sign Up
+      </Button>
+      <a className="forgot-password">Forgot password ?</a>
+      <img
+        className="whatsapp"
+        alt=""
+        src="../whatsapp-image-20221222-at-923-1@2x.png"
+      />
+      <img className="ezgif-3-icon" alt="" src="../two.gif" />
+      <div className="already-have-an-account">
+        <span className="already-have-an">Already have an account</span>
+        <span>{` `}</span>
+      </div>
+      <Link className="login-here" to="/" onClick={onLoginHereClick}>
+        Login here
+      </Link>
+    </div>
+    <ToastContainer /></>
+  );
+};
 
-    return (
-        <>
-            <section>
-                <div className="form_data">
-                    <div className="form_heading">
-                        <h2>Sign Up</h2>
-                        <p style={{ textAlign: "center" }}>We are glad that you will be using Project Cloud to manage <br />
-                            your tasks! We hope that you will get like it.</p>
-                    </div>
-
-                    <form>
-                        <div className="form_input">
-                            <label htmlFor="fname">Name</label>
-                            <input type="text"
-                             onChange={setVal} 
-                             value={inpval.fname}
-                              name="fname"
-                               id="fname" placeholder='Enter Your Name' />
-                        </div>
-                        <div className="form_input">
-                            <label htmlFor="email">Email</label>
-                            <input type="email"
-                             onChange={setVal} 
-                             value={inpval.email} 
-                             name="email" 
-                             id="email" 
-                             placeholder='Enter Your Email Address' />
-                        </div>
-                        <div className="form_input">
-                            <label htmlFor="password">Tempass</label>
-                            <div className="two">
-                                <input type={!cpassSho ? "password" : "text"} 
-                                value={inpval.temppass} onChange={setVal} 
-                                name="temppass" id="temppass" 
-                                placeholder='Enter Your temppass' />
-                                <div className="showpass" onClick={() => setCPassSho(!cpassSho)}>
-                                    {!cpassSho ? "Show" : "Hide"}
-                                </div>
-                            </div>
-                        </div>
-                        <div className="form_input">
-                            <label htmlFor="password">Password</label>
-                            <div className="two">
-                                <input type={!passShow ? "password" : "text"} 
-                                value={inpval.password} onChange={setVal} name="password" id="password" 
-                                placeholder='Enter Your password' />
-                                <div className="showpass" onClick={() => setPassShow(!passShow)}>
-                                    {!passShow ? "Show" : "Hide"}
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="form_input">
-                            <label htmlFor="password">Confirm Password</label>
-                            <div className="two">
-                                <input type={!cpassShow ? "password" : "text"} 
-                                value={inpval.cpassword} onChange={setVal} name="cpassword" id="cpassword" placeholder='Confirm password' />
-                                <div className="showpass" onClick={() => setCPassShow(!cpassShow)}>
-                                    {!cpassShow ? "Show" : "Hide"}
-                                </div>
-                            </div>
-                        </div>
-
-                        <button className='btn' onClick={addUserdata}>Sign Up</button>
-                        <p>Already have an account? <NavLink to="/">Log In</NavLink></p>
-                    </form>
-                    <ToastContainer />
-                </div>
-            </section>
-        </>
-    )
-}
-
-export default Register
+export default Register;

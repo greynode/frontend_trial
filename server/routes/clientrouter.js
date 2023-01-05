@@ -26,7 +26,7 @@ const transporter = nodemailer.createTransport({
 
 router.post("/addusr", async (req, res) => {
 
-    const { email ,pass,active} = req.body;
+    const { email ,pass,active,eemail} = req.body;
 
     if ( !email || !pass|| !active) {
         res.status(422).json({ error: "fill all the details" })
@@ -41,7 +41,7 @@ router.post("/addusr", async (req, res) => {
         }
          else {
             const finalUser = new tempusr({
-                 email,pass,active
+                 email,pass,active,eemail
             });
 
             
@@ -61,19 +61,38 @@ router.post("/addusr", async (req, res) => {
 //rem subusr
 router.post("/remusr", async (req, res) => {
 
-    const { email ,pass,active } = req.body;
+    const { remail ,ractive } = req.body;
 
-    if ( !email || !pass|| !active ) {
+    if ( !remail  ) {
         res.status(422).json({ error: "fill all the details" })
     }
 
+ 
+
+       
+if(ractive==="remove"){
     try {
-
-        const preuser = await tempusr.findOne({ email: email });
-
+        
+        const usrr = await tempusr.findOne({ email: remail });
+        if(usrr){
+        const usr = await tempusr.findOneAndDelete({email:remail});
+        res.status(201).json({ status: 201, usr})
+  
+    }
+     else{
+        res.status(422).json({status:401,message:"user not exist"});
+     }
+   
+    } catch (error) {
+        res.send(error);
+       
+    }
+}else{ 
+    try {
+    const preuser = await tempusr.findOne({ email: remail });
         if (preuser) {
-            const users = await tempusr.updateMany({email:email},{
-                pass:pass,active:active});
+            const users = await tempusr.updateMany({email:remail},{
+                active:ractive});
         
 
             
@@ -91,7 +110,7 @@ router.post("/remusr", async (req, res) => {
     } catch (error) {
         res.status(201).json({status:201})
         console.log("success");
-    }
+    }}
 
 });
 // for user registration
@@ -207,6 +226,7 @@ router.post("/login", async (req, res) => {
 // user valid
 router.get("/validuser",authenticate,async(req,res)=>{
     try {
+        console.log(req.userId);
         const ValidUserOne = await userdb.findOne({_id:req.userId});
         res.status(201).json({status:201,ValidUserOne});
     } catch (error) {

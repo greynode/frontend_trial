@@ -8,7 +8,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { LoginContext } from "../ContextProvider/Context";
 import "./Home1Add.css";
+import DatePicker from 'react-date-picker';
 const Mcomp = () =>{
+   const [dte, onChange] = useState(new Date());
     const [usrs, setTodoss] = useState([]);
     const [count, setCount] = useState(0);
     const [calculation, setCalculation] = useState(0);
@@ -378,11 +380,10 @@ if(air==="AirShortHaul"){
 let co2=val
            
             
-            const current = new Date();
-            const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+let date=(dte.toLocaleDateString());
 
             const email=he;
-            setCount((c) => c + 1)
+
 
 
 
@@ -403,7 +404,7 @@ let co2=val
           const res = await data.json();
           console.log(res)
          
-          
+          setCount((c) => c + 1)
 
 
           if (res.status === 201) {
@@ -543,6 +544,7 @@ let co2=val
       </select>
       {/* <p>{`You selected ${type}`}</p> */}
     </div>
+  <div>  <DatePicker onChange={onChange} value={dte} className="datee" /></div>
     <div className="containpro">
         
     <select value={mode} onChange={setValsss} className="hello">

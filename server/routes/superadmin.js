@@ -9,6 +9,8 @@ const superadmindb=require("../models/superadmindb");
 
 const tempusr = require("../models/tempsubusr");
 const tempadminusr = require("../models/tempclient");
+const sauthenticate = require("../middleware/subauth");
+const aauthenticate = require("../middleware/adminauth");
 
 const keysecret = process.env.SECRET_KEY
 const topsecret = process.env.TOPSECRET
@@ -207,8 +209,9 @@ superouter.post("/superlogin", async (req, res) => {
 
 
 // user valid
-superouter.get("/supervaliduser",authenticate,async(req,res)=>{
+superouter.get("/supervaliduser",aauthenticate,async(req,res)=>{
     try {
+       console.log(req.userId)
         const ValidUserOne = await superadmindb.findOne({_id:req.userId});
         res.status(201).json({status:201,ValidUserOne});
     } catch (error) {
@@ -219,7 +222,7 @@ superouter.get("/supervaliduser",authenticate,async(req,res)=>{
 
 // user logout
 
-superouter.get("/superlogout",authenticate,async(req,res)=>{
+superouter.get("/superlogout",aauthenticate,async(req,res)=>{
     try {
         req.rootUser.tokens =  req.rootUser.tokens.filter((curelem)=>{
             return curelem.token !== req.token

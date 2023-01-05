@@ -1,12 +1,20 @@
-import React, { useState } from 'react'
-import { NavLink ,useNavigate} from "react-router-dom"
+import { useCallback,useState } from "react";
+import { TextField, Input, Icon, Button } from "@mui/material";
+import { useNavigate, Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
-import Header from '../Header';
-import "./mix.css"
+import "./Login.css";
 
 const Login = () => {
+  const navigate = useNavigate();
 
-    const [passShow, setPassShow] = useState(false);
+  // const onRectangleButtonClick = useCallback(() => {
+  //   navigate("/register");
+  // }, [navigate]);
+
+  const onRegisterHereClick = useCallback(() => {
+    navigate("/clientregister");
+  }, [navigate]);
+  const [passShow, setPassShow] = useState(false);
 
     const [inpval, setInpval] = useState({
         email: "",
@@ -78,47 +86,76 @@ const Login = () => {
         }
     }
 
-    return (
-        <>       <Header />
-            <section>
-                <div className="form_data">
-                    <div className="form_heading">
-                        <h2>Login</h2>
-                        {/* <h1>Welcome Back, Log In</h1>
-                        <p>Hi, we are you glad you are back. Please login.</p> */}
-                    </div>
+  return (
+    <>
+    <div className="wireframe-7">
+      <TextField
+        className="wireframe-7-child"
+        sx={{ width: 421 }}
+        color="primary"
+        variant="outlined"
+        type="text"
+        label="Email"
+        placeholder="Enter your email"
+        size="medium"
+        margin="none"
+        value={inpval.email} 
+        onChange={setVal}
+         name="email"
+         id="email" 
+        required
+      />
+      <img className="arroba-2-1-icon" alt="" src="../arroba2-3@2x.png" />
+      <TextField
+        className="wireframe-7-item"
+        sx={{ width: 421 }}
+        color="primary"
+        variant="outlined"
+        type="password"
+        label="Password "
+        placeholder="Password "
+        size="medium"
+        margin="none"
+        onChange={setVal}
+         value={inpval.password} 
+         name="password"
+        id="password"
+        required
+      />
+      <img className="arroba-2-2-icon1" alt="" src="../arroba2-2@2x.png" />
+      <div className="login">Login</div>
+      <Button
+        className="wireframe-7-inner"
+        sx={{ width: 233 }}
+        variant="contained"
+        color="primary"
+        href="/register"
+        onClick={loginuser}
+      >
+        Login
+      </Button>
+      <a className="forgot-password1">Forgot password ?</a>
+      <div className="if-you-dont-have-an-account">
+        If you don’t have an account
+      </div>
+      <Link
+        className="register-here"
+        to="/register"
+        onClick={onRegisterHereClick}
+      >
+        <span>{` `}</span>
+        <span className="register-here1">Register</span>
+      </Link>
+      <img className="ezgif-2-icon" alt="" src="../one.gif" />
+      <img
+        className="whatsap"
+        alt=""
+        src="../whatsapp-image-20221222-at-923-1@2x.png"
+      />
+    </div>
+    <ToastContainer />
+    </>
+  );
+};
 
-                    <form>
-                        <div className="form_input">
-                            <label htmlFor="email">Email</label>
-                            <input type="email"
-                             value={inpval.email} 
-                            onChange={setVal} name="email"
-                             id="email" 
-                             placeholder='Enter Your Email Address' />
-                        </div>
-                        
-                        <div className="form_input">
-                            <label htmlFor="password">Password</label>
-                            <div className="two">
-                                <input type={!passShow ? "password" : "text"}
-                                 onChange={setVal} value={inpval.password} name="password"
-                                  id="password" placeholder='Enter Your password' />
-                                <div className="showpass" onClick={() => setPassShow(!passShow)}>
-                                    {!passShow ? "Show" : "Hide"}
-                                </div>
-                            </div>
-                        </div>
-
-                        <button className='btn' onClick={loginuser}>Login</button>
-                        <p>Don't have an Account? <NavLink to="/register">Sign Up</NavLink> </p>
-                        <p style={{color:"black",fontWeight:"bold"}}>Forgot Password  <NavLink to="/password-reset">Click Here</NavLink> </p>
-                    </form>
-                    <ToastContainer />
-                </div>
-            </section>
-        </>
-    )
-}
-
-export default Login
+export default Login;

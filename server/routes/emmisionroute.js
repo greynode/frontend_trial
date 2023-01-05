@@ -240,7 +240,7 @@ routerstation.post("/getmobile", async (req, res) => {
 
 routerstation.post("/energy", async (req, res) => {
 
-    const { code,facility,fuel,co2,quantity} = req.body;
+    const { code,facility,fuel,co2,quantity,date,email} = req.body;
 
    
 
@@ -249,7 +249,7 @@ routerstation.post("/energy", async (req, res) => {
     
     
             const saves = new energydb({
-                code,facility,fuel,co2,quantity
+               email, code,facility,fuel,co2,quantity,date
             });
 
             
@@ -266,12 +266,22 @@ routerstation.post("/energy", async (req, res) => {
     }
 
 });
-routerstation.get('/energydash', async (req, res) => {
-	const usr = await energydb.find();
+routerstation.post("/energydash", async (req, res) => {
 
+    const { email} = req.body;
 
-	res.json(usr);
+    if ( !email ) {
+        res.status(422).json({ error: "nomatch" })
+    }
+
+  else{
+   
+        const usr = await energydb.find({email:email});
+            
+      res.json(usr)
+  }
 });
+
 //mc
 
 routerstation.post("/mc1", async (req, res) => {

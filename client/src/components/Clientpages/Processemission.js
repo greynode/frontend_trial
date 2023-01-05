@@ -7,7 +7,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { LoginContext } from "../ContextProvider/Context";
 import "./Home1Add.css";
+import DatePicker from 'react-date-picker';
 const Scomp = () =>{
+  const [dte, onChange] = useState(new Date());
   const [usrs, setTodoss] = useState([]);
   const [count, setCount] = useState(0);
   const [calculation, setCalculation] = useState(0);
@@ -82,11 +84,10 @@ const [inpval, setInpval] = useState({
             
 
 
-            const current = new Date();
-            const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+                let date=(dte.toLocaleDateString());
 
             const email=he;
-            setCount((c) => c + 1)
+           
 
           const data = await fetch("/process", {
               method: "POST",
@@ -101,7 +102,7 @@ const [inpval, setInpval] = useState({
 
           const res = await data.json();
           console.log(res)
-       
+          setCount((c) => c + 1)
           
 
 
@@ -147,8 +148,7 @@ const email=he
      element += (usrs[index].co2)
     console.log(index);
   }
-  const current = new Date();
-  const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+
 
   const navigate = useNavigate();
   const onAddDataClick = useCallback(() => {
@@ -164,7 +164,7 @@ setCalculation(() => count * 2);
 
     return(
         
-        
+        <>  
         
       <div className="home1-hello">
          
@@ -231,7 +231,7 @@ setCalculation(() => count * 2);
 
           
       <div className="home1-add-child8" />
-     
+      <div>  <DatePicker onChange={onChange} value={dte} className="dae" /></div>
     
       <Form.Group className="frame">
         <Form.Control  type="number"
@@ -243,7 +243,6 @@ setCalculation(() => count * 2);
       </Form.Group>
    
      
-   
  
       <h2 className="stationary-combustion1">Process Emissions</h2>
 
@@ -253,6 +252,8 @@ setCalculation(() => count * 2);
               value={inpval.code}
               id="code" />
       </Form.Group>
+   
+   
       <Form.Group className="wrapper3">
         <Form.Control type="text" placeholder="Facility Name"  name="facility"
               onChange={setVal}
@@ -279,7 +280,7 @@ setCalculation(() => count * 2);
       <a className="dashboard">Dashboard</a>
  <ToastContainer/>
     </div>
-   
+   </>
   
     )}
 

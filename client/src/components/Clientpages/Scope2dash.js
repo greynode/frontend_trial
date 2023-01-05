@@ -2,9 +2,8 @@ import { useCallback ,useEffect,useState,useContext} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Home1View.css";
 import { LoginContext } from "../ContextProvider/Context";
-import DatePicker from 'react-date-picker';
+
 const Home1View = () => {
-    const [value, onChange] = useState(new Date());
   const [usrs, setTodoss] = useState([]);
   const [count, setCount] = useState(0);
   const [calculation, setCalculation] = useState(0);
@@ -18,11 +17,11 @@ asuser();
   const navigate = useNavigate();
 
   const onAddDataClick = useCallback(() => {
-    navigate("/fug");
+    navigate("/sco");
   }, [navigate]);
   const hellos =async(e)=>{
     const email=he
-        const datap = await fetch("/fugdash", {
+        const datap = await fetch("/energydash", {
           method: "POST",
           headers: {
               "Content-Type": "application/json"
@@ -34,13 +33,14 @@ asuser();
       const res = await datap.json();
       console.log(res);
       setTodoss(res);
+   
       }
       let element=0;
   for (let index = 0; index < usrs.length; index++) {
 
 
     element += (usrs[index].co2)
-  
+
  }
  useEffect(() => {
  
@@ -50,8 +50,7 @@ setCalculation(() => count * 2);
 let i=0;
 
   return (
-    <div className="home1-view">
-      
+    <div className="home1-vie">
       <img className="home1-view-child" alt="" src="../vector-4.svg" />
       <img className="home1-view-item" alt="" src="../vector-4.svg" />
       <div className="home1-view-inner" />
@@ -133,25 +132,23 @@ let i=0;
       <Link className="dashboard" to="/home1add">
         Dashboard
       </Link>
-      <table class="infooo">
+      <table class="infoo">
 
 	
 <thead>
   <tr>
     <th>S.NO</th>
     <th>Facility Name</th>
-    <th>Facility code</th>
-    <th>Type of Refregerant</th>
-    <th>Type of Refregration</th>
+ 
+    <th>Facility Code</th>
+    <th>Type of Gas</th>
+  
+    
+   <th>Quantity</th>
     <th>Date</th>
-    <th>Total refrigerant capacity of retiring equipment</th>
-    <th>refrigerant used to charge new equipment</th>
-    <th>Total refrigerant capacity of the equipment</th>
-    <th>Amount of refrigerant bought to service the equipment</th>
-    <th>Refrigerant recovered from the retiring equipment</th>
-
     <th>Carbonfootprint</th>
-
+   
+    
   </tr>
 </thead>
 
@@ -164,17 +161,11 @@ let i=0;
         <tr>
         <td  key="{qaait}">{i=i+1}</td>
         <td  key="{quantity}">{todo.facility}</td>
-        <td  key="{quantit}">{todo.code}</td>
-        <td  key="{quantity">{todo.refrigerant}</td>
-        <td  key="{quantit}">{todo.refrigeration}</td>
-        <td  key="quantity">{todo.date}</td>
-        <td  key="{quantt}">{todo.i}</td>
-        <td  key="{quantit}">{todo.f}</td>
-        <td  key="quantity">{todo.g}</td>
-        <td  key="{quantt}">{todo.h}</td>
-        <td  key="{quantt}">{todo.j}</td>
-        <td  key="quantity">{todo.co2}</td>
-    
+        <td  key="{quantity">{todo.code}</td>
+        <td  key="quantity">{todo.fuel}</td>
+        <td  key="{quantit}">{todo.quantity}</td>
+        <td  key="{quantt">{todo.date}</td>
+        <td  key="{qtt}">{Math.round(todo.co2)}</td>
     
         </tr>
         )) : (
