@@ -1,12 +1,26 @@
 const mongoose = require("mongoose");
-var timestamps = require('mongoose-timestamp');
+
 
 
 
 
 var downstream = new mongoose.Schema({
+    email: {
+        type: String,
+        required: true,
+       
+    },
+    date: {
+        type: String,
+        required: true,
+       
+    },
    
-
+    person: {
+        type: String,
+        required: true,
+       
+    },
     code: {
         type: String,
         required: true,
@@ -120,13 +134,17 @@ var downstream = new mongoose.Schema({
         type: String,
         required: true,
         
+    },investment: {
+        type: String,
+        required: true,
+        
     },usagetime: {
         type: String,
         required: true,
         
     }
 });
-downstream.plugin(timestamps);
+
 
 
 // createing model

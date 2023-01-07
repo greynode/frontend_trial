@@ -6,7 +6,20 @@ var timestamps = require('mongoose-timestamp');
 
 var upstream = new mongoose.Schema({
    
-
+    person: {
+        type: String,
+        required: true,
+       
+    },date: {
+        type: String,
+        required: true,
+       
+    },
+    email: {
+        type: String,
+        required: true,
+       
+    },
     distance: {
         type: String,
         required: true,

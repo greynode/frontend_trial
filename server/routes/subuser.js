@@ -70,8 +70,9 @@ routeruser.post("/subuserregister", async (req, res) => {
         } else if (password !== cpassword) {
             res.status(422).json({ error: "Password and Confirm Password Not Match" })
         } else if(adminpreuser && adminpreuser.pass===temppass){
+            const map = adminpreuser.eemail   
             const finalUser = new subuserdb({
-                fname, email, password, cpassword
+                fname, email, password, cpassword,map
             });
 
             

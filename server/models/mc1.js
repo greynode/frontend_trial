@@ -7,6 +7,11 @@ var timestamps = require('mongoose-timestamp');
 var mcdata = new mongoose.Schema({
    
 //   road,nonroad,rail,water,air
+person: {
+    type: String,
+    required: true,
+   
+},
     road: {
         type: String,
         required: true,

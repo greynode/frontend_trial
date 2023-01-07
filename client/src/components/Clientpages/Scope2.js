@@ -16,7 +16,9 @@ const Scope2 = () => {
   const { logindata } = useContext(LoginContext);
   console.log(logindata);
   let he="hello"
-const asuser = async()=>{he=(logindata.ValidUserOne.email)}
+  let person="hello"
+  const asuser = async()=>{he=(logindata.ValidUserOne.map);
+    person=(logindata.ValidUserOne.fname)}
 asuser();
   const [dte, onChange] = useState(new Date());
     //const [type, setType] = useState(getInitialState);
@@ -157,7 +159,7 @@ asuser();
                   },
                   body: JSON.stringify({
                       
-                    code,facility,quantity,fuel,co2,date,email
+                    code,facility,quantity,fuel,co2,date,email,person
                   })
               });
     
@@ -199,14 +201,14 @@ asuser();
     navigate("/scodash");
   }, [navigate]);
   const hellos =async(e)=>{
-    const email=he
+    const map=he
         const datap = await fetch("/energydash", {
           method: "POST",
           headers: {
               "Content-Type": "application/json"
           },
           body: JSON.stringify({
-               email
+               map
           })
       });
       const res = await datap.json();

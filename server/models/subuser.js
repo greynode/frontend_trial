@@ -26,6 +26,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         minlength: 6
+    },map:{
+        type: String,
+        required: true
+    
     },
     cpassword: {
         type: String,

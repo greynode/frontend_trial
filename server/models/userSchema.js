@@ -32,6 +32,11 @@ const userSchema = new mongoose.Schema({
         required: true,
         minlength: 6
     },
+    map: {
+        type: String,
+        required: true,
+       
+    },
     tokens: [
         {
             token: {

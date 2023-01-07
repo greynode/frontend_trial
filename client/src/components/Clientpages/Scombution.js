@@ -16,7 +16,9 @@ const Scomp = () =>{
   const { logindata } = useContext(LoginContext);
   console.log(logindata);
   let he="hello"
-const asuser = async()=>{he=(logindata.ValidUserOne.email)}
+  let person="hello"
+const asuser = async()=>{he=(logindata.ValidUserOne.map);
+  person=(logindata.ValidUserOne.fname)}
 
 asuser();
 
@@ -1508,7 +1510,7 @@ else{
               },
               body: JSON.stringify({
                   
-                code,facility,quantity,type,weight,fuel,co2,ch4,no2,date,email
+                code,facility,quantity,type,weight,fuel,co2,ch4,no2,date,email,person
               })
           });
 
@@ -1540,14 +1542,14 @@ else{
           
   }}
   const hellos =async(e)=>{
-const email=he
+const map=he
     const datap = await fetch("/getstation", {
       method: "POST",
       headers: {
           "Content-Type": "application/json"
       },
       body: JSON.stringify({
-           email
+           map
       })
   });
   const res = await datap.json();
@@ -1751,7 +1753,7 @@ setCalculation(() => count * 2);
       <h4 className="facility">{`Facility `}</h4>
       <h4 className="fuel">Fuel</h4>
       <h4 className="dat">SI Unit</h4>
-      <Button className="rectangle-button" variant="primary" onClick={addCompanydata}>
+      <Button className="rectangle-buttons" variant="primary" onClick={addCompanydata}>
         Add Data
       </Button>
       <a className="view-data" onClick={onAddDataClick}>

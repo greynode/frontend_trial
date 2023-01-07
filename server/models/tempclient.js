@@ -23,7 +23,7 @@ var TempclientSchema = new mongoose.Schema({
     }
     ,
     active: {
-        type: Boolean,
+        type: String,
         required: true,
         
     }

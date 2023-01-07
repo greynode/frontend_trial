@@ -4,7 +4,11 @@ const mongoose = require("mongoose");
 
 
 var mobileSchema = new mongoose.Schema({
-   
+    person: {
+        type: String,
+        required: true,
+       
+    },
     mode:{
         type: String,
         required: true,

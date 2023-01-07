@@ -5,7 +5,11 @@ const mongoose = require("mongoose");
 
 var mobiledistance = new mongoose.Schema({
    
-
+    person: {
+        type: String,
+        required: true,
+       
+    },
     code: {
         type: String,
         required: true,

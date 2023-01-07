@@ -16,7 +16,9 @@ const Scomp = () =>{
   const { logindata } = useContext(LoginContext);
   console.log(logindata);
   let he="hello"
-const asuser = async()=>{he=(logindata.ValidUserOne.email)}
+  let person="hello"
+  const asuser = async()=>{he=(logindata.ValidUserOne.map);
+    person=(logindata.ValidUserOne.fname)}
 
 asuser();
 
@@ -96,7 +98,7 @@ const [inpval, setInpval] = useState({
               },
               body: JSON.stringify({
                   
-                code,facility,quantity,fuel,date,email
+                code,facility,quantity,fuel,date,email,person
               })
           });
 
@@ -126,14 +128,14 @@ const [inpval, setInpval] = useState({
           
   }}
   const hellos =async(e)=>{
-const email=he
+const map=he
     const datap = await fetch("/getstation", {
       method: "POST",
       headers: {
           "Content-Type": "application/json"
       },
       body: JSON.stringify({
-           email
+           map
       })
   });
   const res = await datap.json();

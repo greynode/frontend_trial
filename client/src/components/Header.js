@@ -24,6 +24,9 @@ const Header = () => {
 
     const logoutuser = async () => {
         let token = localStorage.getItem("usersdatatoken");
+        let stoken = localStorage.getItem("susersdatatoken");
+        let atoken = localStorage.getItem("ausersdatatoken");
+
 
         const res = await fetch("/logout", {
             method: "GET",
@@ -36,20 +39,57 @@ const Header = () => {
         });
 
         const data = await res.json();
-        console.log(data);
+       //subuser
+       
+       const sres = await fetch("/subuserlogout", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": stoken,
+            Accept: "application/json"
+        },
+        credentials: "include"
+    });
+
+    const sdata = await sres.json();
+    //sadmin
+    
+    const ares = await fetch("/superlogout", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": atoken,
+            Accept: "application/json"
+        },
+        credentials: "include"
+    });
+
+    const adata = await ares.json();
 
         if (data.status === 201) {
             console.log("use logout");
             localStorage.removeItem("usersdatatoken");
             setLoginData(false)
             history("/");
-        } else {
+        }
+        else if(sdata.status === 201){
+            console.log("use logout");
+            localStorage.removeItem("susersdatatoken");
+            setLoginData(false)
+            history("/");
+        } 
+        else if(adata.status === 201){
+            console.log("use logout");
+            localStorage.removeItem("ausersdatatoken");
+            setLoginData(false)
+            history("/");
+        }else {
             console.log("error");
         }
     }
 
     const goDash = () => {
-        history("/comp")
+        history("/")
     }
 
     const goError = () => {

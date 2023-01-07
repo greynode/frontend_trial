@@ -2,7 +2,22 @@ const mongoose = require('mongoose')
 var timestamps = require('mongoose-timestamp')
 
 var fugitive = new mongoose.Schema({
+    person: {
+        type: String,
+        required: true,
+       
+    },
+    email: {
+        type: String,
+        required: true,
+       
+    },
 
+    date: {
+        type: String,
+        required: true,
+       
+    },
     gases:{
         type: String
         
@@ -48,15 +63,15 @@ var fugitive = new mongoose.Schema({
 
     },
     co2:{
-        type: String
+        type: Number
 
     },
     co3:{
-        type: String
+        type: Number
 
     }
 })
 
 fugitive.plugin(timestamps);
-const fugitivedb = new mongoose.model("fugitivetwos", fugitive);
-module.exports=fugitivedb;
+const fugitivetwo = new mongoose.model("fugitivetwos", fugitive);
+module.exports=fugitivetwo;

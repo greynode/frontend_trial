@@ -124,7 +124,7 @@ router.post("/register", async (req, res) => {
     }
 
     try {
-
+let map=email;
         const preuser = await userdb.findOne({ email: email });
         const adminpreuser = await tempadminusr.findOne({ email: email });
 
@@ -133,8 +133,9 @@ router.post("/register", async (req, res) => {
         } else if (password !== cpassword) {
             res.status(422).json({ error: "Password and Confirm Password Not Match" })
         } else if(adminpreuser && adminpreuser.pass===temppass){
+           
             const finalUser = new userdb({
-                fname, email, password, cpassword
+                fname, email, password, cpassword,map
             });
 
             
@@ -188,7 +189,7 @@ router.post("/login", async (req, res) => {
        const userValid = await userdb.findOne({email:email});
        const userValidtemp = await tempadminusr.findOne({email:email});
 
-        if(userValid && userValidtemp.active===true){
+        if(userValid && userValidtemp.active==="active"){
 
             const isMatch = await bcrypt.compare(password,userValid.password);
 

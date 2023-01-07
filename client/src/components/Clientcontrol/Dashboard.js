@@ -87,7 +87,10 @@ const Dashboard = () => {
         <div id ="hello" width="50%" margin="auto" padding="10px">
      
         <Link to="/Subuseradd">
-          <button id="bu">Demo route</button>
+          <button id="bu">Subusr add</button>
+        </Link>
+        <Link to="/client">
+          <button id="bu">client add</button>
         </Link>
        
         <Link to="/demo">
@@ -139,8 +142,8 @@ const Dashboard = () => {
         <Link to="/fugdash">
           <button id="bu">Fugitive emission dash</button>
         </Link>
-        <Link to="/scope3">
-          <button id="bu">Scope3 </button>
+        <Link to="/franchise">
+          <button id="bu">Franchise </button>
         </Link>
         <Link to="/scope3dash">
           <button id="bu">Scope3 dash</button>

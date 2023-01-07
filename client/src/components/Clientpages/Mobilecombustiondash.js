@@ -10,7 +10,9 @@ const Home1View = () => {
   const { logindata } = useContext(LoginContext);
   console.log(logindata);
   let he="hello"
-const asuser = async()=>{he=(logindata.ValidUserOne.email)}
+
+  const asuser = async()=>{he=(logindata.ValidUserOne.map);
+   }
 
 asuser();
 
@@ -20,14 +22,15 @@ asuser();
     navigate("/mobilecombustion");
   }, [navigate]);
   const hellos =async(e)=>{
-    const email=he
+    const map=he
+    
         const datap = await fetch("/getmobile", {
           method: "POST",
           headers: {
               "Content-Type": "application/json"
           },
           body: JSON.stringify({
-               email
+               map
           })
       });
       const res = await datap.json();

@@ -4,7 +4,11 @@ const mongoose = require("mongoose");
 
 
 var stationarySchema = new mongoose.Schema({
-   
+    person: {
+        type: String,
+        required: true,
+       
+    },  
 email:{
     type: String,
     required: true
@@ -15,6 +19,10 @@ email:{
        
     },
     facility: {
+        type: String,
+        required: true,
+        
+    }, person: {
         type: String,
         required: true,
         

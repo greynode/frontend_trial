@@ -2,7 +2,11 @@ const mongoose = require("mongoose");
 
 
 var Scope2energy = new mongoose.Schema({
-   
+    person: {
+        type: String,
+        required: true,
+       
+    },  
 email:{
     type:String
 },

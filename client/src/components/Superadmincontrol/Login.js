@@ -67,7 +67,7 @@ const Superlogin = () => {
 
             if(res.status === 201){
                 localStorage.setItem("ausersdatatoken",res.result.token);
-                history("/dash")
+                history("/superdash")
                 setInpval({...inpval,email:"",password:""});
             }else{
                 toast.error("Invalid Credentials", {

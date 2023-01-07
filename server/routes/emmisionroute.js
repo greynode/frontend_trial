@@ -12,12 +12,13 @@ const scope3goodsdb=require("../models/scope3goods")
 const downstreamdb=require("../models/downstream")
 const upstreamdb=require("../models/upstream");
 const capitaldb = require("../models/capitalgoods");
-const fugitivedb= require("../models/fugitive2");
+
 const processdb = require("../models/process");
+const fugitivetwo = require("../models/fugitive2");
 //process
 routerstation.post("/process", async (req, res) => {
 
-    const { code,facility,quantity,fuel,email,date} = req.body;
+    const { code,facility,quantity,fuel,email,date,person} = req.body;
 
    
 
@@ -26,7 +27,7 @@ routerstation.post("/process", async (req, res) => {
     
     
             const finalUser = new processdb({
-                code,facility,quantity,fuel,email,date
+                code,facility,quantity,fuel,email,date,person
             });
 
             
@@ -45,15 +46,15 @@ routerstation.post("/process", async (req, res) => {
 });
 routerstation.post("/getprocess", async (req, res) => {
 
-    const { email} = req.body;
+    const { map} = req.body;
 
-    if ( !email ) {
+    if ( !map ) {
         res.status(422).json({ error: "nomatch" })
     }
 
   else{
    
-        const usr = await processdb.find({email:email});
+        const usr = await processdb.find({map:map});
             
       res.json(usr)
   }
@@ -61,15 +62,15 @@ routerstation.post("/getprocess", async (req, res) => {
 //getstationary
 routerstation.post("/getstation", async (req, res) => {
 
-    const { email} = req.body;
+    const { map} = req.body;
 
-    if ( !email ) {
+    if ( !map ) {
         res.status(422).json({ error: "nomatch" })
     }
 
   else{
    
-        const usr = await stationdb.find({email:email});
+        const usr = await stationdb.find({map:map});
             
       res.json(usr)
   }
@@ -77,7 +78,7 @@ routerstation.post("/getstation", async (req, res) => {
 //stationary
 routerstation.post("/scomp", async (req, res) => {
 
-    const { code,facility,quantity,type,weight,fuel,co2,ch4,no2,email,date} = req.body;
+    const { code,facility,quantity,type,weight,fuel,co2,ch4,no2,email,date,person} = req.body;
 
    
 
@@ -86,7 +87,7 @@ routerstation.post("/scomp", async (req, res) => {
     
     
             const finalUser = new stationdb({
-                code,facility,quantity,type,weight,fuel,co2,ch4,no2,email,date
+                code,facility,quantity,type,weight,fuel,co2,ch4,no2,email,date,person
             });
 
             
@@ -104,23 +105,23 @@ routerstation.post("/scomp", async (req, res) => {
 
 });
 
-routerstation.get('/scompp', async (req, res) => {
-	const usr = await stationdb.find();
-    // console.log(usr[0].quantity);
-    // for(i=0;usr.length>i;i++){
-    //     console.log("hello");
+// routerstation.get('/scompp', async (req, res) => {
+// 	const usr = await stationdb.find();
+//     // console.log(usr[0].quantity);
+//     // for(i=0;usr.length>i;i++){
+//     //     console.log("hello");
      
     
-    // if(usr[i].quantity<10000){
-    //     console.log("yes");
-    // }}
+//     // if(usr[i].quantity<10000){
+//     //     console.log("yes");
+//     // }}
 
-	res.json(usr);
-});
+// 	res.json(usr);
+// });
 //mobile 
 routerstation.post("/mcomp", async (req, res) => {
 
-    const { code,facility,quantity,literdistance,fuel,co2,category,subcat,mode,date,email ,air,weight} = req.body;
+    const { code,facility,quantity,literdistance,fuel,co2,category,subcat,mode,date,email ,air,weight,person} = req.body;
 
    
 
@@ -129,7 +130,7 @@ routerstation.post("/mcomp", async (req, res) => {
     
     
             const saves = new mobiledb({
-                code,facility,quantity,literdistance,fuel,co2,category,subcat,mode,date,email,air,weight
+                code,facility,quantity,literdistance,fuel,co2,category,subcat,mode,date,email,air,weight,person
             });
 
             
@@ -149,15 +150,15 @@ routerstation.post("/mcomp", async (req, res) => {
 
 routerstation.post("/getmobile", async (req, res) => {
 
-    const { email} = req.body;
+    const { map} = req.body;
 
-    if ( !email ) {
+    if ( !map ) {
         res.status(422).json({ error: "nomatch" })
     }
 
   else{
    
-        const usr = await mobiledb.find({email:email});
+        const usr = await mobiledb.find({map:map});
             
       res.json(usr)
   }
@@ -240,7 +241,7 @@ routerstation.post("/getmobile", async (req, res) => {
 
 routerstation.post("/energy", async (req, res) => {
 
-    const { code,facility,fuel,co2,quantity,date,email} = req.body;
+    const { code,facility,fuel,co2,quantity,date,email,person} = req.body;
 
    
 
@@ -249,7 +250,7 @@ routerstation.post("/energy", async (req, res) => {
     
     
             const saves = new energydb({
-               email, code,facility,fuel,co2,quantity,date
+               email, code,facility,fuel,co2,quantity,date,person
             });
 
             
@@ -268,15 +269,15 @@ routerstation.post("/energy", async (req, res) => {
 });
 routerstation.post("/energydash", async (req, res) => {
 
-    const { email} = req.body;
+    const { map} = req.body;
 
-    if ( !email ) {
+    if ( !map ) {
         res.status(422).json({ error: "nomatch" })
     }
 
   else{
    
-        const usr = await energydb.find({email:email});
+        const usr = await energydb.find({map:map});
             
       res.json(usr)
   }
@@ -286,7 +287,7 @@ routerstation.post("/energydash", async (req, res) => {
 
 routerstation.post("/mc1", async (req, res) => {
 
-    const {    road,nonroad,rail,water,air} = req.body;
+    const {    road,nonroad,rail,water,air,person} = req.body;
 
    
 
@@ -295,7 +296,7 @@ routerstation.post("/mc1", async (req, res) => {
     
     
             const saves = new Mcdb({
-                road,nonroad,rail,water,air
+                road,nonroad,rail,water,air,person
             });
 
             
@@ -322,7 +323,7 @@ routerstation.get('/mcdash', async (req, res) => {
 
 routerstation.post("/fug", async (req, res) => {
 
-    const {      code,facility,i,f,g,h,j,refrigerant,refrigeration,co2,date,email} = req.body;
+    const {      code,facility,i,f,g,h,j,refrigerant,refrigeration,co2,date,email,person} = req.body;
 
    
 
@@ -331,7 +332,7 @@ routerstation.post("/fug", async (req, res) => {
     
     
             const saves = new fugitiveDB({
-                code,facility,i,f,g,h,j,refrigerant,refrigeration,co2,date,email
+                code,facility,i,f,g,h,j,refrigerant,refrigeration,co2,date,email,person
             });
 
             
@@ -350,23 +351,23 @@ routerstation.post("/fug", async (req, res) => {
 });
 routerstation.post("/fugdash", async (req, res) => {
 
-    const { email} = req.body;
+    const { map} = req.body;
 
-    if ( !email ) {
+    if ( !map ) {
         res.status(422).json({ error: "nomatch" })
     }
 
   else{
    
-        const usr = await fugitiveDB.find({email:email});
+        const usr = await fugitiveDB.find({map:map});
             
       res.json(usr)
   }
 });
 //scope3
-routerstation.post("/scope3", async (req, res) => {
+routerstation.post("/franchise", async (req, res) => {
 
-    const {    name,product,time,disposal,asset,period,franchisename,franchiseperiod,investment,location  } = req.body;
+    const {    name,product,time,disposal,asset,period,franchisename,franchiseperiod,investment,location,person ,email,date } = req.body;
 
    
 
@@ -375,7 +376,7 @@ routerstation.post("/scope3", async (req, res) => {
     
     
             const saves = new scope3db({
-                name,product,time,disposal,asset,period,franchisename,franchiseperiod,investment,location
+                name,product,time,disposal,asset,period,franchisename,franchiseperiod,investment,location,person,email,date
             });
 
             
@@ -392,16 +393,26 @@ routerstation.post("/scope3", async (req, res) => {
     }
 
 });
-routerstation.get('/scope3dash', async (req, res) => {
-	const usr = await scope3db.find();
+routerstation.post('/franchisedash', async (req, res) => {
+	
+    const { map} = req.body;
 
+    if ( !map ) {
+        res.status(422).json({ error: "nomatch" })
+    }
 
-	res.json(usr);
+  else{
+   
+        const usr = await scope3db.find({map:map});
+            
+      res.json(usr)
+  }
 });
 //scope3goods
-routerstation.post("/scope3goods", async (req, res) => {
+routerstation.post("/goodsscope3", async (req, res) => {
 
-    const { period2,vendorlocation2,vendorname2,name2,code2,quantity,purchased,vendorlocation,vendorname,namegoods,codegoods,serviceavailed  } = req.body;
+    const { period2,person,vendorlocation2,vendorname2,name2,code2,quantity,
+        purchased,vendorlocation,vendorname,namegoods,codegoods,serviceavailed  ,email,date} = req.body;
 
    
 
@@ -410,7 +421,8 @@ routerstation.post("/scope3goods", async (req, res) => {
     
     
             const saves = new scope3goodsdb({
-                period2,vendorlocation2,vendorname2,name2,code2,quantity,purchased,vendorlocation,vendorname,namegoods,codegoods,serviceavailed
+                period2,person,vendorlocation2,vendorname2,name2,code2,quantity,purchased,
+                vendorlocation,vendorname,namegoods,codegoods,serviceavailed,email,date
             });
 
             
@@ -427,18 +439,26 @@ routerstation.post("/scope3goods", async (req, res) => {
     }
 
 });
-routerstation.get('/scope3goodsdash', async (req, res) => {
-	const usr = await scope3goodsdb.find();
+routerstation.post('/goodsscope3dash', async (req, res) => {
+    const { map} = req.body;
 
+    if ( !map ) {
+        res.status(422).json({ error: "nomatch" })
+    }
 
-	res.json(usr);
+  else{
+   
+        const usr = await scope3goodsdb.find({map:map});
+            
+      res.json(usr)
+  }
 });
 //downstream
 routerstation.post("/downstream", async (req, res) => {
 
     const { distance,material,quantity,code,byername,byerlocation,facility,transport,vehicle,code2,byername2,byerlocation2,facility2
         ,finalproduct,quantity2,process,material2,productname,usagetime,productname2,disposal,lease,namefranchise,location
-        ,franchiseperiod,location2    } = req.body;
+        ,franchiseperiod,location2 ,person,email,date ,investment  } = req.body;
 
    
 
@@ -449,7 +469,7 @@ routerstation.post("/downstream", async (req, res) => {
             const saves = new downstreamdb({
                 distance,material,quantity,code,byername,byerlocation,facility,transport,vehicle,code2,byername2,byerlocation2,facility2
                 ,finalproduct,quantity2,process,material2,productname,usagetime,productname2,disposal,lease,namefranchise,location
-                ,franchiseperiod,location2          });
+                ,franchiseperiod,location2  ,person  ,email,date  ,investment    });
 
             
 
@@ -465,18 +485,26 @@ routerstation.post("/downstream", async (req, res) => {
     }
 
 });
-routerstation.get('/downstreamdash', async (req, res) => {
-	const usr = await downstreamdb.find();
+routerstation.post('/downdash', async (req, res) => {
+    const { map} = req.body;
 
+    if ( !map ) {
+        res.status(422).json({ error: "nomatch" })
+    }
 
-	res.json(usr);
+  else{
+   
+        const usr = await fugitiveDB.find({map:map});
+            
+      res.json(usr)
+  }
 });
 //upstream
 routerstation.post("/upstream", async (req, res) => {
 
-    const {  distance,material,quantity,code,byername,byerlocation,facility,transport,vehicle,facility2,code2,waste,dispose,quantity2,facility3,
+    const { date,email, distance,material,quantity,code,byername,byerlocation,facility,transport,vehicle,facility2,code2,waste,dispose,quantity2,facility3,
         code3,employeecode,employeename,from,to,employeecode2,employeename2,distance2,transport2,
-        vehicle2,facility4,code4,from2,to2,distance3,transport3,period,asset,vehicle3   } = req.body;
+        vehicle2,facility4,code4,from2,to2,distance3,transport3,period,asset,vehicle3,person   } = req.body;
 
    
 
@@ -487,7 +515,7 @@ routerstation.post("/upstream", async (req, res) => {
             const saves = new upstreamdb({
                 distance,material,quantity,code,byername,byerlocation,facility,transport,vehicle,facility2,code2,waste,dispose,quantity2,facility3,
                 code3,employeecode,employeename,from,to,employeecode2,employeename2,distance2,transport2,
-                vehicle2,facility4,code4,from2,to2,distance3,transport3,period,asset,vehicle3        });
+                vehicle2,facility4,code4,from2,to2,distance3,transport3,period,asset,vehicle3,email   ,person   ,date  });
 
             
 
@@ -503,17 +531,26 @@ routerstation.post("/upstream", async (req, res) => {
     }
 
 });
-routerstation.get('/upstreamdash', async (req, res) => {
-	const usr = await upstreamdb.find();
+routerstation.post("/upstreamdash", async (req, res) => {
 
+    const { map} = req.body;
 
-	res.json(usr);
+    if ( !map ) {
+        res.status(422).json({ error: "nomatch" })
+    }
+
+  else{
+   
+        const usr = await upstreamdb.find({map:map});
+            
+      res.json(usr)
+  }
 });
 //capital goods
 routerstation.post("/cap", async (req, res) => {
 
     const {  energy,employeename,employeecode,code3,facility3,vehicle2,transport2,quantity2,code2,facility2,
-        quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code  } = req.body;
+        quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code ,person,email,date } = req.body;
 
    
 
@@ -523,7 +560,7 @@ routerstation.post("/cap", async (req, res) => {
     
             const saves = new capitaldb({
                 energy,employeename,employeecode,code3,facility3,vehicle2,transport2,quantity2,code2,facility2,
-                quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code        });
+                quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code ,person  ,date,email     });
 
             
 
@@ -539,22 +576,30 @@ routerstation.post("/cap", async (req, res) => {
     }
 
 });
-routerstation.get('/capdash', async (req, res) => {
-	const usr = await capitaldb.find();
+routerstation.post('/capdash', async (req, res) => {
+    const { map} = req.body;
 
+    if ( !map ) {
+        res.status(422).json({ error: "nomatch" })
+    }
 
-	res.json(usr);
+  else{
+   
+        const usr = await capitaldb.find({map:map});
+            
+      res.json(usr)
+  }
 });
 //fugitive 2
 
 routerstation.post("/fugitive2",async(req,res) => {
     const { gases, code, facility, fuel, quantity, yesno, code2, 
-            facility2, fire, typegas, capacity, co2, co3} = req.body
+            facility2, fire, typegas, capacity, co2, co3,person,date,email} = req.body
 
 
-            const testdetail = new fugitivedb({
+            const testdetail = new fugitivetwo({
                 gases, code, facility, fuel, quantity, yesno, code2, 
-            facility2, fire, typegas, capacity, co2, co3 
+            facility2, fire, typegas, capacity, co2, co3 ,person,email,date
             });
 
             const data= await testdetail.save();
@@ -563,7 +608,20 @@ routerstation.post("/fugitive2",async(req,res) => {
         }
 );
 
-    
+routerstation.post('/fugdashtwo', async (req, res) => {
+    const { map} = req.body;
+
+    if ( !map ) {
+        res.status(422).json({ error: "nomatch" })
+    }
+
+  else{
+   
+        const usr = await fugitivetwo.find({email:map});
+            
+      res.json(usr)
+  }
+});  
 
 
 

@@ -17,7 +17,9 @@ const Fugitive = () =>{
     const { logindata } = useContext(LoginContext);
     console.log(logindata);
     let he="hello"
-  const asuser = async()=>{he=(logindata.ValidUserOne.email)}
+    let person="hello"
+    const asuser = async()=>{he=(logindata.ValidUserOne.map);
+        person=(logindata.ValidUserOne.fname)}
   
   asuser();
  
@@ -378,7 +380,7 @@ let co2=val
               },
               body: JSON.stringify({
                   
-                code,facility,i,f,g,h,j,refrigerant,refrigeration,co2,date,email
+                code,facility,i,f,g,h,j,refrigerant,refrigeration,co2,date,email,person
               })
           });
 
@@ -411,14 +413,14 @@ let co2=val
   }}
   
   const hellos =async(e)=>{
-    const email=he
+    const map=he
         const datap = await fetch("/fugdash", {
           method: "POST",
           headers: {
               "Content-Type": "application/json"
           },
           body: JSON.stringify({
-               email
+               map
           })
       });
       const res = await datap.json();
@@ -644,7 +646,7 @@ let co2=val
          <h4 className="fue">Type of Refregration Used</h4>
          <h4 className="fu">Refrigerant capacity of theTotal equipment</h4>
          <h4 className="dat">Amount of Refregerant Recovered from Retring Equipment</h4>
-         <Button className="rectangle-button" variant="primary" onClick={addCompanydata}>
+         <Button className="rectangle-buttons" variant="primary" onClick={addCompanydata}>
            Add Data
          </Button>
          <a className="view-dat" onClick={onAddDataClick}>

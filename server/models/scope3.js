@@ -1,13 +1,27 @@
 //name,product,time,disposal,asset,period,franchisename,franchiseperiod,investment,location
 const mongoose = require("mongoose");
-var timestamps = require('mongoose-timestamp');
+
 
 
 
 
 var Scope3energy = new mongoose.Schema({
+    email: {
+        type: String,
+        required: true,
+       
+    },
+    date: {
+        type: String,
+        required: true,
+       
+    },
    
-
+    person: {
+        type: String,
+        required: true,
+       
+    },
     name: {
         type: String,
         required: true,
@@ -58,10 +72,10 @@ var Scope3energy = new mongoose.Schema({
 
 
 });
-Scope3energy.plugin(timestamps);
+
 
 
 // createing model
-const scope3db = new mongoose.model("Scope3energys", Scope3energy);
+const scope3db = new mongoose.model("Scope3franchises", Scope3energy);
 
 module.exports = scope3db;

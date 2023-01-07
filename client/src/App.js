@@ -21,19 +21,19 @@ import Subuserhome from "./components/Subuserhome";
 
 
 import Scope2energy from "./components/Scope2energy";
-import Scope1dash from"./components/Scope2energydash";
+import Scope1dash from"./components/Scope2energydash"
 import Mc1 from "./components/Mc1";
 
 import Scope3 from "./components/Scope3";
 import Scope3dash from "./components/Scope3dash";
 import Scope3goods from "./components/Scope3goods";
 import Scope3goodsdash from "./components/scope3goodsdash";
-import Downstream from "./components/Downstream";
-import Upstream from "./components/Upstream";
-import Capitalgoods from "./components/Capitalgoods";
+import Downstream from "./components/Clientpages/Downstream";
+
+
 import Report from "./components/Report";
-import Fugitive2 from "./components/Fugitive2";
-import Subfirst from "./components/Subusrfirstlog";
+import Fugitive2 from "./components/Clientpages/Fugitivegas";
+
 import Superregister from "./components/Superadmincontrol/Register";
 import Superreset from "./components/Superadmincontrol/PasswordReset";
 import Superlogin from "./components/Superadmincontrol/Login";
@@ -73,6 +73,15 @@ import Subuserregister from "./components/Subusercontrol/Register";
 import Subuserlogin from "./components/Subusercontrol/Login";
 import Logins from "./components/Clientcontrol/Login";
 import Registers from "./components/Clientcontrol/Register";
+import Client from "./components/Superadmincontrol/Client";
+
+import Superdash from "./components/Superadmincontrol/Dashboard";
+
+import Subdash from "./components/Subusercontrol/Dashboard";
+import Upstream from "./components/Clientpages/Upstream";
+import Capitalgoods from "./components/Clientpages/Capitalgoods";
+import Franchise from "./components/Clientpages/Franchisescope3";
+import Goodsscope3 from "./components/Clientpages/Goodsscope3";
 
 function App() {
 
@@ -126,12 +135,12 @@ function App() {
     }else if(sdata.status == 201){
       console.log("user verify");
        setLoginData(sdata)
-      history("/dash");
+      history("/subdash");
       console.log("sub user");
     }else if(adata.status == 201){
       console.log("user verify");
       setLoginData(adata)
-      history("/dash");
+      history("/superdash");
       console.log("super user");
     }  else {
       console.log("user not valid ohh");
@@ -159,7 +168,9 @@ function App() {
               <Route path="/register" element={<Registers />} />
               <Route path="/subuserregister" element={<Subuserregister/>}/>
               <Route path="/sublogin" element={<Subuserlogin/>}/>
-             
+              <Route path="/subdash" element={<Subdash/>}/>
+              <Route path="/superdash" element={<Superdash/>}/>
+            
               <Route path="/dash" element={<Dashboard />} />
               <Route path="/password-reset" element={<PasswordReset />} />
               <Route path="/forgotpassword/:id/:token" element={<ForgotPassword />} />
@@ -176,16 +187,14 @@ function App() {
       
               <Route path="/mc" element={<Mc1/>}/>
           
-              <Route path="/scope3" element={<Scope3/>}/>
-              <Route path="/scope3dash" element={<Scope3dash/>}/>
-              <Route path="/scope3good" element={<Scope3goods/>}/>
-              <Route path="/scope3gooddas" element={<Scope3goodsdash/>}/>
+     
+       
               <Route path="/downstream" element={<Downstream/>}/>
               <Route path="/upstream" element={<Upstream/>}/>
               <Route path="/capital" element={<Capitalgoods/>}/>
               <Route path="/report" element={<Report/>}/>
               <Route path="/fugitivetwo" element={<Fugitive2/>}/>
-              <Route path="/subfirst" element={<Subfirst/>}/>
+           
               <Route path="/Superregister" element={<Superregister/>}/>
               <Route path="/Superreset" element={<Superreset/>}/>
               <Route path="/Superlogin" element={<Superlogin/>}/>
@@ -214,7 +223,12 @@ function App() {
     <Route path="/sco" element={<Scope2/>}/>
     <Route path="/scodash" element={<Scope2dash/>}/>
 
+    <Route path="/client" element={<Client/>}/>
+    <Route path="/franchise" element={<Franchise/>}/>
+    <Route path="/scope3good" element={<Goodsscope3/>}/>
 
+
+ 
 
                        
 

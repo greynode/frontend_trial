@@ -79,22 +79,42 @@ superouter.post("/adminaddusr", async (req, res) => {
     }
 
 });
+
 //rem subusr
 superouter.post("/adminremusr", async (req, res) => {
 
-    const { email ,pass,active } = req.body;
+    const { remail ,ractive } = req.body;
 
-    if ( !email || !pass|| !active ) {
+    if ( !remail  ) {
         res.status(422).json({ error: "fill all the details" })
     }
 
+ 
+
+       
+if(ractive==="remove"){
     try {
-
-        const preuser = await tempadminusr.findOne({ email: email });
-
+        
+        const usrr = await tempadminusr.findOne({ email: remail });
+        if(usrr){
+        const usr = await tempadminusr.findOneAndDelete({email:remail});
+        res.status(201).json({ status: 201, usr})
+  
+    }
+     else{
+        res.status(422).json({status:401,message:"user not exist"});
+     }
+   
+    } catch (error) {
+        res.send(error);
+       
+    }
+}else{ 
+    try {
+    const preuser = await tempadminusr.findOne({ email: remail });
         if (preuser) {
-            const users = await tempadminusr.updateMany({email:email},{
-                pass:pass,active:active});
+            const users = await tempadminusr.updateMany({email:remail},{
+                active:ractive});
         
 
             
@@ -112,9 +132,10 @@ superouter.post("/adminremusr", async (req, res) => {
     } catch (error) {
         res.status(201).json({status:201})
         console.log("success");
-    }
+    }}
 
 });
+
 // for user registration
 
 superouter.post("/superregister", async (req, res) => {
@@ -374,6 +395,11 @@ superouter.post("/addadmin", async (req, res) => {
         console.log("catch block error");
     }
 
+});
+superouter.get('/clist', async (req, res) => {
+	const usr = await tempadminusr.find();
+
+	res.json(usr);
 });
 
 

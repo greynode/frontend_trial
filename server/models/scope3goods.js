@@ -1,13 +1,27 @@
 //  period2,vendorlocation2,vendorname2,name2,code2,quantity,purchased,vendorlocation,vendorname,namegoods,codegoods
 const mongoose = require("mongoose");
-var timestamps = require('mongoose-timestamp');
+
 
 
 
 
 var Scope3goods = new mongoose.Schema({
+    email: {
+        type: String,
+        required: true,
+       
+    },
+    date: {
+        type: String,
+        required: true,
+       
+    },
    
-
+    person: {
+        type: String,
+        required: true,
+       
+    },
     period2: {
         type: String,
         required: true,
@@ -67,7 +81,7 @@ var Scope3goods = new mongoose.Schema({
 
 
 });
-Scope3goods.plugin(timestamps);
+
 
 
 // createing model

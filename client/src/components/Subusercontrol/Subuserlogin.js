@@ -92,10 +92,10 @@ const Subuserlogin = () =>{
           
           <h3 align="center">Subuser Login</h3>
           
-          <label>User  Email:</label>
+          <label>User  email:</label>
             <input
               type="text"
-              placeholder="enter the user email"
+              placeholder="enter the user eemail"
               name="email"
               onChange={setVal}
               value={inpval.email}

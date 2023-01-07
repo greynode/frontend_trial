@@ -17,7 +17,9 @@ const Mcomp = () =>{
     const { logindata } = useContext(LoginContext);
     console.log(logindata);
     let he="hello"
-  const asuser = async()=>{he=(logindata.ValidUserOne.email)}
+    let person="hello"
+    const asuser = async()=>{he=(logindata.ValidUserOne.map);
+      person=(logindata.ValidUserOne.fname)}
   
   asuser();
  
@@ -397,7 +399,7 @@ let date=(dte.toLocaleDateString());
               },
               body: JSON.stringify({
                   
-                code,facility,quantity,literdistance,fuel,co2,category,subcat,mode,date,email,air,weight
+                code,facility,quantity,literdistance,fuel,co2,category,subcat,mode,date,email,air,weight,person
               })
           });
 
@@ -433,14 +435,14 @@ let date=(dte.toLocaleDateString());
   }}
   
   const hellos =async(e)=>{
-    const email=he
+    const map=he
         const datap = await fetch("/getmobile", {
           method: "POST",
           headers: {
               "Content-Type": "application/json"
           },
           body: JSON.stringify({
-               email
+               map
           })
       });
       const res = await datap.json();
@@ -667,7 +669,7 @@ let date=(dte.toLocaleDateString());
       <h4 className="fue">Type of Transport</h4>
       <h4 className="fu">Weight</h4>
       <h4 className="dat">Input Type</h4>
-      <Button className="rectangle-button" variant="primary" onClick={addCompanydata}>
+      <Button className="rectangle-buttons" variant="primary" onClick={addCompanydata}>
         Add Data
       </Button>
       <a className="view-dat" onClick={onAddDataClick}>

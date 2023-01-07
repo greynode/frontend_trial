@@ -114,8 +114,8 @@ const Superregister = () => {
                             <input type="text" onChange={setVal} value={inpval.fname} name="fname" id="fname" placeholder='Enter Your Name' />
                         </div>
                         <div className="form_input">
-                            <label htmlFor="email">Email</label>
-                            <input type="email" onChange={setVal} value={inpval.email} name="email" id="email" placeholder='Enter Your Email Address' />
+                            <label htmlFor="email">Eemail</label>
+                            <input type="email" onChange={setVal} value={inpval.email} name="email" id="email" placeholder='Enter Your Eemail Address' />
                         </div>
                         <div className="form_input">
                             <label htmlFor="password">Password</label>
