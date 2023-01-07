@@ -1,4 +1,4 @@
-
+import Header from './Header';
 import { Form, Button } from "react-bootstrap";
 
 import React, { Component ,useCallback ,useState,useContext, useEffect} from 'react';
@@ -1599,7 +1599,7 @@ setCalculation(() => count * 2);
         alt=""
         src="../whatsapp-image-20221222-at-923-3@2x.png"
       />
-      <img className="ellipse-icon" alt="" src="../ellipse-9@2x.png" />
+    <div className="ellipse-icon">  <Header/></div>
       <img className="home1-add-child1" alt="" src="../ellipse-56.svg" />
       <img className="vector-icon" alt="" src="../vector-1.svg" />
       <img className="home1-add-child2" alt="" src="../vector-2.svg" />

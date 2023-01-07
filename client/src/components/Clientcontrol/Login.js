@@ -12,7 +12,7 @@ const Login = () => {
   // }, [navigate]);
 
   const onRegisterHereClick = useCallback(() => {
-    navigate("/clientregister");
+    navigate("/register");
   }, [navigate]);
   const [passShow, setPassShow] = useState(false);
 

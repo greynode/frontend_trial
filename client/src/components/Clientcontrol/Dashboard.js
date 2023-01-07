@@ -59,11 +59,11 @@ const Dashboard = () => {
             }else if(sdata.status == 201){
               console.log("user verify");
               setLoginData(sdata)
-              history("/dash");
+              history("/subdash");
             }else if(adata.status == 201){
               console.log("user verify");
               setLoginData(adata)
-              history("/dash");
+              history("/superdash");
             }  else {
              
               //  history("/")
@@ -83,31 +83,21 @@ const Dashboard = () => {
         <>  <Routes> 
           <Route path="/demo" element={<Fugi/>} />
         </Routes>
-       <Header/>
+
         <div id ="hello" width="50%" margin="auto" padding="10px">
      
         <Link to="/Subuseradd">
           <button id="bu">Subusr add</button>
         </Link>
-        <Link to="/client">
-          <button id="bu">client add</button>
+        <Link to="/rec">
+          <button id="bu">Recommended </button>
         </Link>
        
-        <Link to="/demo">
-          <button id="bu">demo</button>
-        </Link>
-       
-        
-        <Link to="/sublogin">
-          <button id="bu">Subuser login</button>
-        </Link>
        
         <Link to="/question">
           <button id="bu">Measurement questions</button>
         </Link>
-        <Link to="/subhome">
-          <button id="bu">subuser home page</button>
-        </Link>
+      
         <Link to="/profile">
           <button id="bu">Profile</button>
         </Link>
@@ -173,9 +163,7 @@ const Dashboard = () => {
        <Link to="/subfirst">
           <button id="bu"> sublogin</button>
         </Link>
-        <Link to="/clientadd">
-          <button id="bu"> client add</button>
-        </Link>
+     
       
         <Link to="/companyadd">
           <button id="bu"> company add</button>

@@ -3,6 +3,7 @@ import { useCallback,useState,useContext,useEffect } from "react";
 import { Button, Icon } from "@mui/material";
 import styles from "./Profile.module.css";
 import { LoginContext } from "../ContextProvider/Context";
+import Header from './Header';
 const Profile = () => {
   
   const [usrs, setTodoss] = useState([]);
@@ -12,7 +13,7 @@ const Profile = () => {
   const { logindata } = useContext(LoginContext);
   console.log(logindata);
   let he="hello"
-const asuser = async()=>{he=(logindata.ValidUserOne.email)}
+const asuser = async()=>{he=(logindata.ValidUserOne.map)}
 
 asuser();
 
@@ -116,7 +117,7 @@ console.log(usr);
         alt=""
         src="../whatsapp-image-20221222-at-923-3@2x.png"
       />
-      <img className={styles.profileChild2} alt="" src="../ellipse-68@2x.png" />
+<div className={styles.profileChild2}>  <Header/></div>
       <img className={styles.profileChild3} alt="" src="../ellipse-56.svg" />
       <a className={styles.measure}>Measure</a>
       <a className={styles.reduce}>Reduce</a>
@@ -149,7 +150,7 @@ console.log(usr);
       >
         Edit Profile
       </Button>
-      <img className={styles.profileChild2} alt="" src="../ellipse-68@2x.png" />
+      
       <img className={styles.money1Icon} alt="" src="../money-1@2x.png" />
       <img className={styles.gps1Icon} alt="" src="../gps-1@2x.png" />
       <img className={styles.phone1Icon} alt="" src="../phone-1@2x.png" />
@@ -162,7 +163,7 @@ console.log(usr);
       {usr.length > 0  ? usr.map
     (hello => (
         <tr>
-        <img className={styles.profileChild2} alt="" src="../ellipse-68@2x.png" />
+     
         <h4>{i=i+1}.{hello.email}</h4>
         </tr>
         )) : (

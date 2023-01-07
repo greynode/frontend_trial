@@ -2,7 +2,7 @@ import { useCallback ,useEffect,useState,useContext} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Home1View.css";
 import { LoginContext } from "../ContextProvider/Context";
-
+import Header from './Header';
 const Home1View = () => {
   const [usrs, setTodoss] = useState([]);
   const [count, setCount] = useState(0);
@@ -61,7 +61,7 @@ let i=0;
         alt=""
         src="../whatsapp-image-20221222-at-923-3@2x.png"
       />
-      <img className="ellipse-icon" alt="" src="../ellipse-9@2x.png" />
+   <div className="ellipse-icon">  <Header/></div>
       <img className="home1-view-child1" alt="" src="../ellipse-56.svg" />
       <img className="vector-icon" alt="" src="../vector-1.svg" />
       <img className="home1-view-child2" alt="" src="../vector-2.svg" />

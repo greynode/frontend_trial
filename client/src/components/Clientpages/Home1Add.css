@@ -33,11 +33,32 @@ top: 1290px;
   top: 1470px;
   left: 640px;
 }
-
-.home1-hello {
-  
-
+.t1{
+  position: absolute;
+  top: 1550px;
+  left: 640px;
 }
+.t2{
+  position: absolute;
+  top: 1550px;
+  left: 157px;
+}
+.t3{
+  position: absolute;
+  top: 1650px;
+  left: 640px;
+}
+.t4{
+  position: absolute;
+  top: 1750px;
+  left: 157px;
+}
+.t5{
+  position: absolute;
+  top: 1650px;
+  left: 157px;
+}
+
 .home1-add-child,
 .home1-add-item {
   position: absolute;
@@ -779,4 +800,91 @@ width: 198px;
  left: 907px;
  color: black;
 
-}               
+}
+.space{
+  position: absolute;
+  top: 1900px;
+}  
+.recom{
+  position: absolute;
+  /* left: 500px; */
+  margin: auto;
+  border-radius: 10px;
+  align-self: center;
+  padding:12%;
+  
+}
+.rectan{
+  
+position: absolute;
+width: 1194px;
+height: 85px;
+left: 124px;
+top: 21px;
+
+background-color: #FFFFFF;
+box-shadow: 2px 1px 6px rgba(0, 0, 0, 0.25);
+border-radius: 16px;
+}
+.whatsappImage20221222At9 {
+  position: absolute;
+  top: 35px;
+  left: 152px;
+  width: 209px;
+  height: 65px;
+  object-fit: cover;
+}
+.subuserPageInner{
+  position: absolute;
+top: 35px;
+left: 152px;
+width: 209px;
+height: 65px;
+object-fit: cover;
+}
+.subuserPageInner{
+  left: 1230px;
+  width: 58px;
+  height: 58px;
+  cursor: pointer;
+}
+.dashboard,
+.measure,
+.offset,
+.reduce {
+text-decoration: none;
+position: absolute;
+top: 53px;
+left: 461px;
+font-size: 20px;
+font-weight: 600;
+font-family: Montserrat;
+color: #000;
+display: inline-block;
+width: 106px;
+height: 31px;
+}
+.dashboard,
+.offset,
+.reduce {
+left: 645px;
+}
+.dashboard,
+.offset {
+left: 823px;
+}
+.dashboard {
+left: 983px;
+width: 140px;
+}
+.thank{
+  font-size: small;
+}
+.comp{
+ position: absolute;
+ top: 200px;
+ left: 10%;
+ border-radius: 15px;
+  width:80%;
+  background-color: white;
+}             

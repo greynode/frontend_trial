@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import DatePicker from 'react-date-picker';
 import { LoginContext } from "../ContextProvider/Context";
 import { NavLink,useNavigate} from "react-router-dom"
-
+import Header from './Header';
 
 
 const Scope2 = () => {
@@ -239,12 +239,7 @@ setCalculation(() => count * 2);
         alt=""
         src="../whatsapp-image-20221222-at-923-3@2x.png"
       />
-      <img
-        className={scope.ellipseIcon}
-        alt=""
-        src="../ellipse-9@2x.png"
-        onClick={onEllipseImageClick}
-      />
+      <div   className={scope.ellipseIcon}>  <Header/></div>
       <img className={scope.scope2Child1} alt="" src="../ellipse-56.svg" />
       <img className={scope.vectorIcon} alt="" src="../vector-1.svg" />
       <img className={scope.scope2Child2} alt="" src="../vector-2.svg" />

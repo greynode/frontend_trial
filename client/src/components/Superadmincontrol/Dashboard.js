@@ -60,7 +60,7 @@ const Dashboard = () => {
             }else if(sdata.status == 201){
               console.log("user verify");
               setLoginData(sdata)
-              history("/dash");
+              history("/subdash");
             }else if(adata.status == 201){
               console.log("user verify");
               setLoginData(adata)
@@ -84,18 +84,16 @@ const Dashboard = () => {
         <>  <Routes> 
           <Route path="/demo" element={<Clientusradd/>} />
         </Routes>
-       <Header/>
+   
         <div id ="hello" width="50%" margin="auto" padding="10px">
      
         <Link to="/Subuseradd">
           <button id="bu">Subusr add</button>
         </Link>
-        <Link to="/client">
-          <button id="bu">client add</button>
-        </Link>
+      
        
         <Link to="/demo">
-          <button id="bu">demo</button>
+          <button id="bu">Clientadd</button>
         </Link>
        
       

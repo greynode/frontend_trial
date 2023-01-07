@@ -9,6 +9,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { LoginContext } from "../ContextProvider/Context";
 import "./Home1Add.css";
 import DatePicker from 'react-date-picker';
+import Header from './Header';
 const Mcomp = () =>{
    const [dte, onChange] = useState(new Date());
     const [usrs, setTodoss] = useState([]);
@@ -34,7 +35,28 @@ const Mcomp = () =>{
   const [mode, setMode] = useState("null");
   const [air, setair] = useState("null");
  
+  const [rail, setrail] = useState("null");
+  const [road, setroad] = useState("null");
+  const [water, setwater] = useState("null");
+  const [nonroad, setnonroad] = useState("null");
+  const [air2, setair2] = useState("null");
+
+
+
+ 
   
+  
+
+  const setValrail = (e) => {
+    setrail(e.target.value)}
+    const setValair2 = (e) => {
+        setair2(e.target.value)}
+        const setValroad = (e) => {
+            setroad(e.target.value)}
+            const setValnonroad = (e) => {
+                setnonroad(e.target.value)}
+                const setValwater = (e) => {
+                    setwater(e.target.value)}
   
 const [inpval, setInpval] = useState({
      
@@ -399,7 +421,7 @@ let date=(dte.toLocaleDateString());
               },
               body: JSON.stringify({
                   
-                code,facility,quantity,literdistance,fuel,co2,category,subcat,mode,date,email,air,weight,person
+                code,facility,quantity,literdistance,fuel,co2,category,subcat,mode,date,email,air,weight,person,road,nonroad,rail,water,air2
               })
           });
 
@@ -484,7 +506,7 @@ let date=(dte.toLocaleDateString());
         alt=""
         src="../whatsapp-image-20221222-at-923-3@2x.png"
       />
-      <img className="ellipse-icon" alt="" src="../ellipse-9@2x.png" />
+   <div className="ellipse-icon">  <Header/></div>
       <img className="home1-add-child1" alt="" src="../ellipse-56.svg" />
       <img className="vector-icon" alt="" src="../vector-1.svg" />
       <img className="home1-add-child2" alt="" src="../vector-2.svg" />
@@ -633,9 +655,9 @@ let date=(dte.toLocaleDateString());
       </select>
     </div>
      
-   
+   <div className="space">.</div>
  
-      <h2 className="stationary-combustion1">Mobile Combustion</h2>
+      <h4 className="stationary-combustion1">Mobile Combustion</h4>
       <h4 className="emission-s">Category</h4>
       <Form.Group className="wrapper2">
         <Form.Control  type="text"
@@ -664,6 +686,84 @@ let date=(dte.toLocaleDateString());
               value={inpval.facility}
               id="pass" />
       </Form.Group>
+     
+           
+
+             <div className="t1"> 
+             <h4 >Road:</h4>
+
+      <select value={road} onChange={setValroad} className="hello3"> 
+      <option value="null">Null</option>
+        <option value="twowheeler">Two wheeler</option>
+        <option value="truck">Truck</option>
+        <option value="car">Car</option>
+        <option value="bus">Bus</option>
+        <option value="van">Van</option>
+        <option value="auto">Auto</option>
+        <option value="combinationvechicle">Combination vechicle</option>
+        
+       
+      </select>
+      {/* <p>{`You selected ${type}`}</p> */}
+    </div>
+    
+
+<div className="t2"><h4>Non Road:</h4>
+<select value={nonroad} onChange={setValnonroad} className="hello3">
+<option value="null">Null</option>
+
+<option value="Constructionequipment">Construction equipment</option>
+<option value="Agriculturalequipment">Agricultural equipment</option>
+<option value="Forklift">Forklift</option>
+<option value="other">other</option>
+
+
+
+</select>
+{/* <p>{`You selected ${type}`}</p> */}
+</div>
+
+<div className="t3"> <h4>Water born:</h4>
+<select value={water} onChange={setValwater} className="hello3">
+<option value="null">Null</option>
+
+<option value="ship">Ships</option>
+<option value="boat">boat</option>
+
+
+
+</select>
+{/* <p>{`You selected ${type}`}</p> */}
+</div> 
+
+
+<div className="t4"><h4>Rail:</h4>
+<select value={rail} onChange={setValrail} className="hello3">
+<option value="null">Null</option>
+
+<option value="freight">freight</option>
+<option value="commute">commute</option>
+
+
+
+</select>
+{/* <p>{`You selected ${type}`}</p> */}
+</div>
+
+
+<div className="t5"><h4>Air:</h4>
+<select value={air2} onChange={setValair2} className="hello3">
+<option value="null">Null</option>
+
+<option value="commercial">freight</option>
+<option value="Executivejets">Executive jets</option>
+
+
+
+</select>
+{/* <p>{`You selected ${type}`}</p> */}
+</div>
+          
       <h4 className="facility">{`Facility `}</h4>
       <h4 className="fuel">Fuel</h4>
       <h4 className="fue">Type of Transport</h4>

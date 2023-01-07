@@ -329,7 +329,7 @@ useEffect(() => {
       />
       <div className="latitude">Latitude</div>
       <TextField
-        className="rectangle-textfield"
+        className="rectangle-textfieldlong"
         sx={{ width: 222 }}
         color="primary"
         variant="outlined"

@@ -121,7 +121,7 @@ routerstation.post("/scomp", async (req, res) => {
 //mobile 
 routerstation.post("/mcomp", async (req, res) => {
 
-    const { code,facility,quantity,literdistance,fuel,co2,category,subcat,mode,date,email ,air,weight,person} = req.body;
+    const { code,facility,quantity,literdistance,fuel,co2,category,subcat,mode,date,email ,air,weight,person,road,nonroad,rail,water,air2} = req.body;
 
    
 
@@ -130,7 +130,7 @@ routerstation.post("/mcomp", async (req, res) => {
     
     
             const saves = new mobiledb({
-                code,facility,quantity,literdistance,fuel,co2,category,subcat,mode,date,email,air,weight,person
+                code,facility,quantity,literdistance,fuel,co2,category,subcat,mode,date,email,air,weight,person,road,nonroad,rail,water,air2
             });
 
             
@@ -165,78 +165,7 @@ routerstation.post("/getmobile", async (req, res) => {
 });
 
 
-// //mobile distance
 
-// routerstation.post("/mcompdist", async (req, res) => {
-
-//     const { code,facility,distance,fuel,co2,category,subcat} = req.body;
-
-   
-
-//     try {
-
-    
-    
-//             const saves = new mobiledistancedb({
-//                 code,facility,distance,fuel,co2,category,subcat
-//             });
-
-            
-
-//             const storeDatadist = await saves.save();
-
-//             // console.log(storeData);
-//             res.status(201).json({ status: 201, storeDatadist })
-        
-
-//     } catch (error) {
-//         res.status(422).json(error);
-//         console.log("catch block error");
-//     }
-
-// });
-// routerstation.get('/mcomppdistdash', async (req, res) => {
-// 	const usr = await mobiledistancedb.find();
-
-
-// 	res.json(usr);
-// });
-
-// //freight
-// routerstation.post("/mcompfreight", async (req, res) => {
-
-//     const { code,facility,distance,fuel,co2,category,weight} = req.body;
-
-   
-
-//     try {
-
-    
-    
-//             const saves = new freightdb({
-//                 code,facility,distance,fuel,co2,category,weight
-//             });
-
-            
-
-//             const storeDatadist = await saves.save();
-
-//             // console.log(storeData);
-//             res.status(201).json({ status: 201, storeDatadist })
-        
-
-//     } catch (error) {
-//         res.status(422).json(error);
-//         console.log("catch block error");
-//     }
-
-// });
-// routerstation.get('/mcomppfreight', async (req, res) => {
-// 	const usr = await freightdb.find();
-
-
-// 	res.json(usr);
-// });
 //scope2 energy
 
 routerstation.post("/energy", async (req, res) => {

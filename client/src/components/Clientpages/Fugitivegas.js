@@ -9,6 +9,7 @@ import { Form, Button } from "react-bootstrap";
 import { LoginContext } from "../ContextProvider/Context";
 import "./Home1Add.css";
 import DatePicker from 'react-date-picker';
+import Header from './Header';
 const Fugitive = () =>{
     const [dte, onChange] = useState(new Date());
     const [usrs, setTodoss] = useState([]);
@@ -744,7 +745,7 @@ let vall=null
            alt=""
            src="../whatsapp-image-20221222-at-923-3@2x.png"
          />
-         <img className="ellipse-icon" alt="" src="../ellipse-9@2x.png" />
+      <div className="ellipse-icon">  <Header/></div>
          <img className="home1-add-child1" alt="" src="../ellipse-56.svg" />
          <img className="vector-icon" alt="" src="../vector-1.svg" />
          <img className="home1-add-child2" alt="" src="../vector-2.svg" />

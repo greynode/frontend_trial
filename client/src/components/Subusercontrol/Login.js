@@ -67,7 +67,7 @@ const Subuserlogin = () => {
 
             if(res.status === 201){
                 localStorage.setItem("susersdatatoken",res.result.token);
-                history("/dash")
+                history("/subdash")
                 setInpval({...inpval,email:"",password:""});
             }else{
                 toast.error("Invalid Credentials", {
@@ -105,8 +105,8 @@ const Subuserlogin = () => {
                         </div>
 
                         <button className='btn' onClick={loginuser}>Login</button>
-                        <p>Don't have an Account? <NavLink to="/register">Sign Up</NavLink> </p>
-                        <p style={{color:"black",fontWeight:"bold"}}>Forgot Password  <NavLink to="/password-reset">Click Here</NavLink> </p>
+                        <p>Don't have an Account? <NavLink to="/subuserregister">Sign Up</NavLink> </p>
+                        <p style={{color:"black",fontWeight:"bold"}}>Forgot Password  <NavLink to="/subuserreset">Click Here</NavLink> </p>
                     </form>
                     <ToastContainer />
                 </div>

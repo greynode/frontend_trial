@@ -80,7 +80,9 @@ const Superlogin = () => {
     return (
         <>
             <section>
+            <h1 align="center">Superadmin login</h1>
                 <div className="form_data">
+              
                     <div className="form_heading">
                         <h2>Login</h2>
                         {/* <h1>Welcome Back, Log In</h1>
@@ -103,8 +105,8 @@ const Superlogin = () => {
                         </div>
 
                         <button className='btn' onClick={loginuser}>Login</button>
-                        <p>Don't have an Account? <NavLink to="/register">Sign Up</NavLink> </p>
-                        <p style={{color:"black",fontWeight:"bold"}}>Forgot Password  <NavLink to="/password-reset">Click Here</NavLink> </p>
+                        <p>Don't have an Account? <NavLink to="/Superregister">Sign Up</NavLink> </p>
+                        <p style={{color:"black",fontWeight:"bold"}}>Forgot Password  <NavLink to="/Superreset">Click Here</NavLink> </p>
                     </form>
                     <ToastContainer />
                 </div>

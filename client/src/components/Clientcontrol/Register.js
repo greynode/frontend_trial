@@ -11,7 +11,7 @@ const Register = () => {
 
 
   const onLoginHereClick = useCallback(() => {
-    navigate("/clientlogin");
+    navigate("/login");
   }, [navigate]);
 
     const [inpval, setInpval] = useState({

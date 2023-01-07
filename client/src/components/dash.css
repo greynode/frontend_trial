@@ -1,0 +1,17 @@
+#hellod{
+    margin: auto;
+    width: 30%;
+    padding:50px;
+    display: grid;
+    position: absolute;
+    top: 200px;
+    left: 500px;
+    
+}
+
+#bu{
+    
+    background-color: aquamarine;
+    width: 300px;
+
+}

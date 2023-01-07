@@ -223,7 +223,8 @@ routers.post("/addcompany1", async (req, res) => {
 
 routers.post("/addd", async (req, res) => {
 
-    const { name,user,email,currency, country, pointofcontact,productservices,ids,employee,website,activity,address,description} = req.body;
+    const { name,user,email,currency, country, pointofcontact,
+        productservices,ids,employee,website,activity,address,description} = req.body;
 
    
     try {
@@ -401,7 +402,21 @@ routers.post("/question", async (req, res) => {
 
 });
 
+routers.post("/quest", async (req, res) => {
 
+    const { email} = req.body;
+
+    if ( !email ) {
+        res.status(422).json({ error: "nomatch" })
+    }
+
+  else{
+   
+        const usr = await questiondb.find({email:email});
+            
+      res.json(usr)
+  }
+});
 
 
 

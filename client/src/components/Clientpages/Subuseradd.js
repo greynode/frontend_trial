@@ -1,4 +1,4 @@
-
+import Header from './Header';
 import { Form, Button } from "react-bootstrap";
 
 import React, { Component ,useCallback ,useState,useContext, useEffect} from 'react';
@@ -229,7 +229,7 @@ setCalculation(() => count * 2);
         alt=""
         src="../whatsapp-image-20221222-at-923-3@2x.png"
       />
-      <img className="ellipse-icon" alt="" src="../ellipse-9@2x.png" />
+      <div className="ellipse-icon">  <Header/></div>
      
       <div className="subract">
       <select value={ractive} onChange={setValsss} className="rsaa" >

@@ -61,6 +61,29 @@ var mobileSchema = new mongoose.Schema({
         type:String
     },weight:{
 type:String
+    }, road: {
+        type: String,
+        required: true,
+       
+    },
+    nonroad: {
+        type: String,
+        required: true,
+        
+    }
+   ,rail: {
+        type: String,
+        required: true,
+        
+    },
+    water: {
+        type: String,
+        required: true,
+        
+    },air2: {
+        type: String,
+        required: true,
+        
     }
 
 });

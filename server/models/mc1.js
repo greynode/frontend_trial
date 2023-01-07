@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-var timestamps = require('mongoose-timestamp');
+
 
 
 
@@ -7,7 +7,15 @@ var timestamps = require('mongoose-timestamp');
 var mcdata = new mongoose.Schema({
    
 //   road,nonroad,rail,water,air
-person: {
+email: {
+    type: String,
+    required: true,
+   
+},date: {
+    type: String,
+    required: true,
+   
+},person: {
     type: String,
     required: true,
    
@@ -38,7 +46,6 @@ person: {
     }
 
 });
-mcdata.plugin(timestamps);
 
 
 // createing model

@@ -82,6 +82,9 @@ import Upstream from "./components/Clientpages/Upstream";
 import Capitalgoods from "./components/Clientpages/Capitalgoods";
 import Franchise from "./components/Clientpages/Franchisescope3";
 import Goodsscope3 from "./components/Clientpages/Goodsscope3";
+import Dummy from "./components/Dummypage";
+
+import Recommendation from './components/Clientpages/Recommendation';
 
 function App() {
 
@@ -163,8 +166,8 @@ function App() {
      
 
             <Routes>
-     
-              <Route path="/" element={<Logins />} />
+            <Route path="/" element={<Dummy />} />
+              <Route path="/login" element={<Logins />} />
               <Route path="/register" element={<Registers />} />
               <Route path="/subuserregister" element={<Subuserregister/>}/>
               <Route path="/sublogin" element={<Subuserlogin/>}/>
@@ -226,7 +229,7 @@ function App() {
     <Route path="/client" element={<Client/>}/>
     <Route path="/franchise" element={<Franchise/>}/>
     <Route path="/scope3good" element={<Goodsscope3/>}/>
-
+    <Route path="/rec" element={<Recommendation/>}/>
 
  
 

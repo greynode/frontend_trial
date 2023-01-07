@@ -71,6 +71,13 @@
   top: 222px;
   left: 914px;
 }
+.rectangle-textfieldlong {
+  border: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 222px;
+  left: 914px;
+}
 .asset-declaration-child1 {
   left: 1146px;
 }
