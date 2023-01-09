@@ -194,7 +194,8 @@ setCalculation(() => count * 2);
       <div className="home1-add-child6" />
       <Link to="/dash">
          <a className="scope-12">Scope 1</a>
-        </Link>
+        </Link> 
+        
         <Link to="/sco">
         <a className="scope-2">Scope 2</a>
         </Link>
