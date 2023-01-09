@@ -127,25 +127,16 @@ const Header = () => {
                 {
                     logindata.ValidUserOne ? (
                         <>
-                            <MenuItem onClick={() => {
-                                goDash()
-                                handleClose()
-                            }}>Profile</MenuItem>
+                           
                             <MenuItem onClick={() => {
                                 logoutuser()
                                 handleClose()
                             }}>Logout</MenuItem>
-                             <MenuItem onClick={() => {
-                              hello()
-                            }}>Notification*</MenuItem>
                            
                         </>
                     ) : (
                         <>
-                            <MenuItem onClick={() => {
-                                goError()
-                                handleClose()
-                            }}>Profile</MenuItem>
+                           
                         </>
                     )
                 }

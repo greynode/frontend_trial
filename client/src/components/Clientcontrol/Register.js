@@ -93,7 +93,22 @@ const Register = () => {
 
             const res = await data.json();
             // console.log(res.status);
-
+          let  cname=fname;let currency="";let  pocnumber="";let  pocname="";
+          let noemployees="";let website="";let address="";let description=""
+            const sdata = await fetch("/addcompany1", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // fname, email, password, cpassword
+                    cname,email,currency, pocnumber, pocname,noemployees,website,address,description
+                })
+            });
+    
+            const sres = await sdata.json();
+            console.log(sres)
+    
             if (res.status === 201) {
                 toast.success("Registration Successfully done 😃!", {
                     position: "top-center"

@@ -15,17 +15,6 @@ var tempsuperadminschema = new mongoose.Schema({
                 throw new Error("not valid email")
             }
         }
-    },
-    pass: {
-        type: String,
-        required: true,
-        
-    }
-    ,
-    active: {
-        type: Boolean,
-        required: true,
-        
     }
 });
 

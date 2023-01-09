@@ -1,8 +1,8 @@
-
-import { Form, Button } from "react-bootstrap";
 import Header from './Header';
+import { Form, Button } from "react-bootstrap";
+
 import React, { Component ,useCallback ,useState,useContext, useEffect} from 'react';
-import { NavLink,useNavigate,Link} from "react-router-dom"
+import { NavLink,useNavigate} from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { LoginContext } from "../ContextProvider/Context";
@@ -93,7 +93,7 @@ const [inpval, setInpval] = useState({
             const eemail=he;
             
 
-          const data = await fetch("/adminaddusr", {
+          const data = await fetch("/addusr", {
               method: "POST",
               headers: {
                   "Content-Type": "application/json"
@@ -130,12 +130,14 @@ const [inpval, setInpval] = useState({
   const hellos =async(e)=>{
 const eemail=he
 
-    const datap = await fetch("/clist", {
-      method: "GET",
+    const datap = await fetch("/sublist", {
+      method: "POST",
       headers: {
           "Content-Type": "application/json"
-      }
-    
+      },
+      body: JSON.stringify({
+           eemail
+      })
   });
   const res = await datap.json();
   console.log(res);
@@ -171,7 +173,7 @@ const eemail=he
 
 
 
-        const data = await fetch("/adminremusr", {
+        const data = await fetch("/remusr", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -227,34 +229,85 @@ setCalculation(() => count * 2);
         alt=""
         src="../whatsapp-image-20221222-at-923-3@2x.png"
       />
-     <div className="ellipse-icon">  <Header/></div>
+      <div className="ellipse-icon">  <Header/></div>
      
-     
+      <div className="subract">
+      <select value={ractive} onChange={setValsss} className="rsaa" >
+        <option value="active">Activate</option>
+        <option value="inactive">Inactivate</option>
+        <option value="remove">Remove</option>
+  
+      </select>
+
+    </div>
+      
+    
+ 
+      <div className="subact">
+      <select value={active} onChange={setValss} className="saa" >
+        <option value="active">Yes</option>
+        <option value="inactive">No</option>
+  
+      </select>
+
+    </div>
+
+
+         
+    
+      <Form.Group className="subremail">
+        <Form.Control   type="text"
+              placeholder="Enter Subuser email"
+              name="remail"
+              onChange={setVals}
+              value={inpvals.remail}
+              id="remail"/>
+      </Form.Group> 
+   
+
+    
+      <Form.Group className="subemail">
+        <Form.Control  type="text"
+              placeholder="Enter Subuser email"
+              name="email"
+              onChange={setVal}
+              value={inpval.email}
+              id="email"/>
+      </Form.Group>
+   
      
  
-      <h2 className="subuser">Client list</h2>
+      <h2 className="subuser">Subuser Control</h2>
 
+      <Form.Group className="subpass">
+        <Form.Control  type="text"
+              placeholder="Set password"
+              name="pass"
+              onChange={setVal}
+              value={inpval.pass}
+              id="pass" />
+      </Form.Group>
+   
+   
+
+      <h4 className="subhead">Subuser Email</h4>
+      
+      <h4 className="subhead2">Set Subuser Password</h4>
+      <h4 className="subhead3">Active Status</h4>
      
+      <Button className="subbutton" variant="primary" onClick={addCompanydata}>
+        Add user
+      </Button>
+      <Button className="subrbutton" variant="primary" onClick={raddCompanydata}>
+        Save
+      </Button>
    
-   
+      <a className="measure">Measure</a>
+      <a className="reduce">Reduce</a>
+      <a className="offset">Offset</a>
+      <a className="dashboard">Dashboard</a>
 
-  
-     
-
-   
-      <Link to="/cli">
-      <a className="measure">Clients</a>
-        </Link> 
-        <Link to="/client">
-      <a className="reduce">Clientcontrol</a></Link>
-      <Link to="/superadd">
-      <a className="offset">Addsuperadmin</a></Link>
-      <Link to="/clidet">
-      <a className="dashboard">Client details</a>
-        </Link> 
-
-
-      <table class="clienttable">
+      <table class="subusertable">
 
 	
 <thead>
@@ -262,6 +315,7 @@ setCalculation(() => count * 2);
     <th>S.NO</th>
     <th>Email</th>
     <th>Active Status</th>
+    <th>Password</th>
    
   </tr>
 </thead>
@@ -276,7 +330,7 @@ setCalculation(() => count * 2);
         <td  key="{qaait}">{i=i+1}</td>
         <td  key="{qantiy}">{todo.email}</td>
         <td  key="{quantity">{todo.active}</td>
-       
+        <td  key="{qantity">{todo.pass}</td>
        
         </tr>
         )) : (

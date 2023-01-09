@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import Avatar from '@mui/material/Avatar';
 import "./header.css"
-import { LoginContext } from './ContextProvider/Context';
+import { LoginContext } from '../ContextProvider/Context';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { useNavigate , NavLink } from "react-router-dom"
@@ -89,16 +89,18 @@ const Header = () => {
     }
 
     const goDash = () => {
-        history("/")
+        history("/profile")
     }
 
     const goError = () => {
         history("*")
     }
     const hello = () => {
-        history("*")
+        history("/rec")
     }
-    
+    const hello1 = () => {
+        history("/companyadd")
+    }
 
     return (
         <>
@@ -125,24 +127,16 @@ const Header = () => {
                 {
                     logindata.ValidUserOne ? (
                         <>
-                            <MenuItem onClick={() => {
-                                goDash()
-                                handleClose()
-                            }}>Profile</MenuItem>
+                          
                             <MenuItem onClick={() => {
                                 logoutuser()
                                 handleClose()
                             }}>Logout</MenuItem>
-                              <MenuItem onClick={() => {
-                              hello()
-                            }}>Notification</MenuItem>
+                           
                         </>
                     ) : (
                         <>
-                            <MenuItem onClick={() => {
-                                goError()
-                                handleClose()
-                            }}>Profile</MenuItem>
+                           
                         </>
                     )
                 }

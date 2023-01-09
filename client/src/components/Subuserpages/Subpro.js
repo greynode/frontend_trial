@@ -73,7 +73,7 @@ asuser();
 
   }, []);
   return (<>
-    {usrs ? usrs.map(todo => (
+    {usrs.map(todo => (
 				
    
             
@@ -135,18 +135,7 @@ asuser();
  
    
     
-      <a className={styles.manageUsers} onClick={onManageUsersClick}>
-        Manage users
-      </a>
-      <Button
-        className={styles.rectangleButton}
-        sx={{ width: 103 }}
-        variant="contained"
-        color="success"
-        onClick={onRectangleButtonClick}
-      >
-        Edit Profile
-      </Button>
+      
       
       <img className={styles.money1Icon} alt="" src="../money-1@2x.png" />
       <img className={styles.gps1Icon} alt="" src="../gps-1@2x.png" />
@@ -168,7 +157,7 @@ asuser();
         )}</div>
       
      
-    </div>)):(<div><h1>shd</h1></div>) }</>
+    </div>)) }</>
   );
 };
 

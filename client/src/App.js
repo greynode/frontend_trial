@@ -31,6 +31,8 @@ import Client from "./components/Superadmincontrol/Client";
 import Superdash from "./components/Superadmincontrol/Dashboard";
 import Clientlist from "./components/Superadmincontrol/Clientlist";
 import Clientdetail from "./components/Superadmincontrol/Clientdetails";
+import Superadd from "./components/Superadmincontrol/Superadd";
+
 
 
 
@@ -72,45 +74,6 @@ import Scope2dash from "./components/Clientpages/Scope2dash";
 import CircularProgress from '@mui/material/CircularProgress';
 
 
-
-
-// import Header from "./components/Header";
-
-
-
-
-
-// import Service from "./components/Services"
-// import Subuserhome from "./components/Subuserhome";
-
-
-
-// import Scope2energy from "./components/Scope2energy";
-// import Scope1dash from"./components/Scope2energydash"
-// import Mc1 from "./components/Mc1";
-
-// import Scope3 from "./components/Scope3";
-// import Scope3dash from "./components/Scope3dash";
-// import Scope3goods from "./components/Scope3goods";
-
-
-
-// import Report from "./components/Report";
-
-
-
-
-
-
-// import Clientusradd from "./components/Clientusradd";
-
-
-
-
-
-
-
-//auth
 
 
 
@@ -276,6 +239,7 @@ function App() {
     <Route path="/capdash" element={<Capdash/>}/>
     <Route path="/cli" element={<Clientlist/>}/>
     <Route path="/clidet" element={<Clientdetail/>}/>
+    <Route path="/superadd" element={<Superadd/>}/>
        
 
  

@@ -6,7 +6,7 @@ const authenticate = require("../middleware/authenticate");
 const nodemailer = require("nodemailer");
 const jwt  = require("jsonwebtoken");
 const superadmindb=require("../models/superadmindb");
-
+const tempsuperadmin =require("../models/tempsuperadmin")
 const tempusr = require("../models/tempsubusr");
 const tempadminusr = require("../models/tempclient");
 const sauthenticate = require("../middleware/subauth");
@@ -16,7 +16,35 @@ const keysecret = process.env.SECRET_KEY
 const topsecret = process.env.TOPSECRET
 
 
+//superadd
+superouter.post("/addsuperadmin", async (req, res) => {
+    const { email } = req.body;
 
+    try {
+
+        const preuser = await tempsuperadmin.findOne({ email: email });
+
+        if (preuser) {
+            res.status(422).json({ error: "This Email is Already Exist" })
+        }
+         else {
+            const finalUser = new tempsuperadmin({
+                 email
+            });
+
+            
+
+            const storeData = await finalUser.save();
+
+            // console.log(storeData);
+            res.status(201).json({ status: 201, storeData })}
+        }
+            catch(error) {
+                res.status(422).json(error);
+                console.log("catch block error");
+            }
+
+})
 // email config
 
 const transporter = nodemailer.createTransport({
@@ -135,6 +163,29 @@ if(ractive==="remove"){
     }}
 
 });
+//mail
+superouter.post("/mail", async (req, res) => {
+    const {  to,subject,text } = req.body;
+    console.log(to,subject,text);
+    const mailOptions = {
+        from:process.env.EMAIL,
+        to:to,
+        subject:subject,
+        text:`${text}`
+    }
+
+    transporter.sendMail(mailOptions,(error,info)=>{
+        if(error){
+            console.log("error",error);
+            res.status(401).json({status:401,message:"email not send"})
+        }else{
+            console.log("Email sent",info.response);
+            res.status(201).json({status:201,message:"Email sent Sucessfully"})
+        }
+})
+});
+
+
 
 // for user registration
 
@@ -147,14 +198,16 @@ superouter.post("/superregister", async (req, res) => {
     }
 
     try {
-
+        const apreuser = await tempsuperadmin.findOne({ email: email });
         const preuser = await superadmindb.findOne({ email: email });
       
         if (preuser) {
             res.status(422).json({ error: "This Email is Already Exist" })
         } else if (password !== cpassword) {
             res.status(422).json({ error: "Password and Confirm Password Not Match" })
-        } else if(topsecret===secretkey) {
+
+        } else if(apreuser){
+            if(topsecret===secretkey) {
             const finalUser = new superadmindb({
                 fname, email, password, cpassword
             });
@@ -167,6 +220,8 @@ superouter.post("/superregister", async (req, res) => {
             res.status(201).json({ status: 201, storeData })
 
         }else{
+            res.status(422).json({ error: "invalid" })
+        }}else{
             res.status(422).json({ error: "invalid" })
         }
 

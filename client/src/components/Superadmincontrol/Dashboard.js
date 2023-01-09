@@ -1,7 +1,6 @@
 import React, { useContext, useEffect ,useState,useCallback} from 'react'
 import { Routes,Route, useNavigate,Link } from 'react-router-dom';
 import { LoginContext } from '../ContextProvider/Context';
-import Header from '../Header';
 
 import "./dash.css"
 import Client from './Client'

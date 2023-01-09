@@ -3,7 +3,7 @@ import React, { useContext, useEffect ,useState} from 'react'
 import Box from '@mui/material/Box';
 import { Routes,Route, useNavigate,Link } from 'react-router-dom';
 import { LoginContext } from '../ContextProvider/Context';
-import Header from '../Header';
+
 import Fugi from "../Clientpages/Fugitiveemmision";
 import "./dash.css"
 import Scope3goodsdash from "../Clientpages/Scope3goodsdash";
@@ -24,7 +24,7 @@ import Upstream from "../Clientpages/Upstream";
 import Capitalgoods from "../Clientpages/Capitalgoods";
 import Franchise from "../Clientpages/Franchisescope3";
 import Goodsscope3 from "../Clientpages/Goodsscope3";
-import Dummy from "../Dummypage";
+
 import Franchisedash from '../Clientpages/Franchisedash';
 import Fugitivegasdash from '../Clientpages/Fugitive2dash';
 import Downdash from '../Clientpages/Downstreamdash';
@@ -37,8 +37,7 @@ import Scope2dash from "../Clientpages/Scope2dash";
 import CircularProgress from '@mui/material/CircularProgress';    
 
 const Dashboard = () => {
- 
-  const [usrs, setTodoss] = useState([]);
+
     const { logindata, setLoginData } = useContext(LoginContext);
     console.log(logindata);
     let he="hello"
@@ -82,19 +81,7 @@ asuser();
           });
             const adata = await ares.json();
       ////////////////////////////////////////////
-      const map=he
-      const pro = await fetch("/comp", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-             map
-        })
-    });
-    const prores = await pro.json();
 
-    setTodoss(prores);
 
      
 
@@ -122,7 +109,7 @@ asuser();
         setTimeout(() => {
             DashboardValid();
             setData(true)
-        })//, 2000
+        }, 2000)
 
     }, [])
 

@@ -1,39 +1,38 @@
 import React, { useContext, useEffect ,useState} from 'react'
 import { Routes,Route, useNavigate,Link } from 'react-router-dom';
 import { LoginContext } from '../ContextProvider/Context';
-import Header from '../Header';
+
 import Box from '@mui/material/Box';
 import "./dash.css"
-import Fugi from "../Clientpages/Fugitiveemmision";
+import Fugi from "../Subuserpages/Fugitiveemmision";
+import Scope3goodsdash from "../Subuserpages/Scope3goodsdash";
+import Downstream from "../Subuserpages/Downstream";
+import Question from "../Subuserpages/Question"
+import Fugitive2 from "../Subuserpages/Fugitivegas";
+import AssetDeclaration from "../Subuserpages/AssetDeclaration";
+import CompanyDetails from "../Subuserpages/CompanyDetails";
+import Mobile from "../Subuserpages/Mobilecombustion";
+import Home1View from "../Subuserpages/Mobilecombustiondash";
+import Process from "../Subuserpages/Processemission";
+import Processdash from "../Subuserpages/processemissiondash";
+import Fugidash from "../Subuserpages/Fugitiveemissiondash";
+import Scombustion from "../Subuserpages/Scombution";
+import Scombustionhome from "../Subuserpages/Scombustiondash";
+import Subuseradd from "../Subuserpages/Subuseradd";
+import Upstream from "../Subuserpages/Upstream";
+import Capitalgoods from "../Subuserpages/Capitalgoods";
+import Franchise from "../Subuserpages/Franchisescope3";
+import Goodsscope3 from "../Subuserpages/Goodsscope3";
 
-import Scope3goodsdash from "../Clientpages/Scope3goodsdash";
-import Downstream from "../Clientpages/Downstream";
-import Question from "../Clientpages/Question"
-import Fugitive2 from "../Clientpages/Fugitivegas";
-import AssetDeclaration from "../Clientpages/AssetDeclaration";
-import CompanyDetails from "../Clientpages/CompanyDetails";
-import Mobile from "../Clientpages/Mobilecombustion";
-import Home1View from "../Clientpages/Mobilecombustiondash";
-import Process from "../Clientpages/Processemission";
-import Processdash from "../Clientpages/processemissiondash";
-import Fugidash from "../Clientpages/Fugitiveemissiondash";
-import Scombustion from "../Clientpages/Scombution";
-import Scombustionhome from "../Clientpages/Scombustiondash";
-import Subuseradd from "../Clientpages/Subuseradd";
-import Upstream from "../Clientpages/Upstream";
-import Capitalgoods from "../Clientpages/Capitalgoods";
-import Franchise from "../Clientpages/Franchisescope3";
-import Goodsscope3 from "../Clientpages/Goodsscope3";
-import Dummy from "../Dummypage";
-import Franchisedash from '../Clientpages/Franchisedash';
-import Fugitivegasdash from '../Clientpages/Fugitive2dash';
-import Downdash from '../Clientpages/Downstreamdash';
-import Upstreamdashb from '../Clientpages/Upstreamdash';
-import Capdash from '../Clientpages/Capitalgoodsdash';
-import Recommendation from '../Clientpages/Recommendation';
-import Profile2 from "../Clientpages/Subpro";
-import Scope2 from "../Clientpages/Scope2";
-import Scope2dash from "../Clientpages/Scope2dash";
+import Franchisedash from '../Subuserpages/Franchisedash';
+import Fugitivegasdash from '../Subuserpages/Fugitive2dash';
+import Downdash from '../Subuserpages/Downstreamdash';
+import Upstreamdashb from '../Subuserpages/Upstreamdash';
+import Capdash from '../Subuserpages/Capitalgoodsdash';
+import Recommendation from '../Subuserpages/Recommendation';
+import Profile2 from "../Subuserpages/Subpro";
+import Scope2 from "../Subuserpages/Scope2";
+import Scope2dash from "../Subuserpages/Scope2dash";
 import CircularProgress from '@mui/material/CircularProgress';
 
     
@@ -117,22 +116,16 @@ const Dashboard = () => {
         data ? (
         <>
         <Routes> 
-          <Route path="/" element={<Scombustion/>}/>
-    <Route path="/homeview" element={<Scombustionhome/>}/>
-    <Route path="/question" element={<Question/>}/>
-            
-     
-       
-            <Route path="/downstream" element={<Downstream/>}/>
-            <Route path="/upstream" element={<Upstream/>}/>
-            <Route path="/capital" element={<Capitalgoods/>}/>
-    
-            <Route path="/fugitivetwo" element={<Fugitive2/>}/>
-         
-     
+      <Route path="/" element={<Scombustion/>}/>
+      <Route path="/homeview" element={<Scombustionhome/>}/>
+      <Route path="/question" element={<Question/>}/>
+      <Route path="/downstream" element={<Downstream/>}/>
+      <Route path="/upstream" element={<Upstream/>}/>
+      <Route path="/capital" element={<Capitalgoods/>}/>
+      <Route path="/fugitivetwo" element={<Fugitive2/>}/>
       <Route path="/companyadd2" element={<AssetDeclaration/>}/>
       <Route path="/companyadd" element={<CompanyDetails/>}/>
-    <Route path="/home" element={<Scombustion/>}/>
+      <Route path="/home" element={<Scombustion/>}/>
       <Route path="/homeview" element={<Scombustionhome/>}/>
       <Route path="/mobilecombustion" element={<Mobile/>}/>
       <Route path="/mobiledash" element={<Home1View/>}/>
@@ -144,7 +137,7 @@ const Dashboard = () => {
       <Route path="/profile" element={<Profile2/>}/>
       <Route path="/sco" element={<Scope2/>}/>
       <Route path="/scodash" element={<Scope2dash/>}/>
-<Route path="/franchise" element={<Franchise/>}/>
+      <Route path="/franchise" element={<Franchise/>}/>
       <Route path="/scope3good" element={<Goodsscope3/>}/>
       <Route path="/rec" element={<Recommendation/>}/>
       <Route path="/franchdash" element={<Franchisedash/>}/>

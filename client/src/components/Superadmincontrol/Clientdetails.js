@@ -1,6 +1,6 @@
 
 import { Form, Button } from "react-bootstrap";
-import Header from '../Clientpages/Header';
+import Header from './Header';
 import React, { Component ,useCallback ,useState,useContext, useEffect} from 'react';
 import { NavLink,useNavigate,Link} from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
@@ -87,7 +87,8 @@ useEffect(() => {
         </Link> 
         <Link to="/client">
       <a className="reduce">Clientcontrol</a></Link>
-      <a className="offset">Addsuperadmin</a>
+      <Link to="/superadd">
+      <a className="offset">Addsuperadmin</a></Link>
       <Link to="/clidet">
       <a className="dashboard">Client details</a>
         </Link> 

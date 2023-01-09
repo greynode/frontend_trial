@@ -1,6 +1,6 @@
 
 import { Form, Button } from "react-bootstrap";
-import Header from '../Clientpages/Header';
+import Header from './Header';
 import React, { Component ,useCallback ,useState,useContext, useEffect} from 'react';
 import { NavLink,useNavigate,Link} from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
@@ -11,9 +11,7 @@ import "./Home1Add.css";
 const Scomp = () =>{
   const history = useNavigate();
      
-  const onAddDataClickn = useCallback(() => {
-    history("/cli");
-  }, []);
+
   const [usrs, setTodoss] = useState([]);
   const [count, setCount] = useState(0);
   const [calculation, setCalculation] = useState(0);
@@ -206,6 +204,76 @@ const eemail=he
 
         
 }}
+const [inp, setInp] = useState({
+     
+  to:"",
+  subject:"",
+  text:""
+});
+const setVa = (e) => {
+    
+    
+  const {name, value} = e.target;
+
+  setInp(() => {
+      return {
+          ...inp,
+          [name]: value,
+        
+      }
+  })
+};
+const mail = async(e)=>{
+  e.preventDefault();
+  const {to,subject,text } = inp;
+  if (to === "") {
+    toast.warning("To is required!", {
+        position: "top-center"
+    });}
+     else if (subject === "") {
+      toast.warning("Subject is required!", {
+          position: "top-center"
+      });}
+      else if (text === "") {
+        toast.warning("Text is required!", {
+            position: "top-center"
+        });
+        
+      }else{
+
+        const data = await fetch("/mail", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+              
+            to,subject,text    
+                })
+
+      });
+
+      const res = await data.json();
+      console.log(res)
+
+      if (res.status === 201) {
+        toast.success(" Email sent 😃!", {
+            position: "top-center"
+        });
+        setInp({ ...inp,  
+          
+          to:"",
+          subject:"",
+          text:""
+          
+       });}else {
+        toast.error("Not sent!", {
+          position: "top-center"
+      });
+        }
+
+      }
+}
 
 let i=0
 
@@ -290,6 +358,49 @@ setCalculation(() => count * 2);
               id="pass" />
       </Form.Group>
    
+      <div className='danger2'>
+        
+    <h3 align="center">Contact Clients</h3>
+   <div className='sup'> 
+    <h3>To:</h3>
+      <input className='inp'
+        type="text"
+        placeholder="enter the email"
+        name="to"
+        onChange={setVa}
+        value={inp.to}
+        id="to"
+        
+      /></div>
+      <div className='sup'> 
+    <h3>Subject:</h3>
+      <input className='inp'
+        type="text"
+        placeholder="enter subject"
+        name="subject"
+        onChange={setVa}
+        value={inp.subject}
+        id="subject"
+      /></div>
+      <div className='sup'> 
+    <h3>Text:</h3>
+      <input className='inp'
+        type="text"
+        placeholder="enter text"
+        name="text"
+        onChange={setVa}
+        value={inp.text}
+        id="text"
+        
+      /></div>
+      
+      <div className="sbuuton"  >
+      <button className='butttonsuper' onClick={mail}>Send</button>
+     
+      </div>
+
+      
+      </div>
    
 
       <h4 className="subhead">Client Email</h4>
@@ -310,7 +421,8 @@ setCalculation(() => count * 2);
         </Link> 
         <Link to="/client">
       <a className="reduce">Clientcontrol</a></Link>
-      <a className="offset">Addsuperadmin</a>
+      <Link to="/superadd">
+      <a className="offset">Addsuperadmin</a></Link>
       <Link to="/clidet">
       <a className="dashboard">Client details</a>
         </Link> 
