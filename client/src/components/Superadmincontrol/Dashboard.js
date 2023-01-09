@@ -1,10 +1,11 @@
-import React, { useContext, useEffect ,useState} from 'react'
+import React, { useContext, useEffect ,useState,useCallback} from 'react'
 import { Routes,Route, useNavigate,Link } from 'react-router-dom';
 import { LoginContext } from '../ContextProvider/Context';
 import Header from '../Header';
 
 import "./dash.css"
-import Clientusradd from '../Clientusradd';
+import Client from './Client'
+import Clientlist from './Clientlist'
 
     
 
@@ -18,6 +19,10 @@ const Dashboard = () => {
 
     //window.alert(data)
       const history = useNavigate();
+     
+      const onAddDataClick = useCallback(() => {
+        history("/cli");
+      }, []);
 
     const DashboardValid = async () => {
         let token = localStorage.getItem("usersdatatoken");
@@ -81,28 +86,14 @@ const Dashboard = () => {
     }, [])
 
     return (
-        <>  <Routes> 
-          <Route path="/demo" element={<Clientusradd/>} />
+        <>  
+        <Routes> 
+        <Route path="/" element={<Client/>}/>
+        <Route path="/superdash" element={<Clientlist/>}/>
+       
         </Routes>
    
-        <div id ="hello" width="50%" margin="auto" padding="10px">
-     
-        <Link to="/Subuseradd">
-          <button id="bu">Subusr add</button>
-        </Link>
-      
        
-        <Link to="/demo">
-          <button id="bu">Clientadd</button>
-        </Link>
-       
-      
-      
-    
-        
-       </div>
-       {/* <h1>user home page</h1>
-       <Service/> */}
     </>
     )
 }

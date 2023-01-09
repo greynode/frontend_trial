@@ -2,11 +2,10 @@ import { useCallback ,useEffect,useState,useContext} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Home1View.css";
 import { LoginContext } from "../ContextProvider/Context";
-
+import DatePicker from 'react-date-picker';
 import Header from './Header';
-
-
 const Home1View = () => {
+    const [value, onChange] = useState(new Date());
   const [usrs, setTodoss] = useState([]);
   const [count, setCount] = useState(0);
   const [calculation, setCalculation] = useState(0);
@@ -20,11 +19,11 @@ asuser();
   const navigate = useNavigate();
 
   const onAddDataClick = useCallback(() => {
-    navigate("/home");
+    navigate("/fug");
   }, [navigate]);
   const hellos =async(e)=>{
     const map=he
-        const datap = await fetch("/getstation", {
+        const datap = await fetch("/downdash", {
           method: "POST",
           headers: {
               "Content-Type": "application/json"
@@ -42,7 +41,7 @@ asuser();
 
 
     element += (usrs[index].co2)
-   console.log(index);
+  
  }
  useEffect(() => {
  
@@ -53,6 +52,7 @@ let i=0;
 
   return (
     <div className="home1-view">
+      
       <img className="home1-view-child" alt="" src="../vector-4.svg" />
       <img className="home1-view-item" alt="" src="../vector-4.svg" />
       <div className="home1-view-inner" />
@@ -61,7 +61,7 @@ let i=0;
         alt=""
         src="../whatsapp-image-20221222-at-923-3@2x.png"
       />
-   <div className="ellipse-icon">  <Header/></div>
+     <div className="ellipse-icon">  <Header/></div>
       <img className="home1-view-child1" alt="" src="../ellipse-56.svg" />
       <img className="vector-icon" alt="" src="../vector-1.svg" />
       <img className="home1-view-child2" alt="" src="../vector-2.svg" />
@@ -71,42 +71,37 @@ let i=0;
       <img className="home1-view-child4" alt="" src="../rectangle-52@2x.png" />
       <img className="home1-view-child5" alt="" src="../rectangle-52@2x.png" />
       <Link to="/dash">
-         <a className="scope-12">Scope 1</a>
+         <a className="scope-1">Scope 1</a>
         </Link>
         <Link to="/sco">
         <a className="scope-2">Scope 2</a>
         </Link>
         <Link to="/scope3good">
-        <a className="scope-3">Scope 3</a>
+        <a className="scope-32">Scope 3</a>
         </Link>
-      <section className="rectangle-section" />
-      
-      <Link to="/dash">
-      <a className="stationary-c2">Stationary Combustion</a>
-        </Link>
+         <section className="rectangle-section" />
+         <Link to="/capital">
+         <section className="rectangle-section" />
+         <a className="stationary-c"> Capital Goods</a>
+</Link>
+         <Link to="/franchise">
+         <a className="mobile-combustion">
+           <p className="mobile1">{`Franchise `}</p>
+           <p className="combustion1"></p>
+         </a>
+         </Link>
+         <Link to="/upstream">
+         <a className="fugitive-emissions">
+           <p className="mobile">{`Upstream `}</p>
+           <p className="combustion"></p>
+         </a>
+         </Link>    
+              <Link to="/downstream">
 
-        <Link to="/mobilecombustion">
-
-
-        <a className="mobile-combustion">
-        <p className="mobile">{`Mobile `}</p>
-        <p className="combustion">Combustion</p>
-      </a>
-        </Link>
-
-        <Link to="/fug">
-      <a className="fugitive-emissions">
-        <p className="mobile">{`Fugitive `}</p>
-        <p className="combustion">Emissions</p>
-      </a>
-      </Link>
-      
-      <Link to="/processemission">
-      <a className="process-emissions">
-        <p className="mobile">{`Process `}</p>
-        <p className="combustion">Emissions</p>
-      </a>
-      </Link>
+         <a className="process-emissions">
+           <p className="mobile2">{`Downstream `}</p>
+    
+         </a></Link>
       <div className="di">{Math.round(element)}</div>
       <p className="p">{Math.round(element)}</p>
       <p className="tonnes-of-co2eq">Tonnes of CO2eq</p>
@@ -148,18 +143,26 @@ let i=0;
       <Link className="dashboard" to="/home1add">
         Dashboard
       </Link>
-      <table class="info">
+      <table class="down1">
 
 	
+
+
+
 <thead>
   <tr>
     <th>S.NO</th>
-    <th>Facility Name</th>
-    <th>Type of fuel</th>
-    <th>Quantity</th>
-    <th>Source of emission</th>
-    <th>Date</th>
-    <th>Carbonfootprint</th>
+    <th>facality code</th>
+    <th>buyername</th>
+    <th>buyer location</th>
+    <th>facility name:</th>
+    <th>distance travelled in KM</th>
+    <th>material</th>
+    <th>quantity</th>
+    
+
+  <th>date</th>
+
   </tr>
 </thead>
 
@@ -171,12 +174,142 @@ let i=0;
     (todo => (
         <tr>
         <td  key="{qaait}">{i=i+1}</td>
-        <td  key="{quantity}">{todo.facility}</td>
-        <td  key="{quantity">{todo.fuel}</td>
+        <td  key="{quantity}">{todo.code}</td>
+        <td  key="{quantit}">{todo.byername}</td>
+        <td  key="{quantity">{todo.byerlocation}</td>
+        <td  key="{quantit}">{todo.facility}</td>
+        <td  key="quantity">{todo.distance}</td>
+        <td  key="{quantt}">{todo.material}</td>
         <td  key="{quantit}">{todo.quantity}</td>
-        <td  key="quantity">{todo.type}</td>
-        <td  key="{quantt}">{todo.date}</td>
-        <td  key="{quantt}">{Math.round(todo.co2)}</td>
+     
+    
+        <td  key="quantity">{todo.date}</td>
+    
+    
+        </tr>
+        )) : (
+          <p>You have no data</p>
+        )}
+      </tbody>
+
+
+      
+    
+
+</table>
+
+<table class="down2">
+
+	
+
+
+
+<thead>
+  <tr>
+    <th>S.NO</th>
+    <th>facality code</th>
+    <th>buyername</th>
+    <th>buyer location</th>
+    <th>facility name:</th>
+   
+    <th>material</th>
+    <th>quantity</th>
+    <th>Processing performed</th>
+    <th>Final product</th>  
+      <th>Mode of Transport</th>   
+       <th>Type of vehicle</th>
+  
+  <th>date</th>
+
+  </tr>
+</thead>
+
+
+
+
+      <tbody>
+      {usrs.length > 0  ? usrs.map
+    (todo => (
+        <tr>
+        <td  key="{qaait}">{i=i+1}</td>
+        <td  key="{quantity}">{todo.code2}</td>
+        <td  key="{quantit}">{todo.byername2}</td>
+        <td  key="{quantity">{todo.byerlocation2}</td>
+        <td  key="{quantit}">{todo.facility2}</td>
+      
+        <td  key="{quantt}">{todo.material2}</td>
+        <td  key="{quantit}">{todo.quantity2}</td>
+        <td  key="quantity">{todo.process}</td>
+        <td  key="quantity">{todo.finalproduct}</td>
+        <td  key="quantity">{todo.transport}</td>
+        <td  key="quantity">{todo.vehicle}</td>
+        
+        <td  key="quantity">{todo.date}</td>
+    
+    
+        </tr>
+        )) : (
+          <p>You have no data</p>
+        )}
+      </tbody>
+
+
+      
+    
+
+</table>
+
+
+
+
+<table class="down3">
+
+	
+
+
+
+<thead>
+  <tr>
+    <th>S.NO</th>
+    <th>Name of Product</th>
+    <th>Times of usage</th>
+    <th>Name of product</th>
+    <th>Method of disposal</th>
+   
+    <th>lease period</th>
+    <th>Name of franchise</th>
+    <th>Location</th>
+    <th>Period of franchise</th>  
+      <th>type of investment</th>   
+       <th>Person entered</th>
+  
+  <th>date</th>
+
+  </tr>
+</thead>
+
+
+
+
+      <tbody>
+      {usrs.length > 0  ? usrs.map
+    (todo => (
+        <tr>
+        <td  key="{qaait}">{i=i+1}</td>
+        <td  key="{quantity}">{todo.code2}</td>
+        <td  key="{quantit}">{todo.productname}</td>
+        <td  key="{quantity">{todo.usagetime}</td>
+        <td  key="{quantit}">{todo.productname2}</td>
+      
+        <td  key="{quantt}">{todo.disposal}</td>
+        <td  key="{quantit}">{todo.lease}</td>
+        <td  key="quantity">{todo.namefranchise}</td>
+        <td  key="quantity">{todo.location}</td>
+        <td  key="quantity">{todo.franchiseperiod}</td>
+        <td  key="quantity">{todo.person}</td>
+        
+        <td  key="quantity">{todo.date}</td>
+    
     
         </tr>
         )) : (

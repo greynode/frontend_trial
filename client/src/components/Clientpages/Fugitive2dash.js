@@ -2,11 +2,10 @@ import { useCallback ,useEffect,useState,useContext} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Home1View.css";
 import { LoginContext } from "../ContextProvider/Context";
-
+import DatePicker from 'react-date-picker';
 import Header from './Header';
-
-
 const Home1View = () => {
+    const [value, onChange] = useState(new Date());
   const [usrs, setTodoss] = useState([]);
   const [count, setCount] = useState(0);
   const [calculation, setCalculation] = useState(0);
@@ -20,11 +19,12 @@ asuser();
   const navigate = useNavigate();
 
   const onAddDataClick = useCallback(() => {
-    navigate("/home");
+    navigate("/fugitivetwo");
   }, [navigate]);
+
   const hellos =async(e)=>{
     const map=he
-        const datap = await fetch("/getstation", {
+        const datap = await fetch("/fugdashtwo", {
           method: "POST",
           headers: {
               "Content-Type": "application/json"
@@ -42,7 +42,7 @@ asuser();
 
 
     element += (usrs[index].co2)
-   console.log(index);
+  
  }
  useEffect(() => {
  
@@ -53,6 +53,7 @@ let i=0;
 
   return (
     <div className="home1-view">
+      
       <img className="home1-view-child" alt="" src="../vector-4.svg" />
       <img className="home1-view-item" alt="" src="../vector-4.svg" />
       <div className="home1-view-inner" />
@@ -61,7 +62,7 @@ let i=0;
         alt=""
         src="../whatsapp-image-20221222-at-923-3@2x.png"
       />
-   <div className="ellipse-icon">  <Header/></div>
+     <div className="ellipse-icon">  <Header/></div>
       <img className="home1-view-child1" alt="" src="../ellipse-56.svg" />
       <img className="vector-icon" alt="" src="../vector-1.svg" />
       <img className="home1-view-child2" alt="" src="../vector-2.svg" />
@@ -82,7 +83,7 @@ let i=0;
       <section className="rectangle-section" />
       
       <Link to="/dash">
-      <a className="stationary-c2">Stationary Combustion</a>
+      <a className="stationary-c">Stationary Combustion</a>
         </Link>
 
         <Link to="/mobilecombustion">
@@ -96,8 +97,8 @@ let i=0;
 
         <Link to="/fug">
       <a className="fugitive-emissions">
-        <p className="mobile">{`Fugitive `}</p>
-        <p className="combustion">Emissions</p>
+        <p className="mobile2">{`Fugitive `}</p>
+        <p className="combustion2">Emissions</p>
       </a>
       </Link>
       
@@ -105,8 +106,7 @@ let i=0;
       <a className="process-emissions">
         <p className="mobile">{`Process `}</p>
         <p className="combustion">Emissions</p>
-      </a>
-      </Link>
+      </a></Link>
       <div className="di">{Math.round(element)}</div>
       <p className="p">{Math.round(element)}</p>
       <p className="tonnes-of-co2eq">Tonnes of CO2eq</p>
@@ -148,18 +148,28 @@ let i=0;
       <Link className="dashboard" to="/home1add">
         Dashboard
       </Link>
-      <table class="info">
+      <table class="infooo">
 
 	
+
+
+
 <thead>
   <tr>
     <th>S.NO</th>
+    <th>Facility code </th>
     <th>Facility Name</th>
-    <th>Type of fuel</th>
-    <th>Quantity</th>
-    <th>Source of emission</th>
-    <th>Date</th>
-    <th>Carbonfootprint</th>
+    <th>Type of gas Purchased</th>
+    <th>purchased gases</th>
+    <th>suppresant equipments</th>
+    <th>Type of gas used</th>
+    <th>Total capacity of the equipment</th>
+    <th>Amount of gas purchased:</th>
+    <th>Has fire equipment been used</th>
+    <th>Person entered</th>
+  <th>date</th>
+  <th>Carbonfootprint</th>
+
   </tr>
 </thead>
 
@@ -171,12 +181,19 @@ let i=0;
     (todo => (
         <tr>
         <td  key="{qaait}">{i=i+1}</td>
-        <td  key="{quantity}">{todo.facility}</td>
+        <td  key="{quantity}">{todo.code}</td>
+        <td  key="{quantit}">{todo.facility}</td>
         <td  key="{quantity">{todo.fuel}</td>
-        <td  key="{quantit}">{todo.quantity}</td>
-        <td  key="quantity">{todo.type}</td>
-        <td  key="{quantt}">{todo.date}</td>
-        <td  key="{quantt}">{Math.round(todo.co2)}</td>
+        <td  key="{quantit}">{todo.gases}</td>
+        <td  key="quantity">{todo.fire}</td>
+        <td  key="{quantt}">{todo.typegas}</td>
+        <td  key="{quantit}">{todo.capacity}</td>
+        <td  key="quantity">{todo.quantity}</td>
+        <td  key="{quantt}">{todo.yesno}</td>
+        <td  key="{quantt}">{todo.person}</td>
+        <td  key="quantity">{todo.date}</td>
+        <td  key="quantity">{todo.co2}</td>
+    
     
         </tr>
         )) : (

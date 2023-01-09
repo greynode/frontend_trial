@@ -9,11 +9,7 @@ import { LoginContext } from "../ContextProvider/Context";
 import "./Home1Add.css";
 
 const Scomp = () =>{
-  const history = useNavigate();
-     
-  const onAddDataClickn = useCallback(() => {
-    history("/cli");
-  }, []);
+
   const [usrs, setTodoss] = useState([]);
   const [count, setCount] = useState(0);
   const [calculation, setCalculation] = useState(0);
@@ -233,78 +229,19 @@ setCalculation(() => count * 2);
       />
      <div className="ellipse-icon">  <Header/></div>
      
-      <div className="subract">
-      <select value={ractive} onChange={setValsss} className="rsaa" >
-        <option value="active">Activate</option>
-        <option value="inactive">Inactivate</option>
-        <option value="remove">Remove</option>
-  
-      </select>
-
-    </div>
-      
-    
- 
-      <div className="subact">
-      <select value={active} onChange={setValss} className="saa" >
-        <option value="active">Yes</option>
-        <option value="inactive">No</option>
-  
-      </select>
-
-    </div>
-
-
-         
-    
-      <Form.Group className="subremail">
-        <Form.Control   type="text"
-              placeholder="Enter Client email"
-              name="remail"
-              onChange={setVals}
-              value={inpvals.remail}
-              id="remail"/>
-      </Form.Group> 
-   
-
-    
-      <Form.Group className="subemail">
-        <Form.Control  type="text"
-              placeholder="Enter Client email"
-              name="email"
-              onChange={setVal}
-              value={inpval.email}
-              id="email"/>
-      </Form.Group>
-   
+     
      
  
-      <h2 className="subuser">Client Control</h2>
+      <h2 className="subuser">Client list</h2>
 
-      <Form.Group className="subpass">
-        <Form.Control  type="text"
-              placeholder="Set password"
-              name="pass"
-              onChange={setVal}
-              value={inpval.pass}
-              id="pass" />
-      </Form.Group>
-   
-   
-
-      <h4 className="subhead">Client Email</h4>
-      
-      <h4 className="subhead2">Set Client Password</h4>
-      <h4 className="subhead3">Active Status</h4>
      
-      <Button className="subbutton" variant="primary" onClick={addCompanydata}>
-        Add user
-      </Button>
-      <Button className="subrbutton" variant="primary" onClick={raddCompanydata}>
-        Save
-      </Button>
    
- 
+   
+
+  
+     
+
+   
       <Link to="/cli">
       <a className="measure">Clients</a>
         </Link> 
@@ -315,7 +252,8 @@ setCalculation(() => count * 2);
       <a className="dashboard">Client details</a>
         </Link> 
 
-      <table class="subusertable">
+
+      <table class="clienttable">
 
 	
 <thead>
@@ -323,7 +261,6 @@ setCalculation(() => count * 2);
     <th>S.NO</th>
     <th>Email</th>
     <th>Active Status</th>
-    <th>Password</th>
    
   </tr>
 </thead>
@@ -338,7 +275,7 @@ setCalculation(() => count * 2);
         <td  key="{qaait}">{i=i+1}</td>
         <td  key="{qantiy}">{todo.email}</td>
         <td  key="{quantity">{todo.active}</td>
-        <td  key="{qantity">{todo.pass}</td>
+       
        
         </tr>
         )) : (

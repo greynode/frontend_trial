@@ -7,7 +7,7 @@ import "./Register.css";
 
 const Register = () => {
   const navigate = useNavigate();
-
+ 
 
 
   const onLoginHereClick = useCallback(() => {
@@ -99,6 +99,7 @@ const Register = () => {
                     position: "top-center"
                 });
                 setInpval({ ...inpval, fname: "", email: "", password: "", cpassword: "",temppass:"" });
+       
             }else{
                 toast.error("invalid!", {
                     position: "top-center"

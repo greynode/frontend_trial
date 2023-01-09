@@ -70,29 +70,42 @@ let i=0;
       <img className="home1-view-child3" alt="" src="../rectangle-52@2x.png" />
       <img className="home1-view-child4" alt="" src="../rectangle-52@2x.png" />
       <img className="home1-view-child5" alt="" src="../rectangle-52@2x.png" />
-      <Link className="scope-1" to="/home1add">
-        Scope 1
-      </Link>
-      <Link className="scope-2" to="/home1add">
-        Scope 2
-      </Link>
-      <Link className="scope-3" to="/home1add">
-        Scope 3
-      </Link>
+      <Link to="/dash">
+         <a className="scope-12">Scope 1</a>
+        </Link>
+        <Link to="/sco">
+        <a className="scope-2">Scope 2</a>
+        </Link>
+        <Link to="/scope3good">
+        <a className="scope-3">Scope 3</a>
+        </Link>
       <section className="rectangle-section" />
-      <a className="stationary-combustion">Stationary Combustion</a>
-      <Link className="mobile-combustion" to="/home1add">
-        <p className="mobile">{`Mobile `}</p>
-        <p className="combustion">Combustion</p>
-      </Link>
-      <Link className="fugitive-emissions" to="/home1add">
+      
+      <Link to="/dash">
+      <a className="stationary-c">Stationary Combustion</a>
+        </Link>
+
+        <Link to="/mobilecombustion">
+
+
+        <a className="mobile-combustion">
+        <p className="mobile2">{`Mobile `}</p>
+        <p className="combustion2">Combustion</p>
+      </a>
+        </Link>
+
+        <Link to="/fug">
+      <a className="fugitive-emissions">
         <p className="mobile">{`Fugitive `}</p>
         <p className="combustion">Emissions</p>
+      </a>
       </Link>
-      <Link className="process-emissions" to="/home1add">
+      
+      <Link to="/processemission">
+      <a className="process-emissions">
         <p className="mobile">{`Process `}</p>
         <p className="combustion">Emissions</p>
-      </Link>
+      </a></Link>
       <div className="di">{Math.round(element)}</div>
       <p className="p">{Math.round(element)}</p>
       <p className="tonnes-of-co2eq">Tonnes of CO2eq</p>

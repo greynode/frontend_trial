@@ -1,7 +1,7 @@
 
 import React, { Component ,useCallback ,useState,useContext, useEffect} from 'react';
 import axios from 'axios';
-import { NavLink,useNavigate} from "react-router-dom"
+import { NavLink,useNavigate,Link} from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Dropdown from 'react-bootstrap/Dropdown';
@@ -133,7 +133,7 @@ const Fugitive = () =>{
     
       const navigate = useNavigate();
       const onAddDataClick = useCallback(() => {
-        navigate("/fugdash");
+        navigate("/sc3godash");
       }, [navigate]);
     
     useEffect(() => {
@@ -147,7 +147,10 @@ const Fugitive = () =>{
         <>
         <div className="home1-hello">
          
-
+        <div className='rectangle-1'/>
+      <div className='rectangle-2'/>
+      <div className='rectangle-3'/>
+      <div className='rectangle-4'/>
          <img className="home1-add-child" alt="" src="../vector-4.svg" />
          <img className="home1-add-item" alt="" src="../vector-4.svg" />
          <div className="home1-add-inner" />
@@ -165,23 +168,37 @@ const Fugitive = () =>{
          <div className="home1-add-child4" />
          <div className="home1-add-child5" />
          <div className="home1-add-child6" />
+         <Link to="/dash">
          <a className="scope-1">Scope 1</a>
-         <a className="scope-2">Scope 2</a>
-         <a className="scope-3">Scope 3</a>
+        </Link>
+        <Link to="/sco">
+        <a className="scope-2">Scope 2</a>
+        </Link>
+        <Link to="/scope3good">
+        <a className="scope-32">Scope 3</a>
+        </Link>
+        <Link to="/capital">
          <section className="rectangle-section" />
-         <a className="stationary-c">Stationary Combustion</a>
+         <a className="stationary-c"> Capital Goods</a>
+</Link>
+         <Link to="/franchise">
          <a className="mobile-combustion">
-           <p className="mobile1">{`Mobile `}</p>
-           <p className="combustion1">Combustion</p>
+           <p className="mobile1">{`Franchise `}</p>
+           <p className="combustion1"></p>
          </a>
+         </Link>
+         <Link to="/upstream">
          <a className="fugitive-emissions">
-           <p className="mobile">{`Fugitive `}</p>
-           <p className="combustion">Emissions</p>
+           <p className="mobile">{`Upstream `}</p>
+           <p className="combustion"></p>
          </a>
+         </Link>    
+              <Link to="/downstream">
+
          <a className="process-emissions">
-           <p className="mobile">{`Process `}</p>
-           <p className="combustion">Emissions</p>
-         </a>
+           <p className="mobile">{`Downstream `}</p>
+    
+         </a></Link>
          <div className="di">{Math.round(element)}</div>
          <div className="tonnes-of">Tonnes of CO2eq</div>
          <p className="this-section-captures-any-emis">

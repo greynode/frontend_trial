@@ -1,6 +1,6 @@
 import { useCallback,useState } from "react";
 import { TextField, Input, Icon, Button } from "@mui/material";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link ,NavLink} from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import "./Login.css";
 
@@ -13,6 +13,9 @@ const Login = () => {
 
   const onRegisterHereClick = useCallback(() => {
     navigate("/register");
+  }, [navigate]);
+  const onRegisterHereClicks = useCallback(() => {
+    navigate("/password-reset");
   }, [navigate]);
   const [passShow, setPassShow] = useState(false);
 
@@ -134,7 +137,9 @@ const Login = () => {
       >
         Login
       </Button>
-      <a className="forgot-password1">Forgot password ?</a>
+    
+      <p className="forgot-password1"> <NavLink to="/password-reset">Forgot Password </NavLink> </p>
+   
       <div className="if-you-dont-have-an-account">
         If you don’t have an account
       </div>

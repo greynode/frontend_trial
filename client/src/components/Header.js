@@ -95,6 +95,10 @@ const Header = () => {
     const goError = () => {
         history("*")
     }
+    const hello = () => {
+        history("*")
+    }
+    
 
     return (
         <>
@@ -129,6 +133,9 @@ const Header = () => {
                                 logoutuser()
                                 handleClose()
                             }}>Logout</MenuItem>
+                              <MenuItem onClick={() => {
+                              hello()
+                            }}>Notification</MenuItem>
                         </>
                     ) : (
                         <>

@@ -107,10 +107,11 @@
 .scope-2,
 .scope-3 {
   left: 364px;
-  color: var(--color-gray-400);
+  color:black;
 }
 .scope-3 {
   left: 597px;
+  color: black;
 }
 .rectangle-section {
   position: absolute;
@@ -137,15 +138,28 @@
 .mobile {
   margin-block-start: 0;
   margin-block-end: 0;
+  color: black;
+
+}
+.mobile2 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  color: green;
 
 }
 .mobile1 {
   margin-block-start: 0;
   margin-block-end: 0;
-  color: green;
+  color: black;
 }
 .combustion {
   margin: 0;
+  color: black;
+  
+}
+.combustion2 {
+  margin: 0;
+  color: green;
   
 }
 .combustion1 {
@@ -466,8 +480,8 @@
   border-radius: var(--br-md);
   background-color: #f4f6f9;
   width: 100%;
-  height: 1721px;
-  overflow: hidden;
+  height: 2021px;
+ 
   text-align: left;
   font-size: var(--font-size-lg);
   color: var(--color-gray-600);
@@ -507,10 +521,7 @@ table.info {
   border: 1px solid black;
 }
 
-/* To display the block as level element */
-table.info tbody, table.info thead {
-  display: block;
-}
+
 
 thead tr th {
   height: 40px;
@@ -518,17 +529,7 @@ thead tr th {
   
 }
 
-table.info tbody {
-  
-  /* Set the height of table body */
-  height: 500px;
-  
-  /* Set vertical scroll */
-  overflow-y: auto;
-  
-  /* Hide the horizontal scroll */
-  overflow-x: hidden;
-}
+
 .info{
   position: absolute;
   top: 1000px;
@@ -566,3 +567,102 @@ table.infooo {
   left: 130px;
 }
 
+.down1{
+  position: absolute;
+  top: 1000px;
+  left: 130px;
+}
+
+/* this is//////////////////////////////////////////////////////////////////////////////////// */
+table.down1 {
+  width: 1200px;
+  
+  /* border-collapse: collapse; */
+  border-spacing: 0;
+  border: 1px solid black;
+}
+
+/* To display the block as level element */
+table.down1 tbody, table.down1 thead {
+  display: block;
+}
+
+thead tr th {
+  height: 40px;
+  line-height: 20px;
+  
+}
+
+table.down1 tbody {
+  
+  /* Set the height of table body */
+  height: 200px;
+  
+  /* Set vertical scroll */
+  overflow-y: auto;
+  
+  /* Hide the horizontal scroll */
+  overflow-x: hidden;
+}
+
+
+
+table.down2 {
+  width: 1200px;
+  
+  /* border-collapse: collapse; */
+  border-spacing: 0;
+  border: 1px solid black;
+}
+
+/* To display the block as level element */
+table.down2 tbody, table.down2 thead {
+  display: block;
+}
+
+thead tr th {
+  height: 40px;
+  line-height: 20px;
+  
+}
+
+table.down2 tbody {
+  
+  /* Set the height of table body */
+  height: 200px;
+  
+  /* Set vertical scroll */
+  overflow-y: auto;
+  
+  /* Hide the horizontal scroll */
+  overflow-x: hidden;
+}
+.down2{
+  position: absolute;
+  top: 1400px;
+  left: 130px;
+}
+.down3{
+  position: absolute;
+  top: 1800px;
+  left: 130px;
+}
+table.down3 {
+  width: 1200px;
+  
+  /* border-collapse: collapse; */
+  border-spacing: 0;
+  border: 1px solid black;
+}
+.down4{
+  position: absolute;
+  top: 1200px;
+  left: 50px;
+}
+table.down4 {
+  width: 1400px;
+  
+  /* border-collapse: collapse; */
+  border-spacing: 0;
+  border: 1px solid black;
+}

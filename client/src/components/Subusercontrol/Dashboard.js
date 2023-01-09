@@ -2,8 +2,39 @@ import React, { useContext, useEffect ,useState} from 'react'
 import { Routes,Route, useNavigate,Link } from 'react-router-dom';
 import { LoginContext } from '../ContextProvider/Context';
 import Header from '../Header';
-import Fugi from "../Clientpages/Fugitiveemmision";
+import Box from '@mui/material/Box';
 import "./dash.css"
+import Fugi from "../Clientpages/Fugitiveemmision";
+
+import Scope3goodsdash from "../Clientpages/Scope3goodsdash";
+import Downstream from "../Clientpages/Downstream";
+import Question from "../Clientpages/Question"
+import Fugitive2 from "../Clientpages/Fugitivegas";
+import AssetDeclaration from "../Clientpages/AssetDeclaration";
+import CompanyDetails from "../Clientpages/CompanyDetails";
+import Mobile from "../Clientpages/Mobilecombustion";
+import Home1View from "../Clientpages/Mobilecombustiondash";
+import Process from "../Clientpages/Processemission";
+import Processdash from "../Clientpages/processemissiondash";
+import Fugidash from "../Clientpages/Fugitiveemissiondash";
+import Scombustion from "../Clientpages/Scombution";
+import Scombustionhome from "../Clientpages/Scombustiondash";
+import Subuseradd from "../Clientpages/Subuseradd";
+import Upstream from "../Clientpages/Upstream";
+import Capitalgoods from "../Clientpages/Capitalgoods";
+import Franchise from "../Clientpages/Franchisescope3";
+import Goodsscope3 from "../Clientpages/Goodsscope3";
+import Dummy from "../Dummypage";
+import Franchisedash from '../Clientpages/Franchisedash';
+import Fugitivegasdash from '../Clientpages/Fugitive2dash';
+import Downdash from '../Clientpages/Downstreamdash';
+import Upstreamdashb from '../Clientpages/Upstreamdash';
+import Capdash from '../Clientpages/Capitalgoodsdash';
+import Recommendation from '../Clientpages/Recommendation';
+import Profile2 from "../Clientpages/Subpro";
+import Scope2 from "../Clientpages/Scope2";
+import Scope2dash from "../Clientpages/Scope2dash";
+import CircularProgress from '@mui/material/CircularProgress';
 
     
 
@@ -66,7 +97,7 @@ const Dashboard = () => {
               history("/superdash");
             }  else {
              
-              //  history("/")
+                history("/")
             }
     }
 
@@ -80,85 +111,58 @@ const Dashboard = () => {
     }, [])
 
     return (
-        <>  <Routes> 
-          <Route path="/demo" element={<Fugi/>} />
+        <>  
+        
+        {
+        data ? (
+        <>
+        <Routes> 
+          <Route path="/" element={<Scombustion/>}/>
+    <Route path="/homeview" element={<Scombustionhome/>}/>
+    <Route path="/question" element={<Question/>}/>
+            
+     
+       
+            <Route path="/downstream" element={<Downstream/>}/>
+            <Route path="/upstream" element={<Upstream/>}/>
+            <Route path="/capital" element={<Capitalgoods/>}/>
+    
+            <Route path="/fugitivetwo" element={<Fugitive2/>}/>
+         
+     
+      <Route path="/companyadd2" element={<AssetDeclaration/>}/>
+      <Route path="/companyadd" element={<CompanyDetails/>}/>
+    <Route path="/home" element={<Scombustion/>}/>
+      <Route path="/homeview" element={<Scombustionhome/>}/>
+      <Route path="/mobilecombustion" element={<Mobile/>}/>
+      <Route path="/mobiledash" element={<Home1View/>}/>
+      <Route path="/processemission" element={<Process/>}/>
+      <Route path="/processdash" element={<Processdash/>}/>
+      <Route path="/fug" element={<Fugi/>}/>
+      <Route path="/fugdash" element={<Fugidash/>}/>
+      <Route path="/Subuseradd" element={<Subuseradd/>}/>
+      <Route path="/profile" element={<Profile2/>}/>
+      <Route path="/sco" element={<Scope2/>}/>
+      <Route path="/scodash" element={<Scope2dash/>}/>
+<Route path="/franchise" element={<Franchise/>}/>
+      <Route path="/scope3good" element={<Goodsscope3/>}/>
+      <Route path="/rec" element={<Recommendation/>}/>
+      <Route path="/franchdash" element={<Franchisedash/>}/>
+      <Route path="/sc3godash" element={<Scope3goodsdash/>}/>
+      <Route path="/fugigasdash" element={<Fugitivegasdash/>}/>
+      <Route path="/downdash" element={<Downdash/>}/>
+      <Route path="/updash" element={<Upstreamdashb/>}/>
+      <Route path="/capdash" element={<Capdash/>}/>
         </Routes>
 
-        <div id ="hello" width="50%" margin="auto" padding="10px">
-     
-       <h1>subuser home </h1>
-       
-      
-       
-    
-        
-       
-        <Link to="/home">
-          <button id="bu">stationay combution</button>
-        </Link>
-        <Link to="/processemission">
-          <button id="bu">process emission</button>
-        </Link>
-        <Link to="/homeview">
-          <button id="bu">stationay combustion dash</button>
-        </Link>
-        <Link to="/mobilecombustion">
-          <button id="bu">Mobilecombustion</button>
-        </Link>
-        <Link to="/mobiledash">
-          <button id="bu">Mobilecombustion dash</button>
-        </Link>
-        
-        <Link to="/sco">
-          <button id="bu">Scope2 energy</button>
-        </Link>
-        <Link to="/scodash">
-          <button id="bu">Scope2 Dashboard</button>
-        </Link>
-        <Link to="/mc">
-          <button id="bu">Transport</button>
-        </Link>
-        <Link to="/fug">
-          <button id="bu">Fugitive emission</button>
-        </Link>
-        <Link to="/fugdash">
-          <button id="bu">Fugitive emission dash</button>
-        </Link>
-        <Link to="/scope3">
-          <button id="bu">Scope3 </button>
-        </Link>
-        <Link to="/scope3dash">
-          <button id="bu">Scope3 dash</button>
-        </Link>
-        <Link to="/scope3good">
-          <button id="bu">Scope3 goods</button>
-        </Link>
-        <Link to="/scope3gooddas">
-          <button id="bu">Scope3 goods dash</button>
-        </Link>
-        <Link to="/downstream">
-          <button id="bu">Downstream</button>
-        </Link>
-        <Link to="/upstream">
-          <button id="bu">Upstream</button>
-        </Link>
-        <Link to="/capital">
-          <button id="bu">Capital goods</button>
-        </Link>
-        <Link to="/report">
-          <button id="bu">Report</button>
-        </Link>
-        <Link to="/fugitivetwo">
-          <button id="bu">Fugitive 2</button>
-        </Link>
   
-      
-    
-        
-       </div>
        {/* <h1>user home page</h1>
        <Service/> */}
-    </>
+    </>) : <Box sx={{ display: 'flex', justifyContent: "center", alignItems: "center", height: "100vh" }}>
+          Loading... &nbsp;
+          <CircularProgress />
+        </Box>
+      }</>
     )
 }
 

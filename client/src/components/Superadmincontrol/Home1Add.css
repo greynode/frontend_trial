@@ -141,16 +141,46 @@ top: 1290px;
   width: 189px;
   height: 41px;
 }
+.scope-12,
+.scope-22,
+.scope-32 {
+  text-decoration: none;
+  position: absolute;
+  top: 180px;
+  font-size: var(--font-size-lg);
+  font-weight: 800;
+  font-family: var(--font-sarabun);
+  display: inline-block;
+  width: 189px;
+  height: 41px;
+}
+.scope-22,
+.scope-32 {
+  left: 364px;
+  color: green;
+}
 .scope-1 {
   left: 111px;
-  color: inherit;
+  color: black;
+}
+.scope-12 {
+  left: 111px;
+  color: green;
 }
 .scope-2,
 .scope-3 {
   left: 364px;
-  color: var(--color-gray-200);
+  color:black;
+}
+.scope-22,
+.scope-32 {
+  left: 364px;
+  color:green;
 }
 .scope-3 {
+  left: 597px;
+}
+.scope-32 {
   left: 597px;
 }
 .rectangle-section {
@@ -169,7 +199,7 @@ top: 1290px;
   top: 593px;
   left: 169px;
   font-weight: 800;
-  color: inherit;
+  color: black;
   text-align: center;
   display: inline-block;
   width: 104px;
@@ -189,6 +219,7 @@ top: 1290px;
   text-align: center;
   width: 244px;
   height: 122px;
+  color: black;
 }
 .mobile-combustion {
   position: absolute;
@@ -559,14 +590,14 @@ top: 1290px;
 .measure {
   text-decoration: underline;
   left: 461px;
-  color: inherit;
+  color: black;
 }
 .dashboard,
 .offset,
 .reduce {
   text-decoration: none;
   left: 645px;
-  color: var(--color-black);
+  color:black;
 }
 .dashboard,
 .offset {
@@ -644,6 +675,30 @@ table.subusertable {
   position: absolute;
   top: 350px;
   left: 730px;
+}
+table.clienttable {
+  width: 1000px;
+  
+  /* border-collapse: collapse; */
+  border-spacing: 0;
+  border: 1px solid black;
+}
+.clienttable{
+  position: absolute;
+  top: 200px;
+  left: 230px;
+}
+table.clienttable2 {
+  width: 1400px;
+  
+  /* border-collapse: collapse; */
+  border-spacing: 0;
+  border: 1px solid black;
+}
+.clienttable2{
+  position: absolute;
+  top: 200px;
+  left: 50px;
 }
 .subremail{
   position: absolute; top: 250px; left: 730px ; width: 400px;

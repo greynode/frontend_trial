@@ -423,7 +423,7 @@ routerstation.post('/downdash', async (req, res) => {
 
   else{
    
-        const usr = await fugitiveDB.find({map:map});
+        const usr = await downstreamdb.find({map:map});
             
       res.json(usr)
   }

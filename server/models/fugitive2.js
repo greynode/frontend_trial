@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-var timestamps = require('mongoose-timestamp')
+
 
 var fugitive = new mongoose.Schema({
     person: {
@@ -72,6 +72,6 @@ var fugitive = new mongoose.Schema({
     }
 })
 
-fugitive.plugin(timestamps);
+
 const fugitivetwo = new mongoose.model("fugitivetwos", fugitive);
 module.exports=fugitivetwo;

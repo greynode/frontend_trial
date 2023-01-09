@@ -1,7 +1,7 @@
 
 import React, { Component ,useCallback ,useState,useContext, useEffect} from 'react';
 import axios from 'axios';
-import { NavLink,useNavigate} from "react-router-dom"
+import { NavLink,useNavigate,Link} from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Dropdown from 'react-bootstrap/Dropdown';
@@ -442,6 +442,9 @@ let co2=val
       const onAddDataClick = useCallback(() => {
         navigate("/fugdash");
       }, [navigate]);
+      const onAddDataClicks = useCallback(() => {
+        navigate("/fugitivetwo");
+      }, [navigate]);
     
     useEffect(() => {
      
@@ -454,7 +457,10 @@ let co2=val
         <>
         <div className="home1-hello">
          
-
+        <div className='rectangle-1'/>
+      <div className='rectangle-2'/>
+      <div className='rectangle-3'/>
+      <div className='rectangle-4'/>
          <img className="home1-add-child" alt="" src="../vector-4.svg" />
          <img className="home1-add-item" alt="" src="../vector-4.svg" />
          <div className="home1-add-inner" />
@@ -472,23 +478,41 @@ let co2=val
          <div className="home1-add-child4" />
          <div className="home1-add-child5" />
          <div className="home1-add-child6" />
-         <a className="scope-1">Scope 1</a>
-         <a className="scope-2">Scope 2</a>
-         <a className="scope-3">Scope 3</a>
+         <Link to="/dash">
+         <a className="scope-12">Scope 1</a>
+        </Link>
+        <Link to="/sco">
+        <a className="scope-2">Scope 2</a>
+        </Link>
+        <Link to="/scope3good">
+        <a className="scope-3">Scope 3</a>
+        </Link>
          <section className="rectangle-section" />
-         <a className="stationary-c">Stationary Combustion</a>
-         <a className="mobile-combustion">
-           <p className="mobile1">{`Mobile `}</p>
-           <p className="combustion1">Combustion</p>
-         </a>
-         <a className="fugitive-emissions">
-           <p className="mobile">{`Fugitive `}</p>
-           <p className="combustion">Emissions</p>
-         </a>
-         <a className="process-emissions">
-           <p className="mobile">{`Process `}</p>
-           <p className="combustion">Emissions</p>
-         </a>
+         <Link to="/dash">
+      <a className="stationary-c">Stationary Combustion</a>
+        </Link>
+
+        <Link to="/mobilecombustion">
+
+
+        <a className="mobile-combustion">
+        <p className="mobile">{`Mobile `}</p>
+        <p className="combustion">Combustion</p>
+      </a>
+        </Link>
+
+        <Link to="/fug">
+      <a className="fugitive-emissions">
+        <p className="mobile2">{`Fugitive `}</p>
+        <p className="combustion2">Emissions</p>
+      </a>
+      </Link>
+      
+      <Link to="/processemission">
+      <a className="process-emissions">
+        <p className="mobile">{`Process `}</p>
+        <p className="combustion">Emissions</p>
+      </a></Link>
          <div className="di">{Math.round(element)}</div>
          <div className="tonnes-of">Tonnes of CO2eq</div>
          <p className="this-section-captures-any-emis">
@@ -652,6 +676,9 @@ let co2=val
          </Button>
          <a className="view-dat" onClick={onAddDataClick}>
            View Data
+         </a>
+         <a className="view-daty" onClick={onAddDataClicks}>
+           Fugitive Gases
          </a>
          <img
            className="factory-pollution-city-air-and-icon"

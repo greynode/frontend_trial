@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import DatePicker from 'react-date-picker';
 import { LoginContext } from "../ContextProvider/Context";
-import { NavLink,useNavigate} from "react-router-dom"
+import { NavLink,useNavigate,Link} from "react-router-dom"
 import Header from './Header';
 
 
@@ -247,10 +247,15 @@ setCalculation(() => count * 2);
         className={scope.rectangleIcon}
         alt=""
         src="../rectangle-51@2x.png"
-      />
-      <a className={scope.scope1}>Scope 1</a>
-      <a className={scope.scope21}>Scope 2</a>
-      <a className={scope.scope3}>Scope 3</a>
+      /> <Link to="/dash">
+   <a className={scope.scope1}>Scope 1</a>     </Link>
+     <Link to="/sco">
+     <a className={scope.scope21}>Scope 2</a>
+     </Link>
+     <Link to="/scope3good">
+     <a className={scope.scope3}>Scope 3</a>
+     </Link>
+   
       <div className={scope.rectangleDiv} />
       <a className={scope.electricity}>Electricity</a>
       <h1 className={scope.h1}>{Math.round(element)}</h1>

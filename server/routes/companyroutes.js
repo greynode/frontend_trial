@@ -420,6 +420,20 @@ routers.post("/quest", async (req, res) => {
 
 
 
+routers.get('/companydb', async (req, res) => {
+	const usr = await companydb.find();
+
+	res.json(usr);
+});
+
+
+routers.get('/clientp', async (req, res) => {
+	const usr = await companydetail1.find();
+
+	res.json(usr);
+});
+
+
 
 
 
