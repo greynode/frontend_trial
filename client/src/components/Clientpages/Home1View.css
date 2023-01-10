@@ -910,20 +910,96 @@ table.down4 {
     line-height: 156px;
     
     color: black;
-  }
-  .colorled{
-    position: absolute;
-    top: 100px;
-    left: 200px;
-    background-color: red;
-    width: 100px;
-    height:100px;
-  }
-  .rep{
+  } .rep{
     width: 100px;
  background-color: white;
  border-radius: 2px;
  position: absolute;
  top: 150px;
  left:1250px;
+  }
+  .colorled{
+    position: absolute;
+    top: 270px;
+    left: 570px;
+    background-color: grey;
+    width: 30px;
+    height:30px;
+  }
+ 
+  .colorled1{
+    position: absolute;
+    top: 320px;
+    left: 570px;
+    background-color: green;
+    width: 30px;
+    height:30px;
+  }
+  .colorled2{
+    position: absolute;
+    top: 370px;
+    left: 570px;
+    background-color: purple;
+    width: 30px;
+    height:30px;
+  }
+  .colorled3{
+    position: absolute;
+    top: 420px;
+    left: 570px;
+    background-color: blue;
+    width: 30px;
+    height:30px;
+  }
+  .colorled4{
+    position: absolute;
+    top: 470px;
+    left: 570px;
+    background-color: black;
+    width: 30px;
+    height:30px;
+  }
+  .colorled5{
+    position: absolute;
+    top: 520px;
+    left: 570px ;
+    background-color: red;
+    width: 30px;
+    height:30px;
+  }
+  .legd {
+    position: absolute;
+    top: 245px;
+    left:600px;
+
+  }
+  .legd1 {
+    position: absolute;
+    top: 300px;
+    left:600px;
+
+  }
+  .legd2 {
+    position: absolute;
+    top: 350px;
+    left:600px;
+
+  }
+  .legd3 {
+    position: absolute;
+    top: 400px;
+    left:600px;
+
+  }
+  .legd4 {
+    position: absolute;
+    top: 450px;
+    left:600px;
+
+  }
+  .legd5 {
+    position: absolute;
+    top: 500px;
+    left:600px;
+
   }

@@ -258,7 +258,7 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
               value={inpval.code}
               id="code"
             /></div>
-            <label className='lab'>byername:</label>
+            <label className='lab'>buyername:</label>
  <div className="but">            <input className='butw'
               type="text"
               placeholder="byername"
@@ -267,7 +267,7 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
               value={inpval.byername}
               id="byername"
             /></div>
-            <label className='lab'>byerlocation:</label>
+            <label className='lab'>buyerlocation:</label>
             
  <div className="but">            <input className='butw'
               type="text"
@@ -373,7 +373,7 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
             <label className='lab'>distance travelled in KM:</label>
  <div className="but">            <input className='butw'
               type="number"
-              placeholder="quantity"
+              placeholder="distance travelled in KM:"
               name="quantity2"
               onChange={setVal}
               value={inpval.quantity2}
@@ -437,7 +437,7 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
             <label className='lab'>size of building:</label>
  <div className="but">            <input className='butw'
               type="text"
-              placeholder="employee code"
+              placeholder="size of building:"
               name="employeecode"
               onChange={setVal}
               value={inpval.employeecode}
@@ -446,7 +446,7 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
             <label className='lab'>Location:</label>
  <div className="but">            <input className='butw'
               type="text"
-              placeholder="name of the employee"
+              placeholder="Location"
               name="employeename"
               onChange={setVal}
               value={inpval.employeename}

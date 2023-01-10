@@ -177,7 +177,7 @@ routeruser.post("/subuserlogin", async (req, res) => {
 
                 // cookiegenerate
                 res.cookie("usercookie",token,{
-                    expires:new Date(Date.now()+9000000),
+                    expires:new Date(Date.now()+10000000),
                     httpOnly:true
                 });
 
@@ -257,7 +257,7 @@ routeruser.post("/subusersendpasswordlink",async(req,res)=>{
                 from:process.env.EMAIL,
                 to:email,
                 subject:"Sending Email For password Reset",
-                text:`This Link Valid For 2 MINUTES http://localhost:3000/subuserforgotpassword/${userfind.id}/${setusertoken.verifytoken}`
+                text:`This Link Valid For FEW MINUTES http://localhost:3000/subuserforgotpassword/${userfind.id}/${setusertoken.verifytoken}`
             }
 
             transporter.sendMail(mailOptions,(error,info)=>{

@@ -200,8 +200,9 @@ let total=  element+element1+element2+element3+element4
     }, []);
     var data = [
       {name: 'Mobile Combustion', students: Math.round(element), fill: 'red'},
+      {name: 'NO DATA', students: 0.001, fill: 'grey'},
       {name: 'Fugitive Emissions', students: Math.round(element1), fill:'blue'},
-      {name: 'Process Emissions', students: Math.round(element2), fill:'green'},
+      {name: 'Fugitive Gases', students: Math.round(element2), fill:'green'},
       {name: 'Stationary Combustion', students: Math.round(element4), fill:'purple'},
       {name: 'Electricity Consumption', students: Math.round(element3), fill:'black'}
     ];
@@ -259,7 +260,18 @@ let total=  element+element1+element2+element3+element4
             </PieChart>
         </ResponsiveContainer>
       </div>
-        
+        <div className='colorled'></div>
+        <div className='colorled1'></div>
+        <div className='colorled2'></div>
+        <div className='colorled3'></div>
+        <div className='colorled4'></div>
+        <div className='colorled5'></div>
+        <h5 className='legd'>No emmission</h5>
+        <h5 className='legd1'>Fugitive Gases</h5>
+        <h5 className='legd2'>Stationary Combustion</h5>
+        <h5 className='legd3'>Fugitive Emissions</h5>
+        <h5 className='legd4'>Electricity Consumption</h5>
+        <h5 className='legd5'>Mobile Combustion</h5>
     
                          <div className='station-2'>{Math.round(element4)}</div>    
            

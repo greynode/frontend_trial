@@ -4,17 +4,17 @@ import "./dash.css"
 const Dashboard = () => {
     return(
         <>
-              <div id ="hellod" width="50%" margin="auto" padding="100px">
-        <Link  align="center" to="/login">
-          <button id="bu">client</button>
+        
+        <Link to="/login">
+          <button id="bucli">Client</button>
         </Link>
-        <Link align="center" to="/sublogin">
-          <button id="bu">subuser</button>
+        <Link  to="/sublogin">
+          <button id="busub">Sub User</button>
         </Link>
-        <Link align="center" to="/Superlogin">
-          <button id="bu">superadmin</button>
+        <Link  to="/Superlogin">
+          <button id="busuper">Super Admin</button>
         </Link>
-       </div> </>
+       </>
     )
 }
 

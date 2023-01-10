@@ -80,7 +80,7 @@ const Dashboard = () => {
         setTimeout(() => {
             DashboardValid();
             setData(true)
-        })//, 2000
+        },2000)
 
     }, [])
 
