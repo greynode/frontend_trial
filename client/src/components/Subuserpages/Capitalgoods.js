@@ -157,6 +157,9 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
       const onAddDataClick = useCallback(() => {
         navigate("/capdash");
       }, [navigate]);
+      const onAddDataClickc = useCallback(() => {
+        navigate("/scope3good");
+      }, [navigate]);
     
     useEffect(() => {
      
@@ -196,7 +199,7 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
         <Link to="/sco">
         <a className="scope-2">Scope 2</a>
         </Link>
-        <Link to="/scope3good">
+        <Link to="/capital">
         <a className="scope-32">Scope 3</a>
         </Link>
          <section className="rectangle-section" />
@@ -484,6 +487,9 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
          <a className="butvieww"onClick={onAddDataClick}>
            View Data
          </a>
+         <a className="bucaptial"onClick={onAddDataClickc}>
+         <h3>  Goods</h3>
+         </a>
          <img
            className="factory-pollution-city-air-and-icon"
            alt=""
@@ -492,7 +498,8 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
          <a className="measure">Measure</a>
          <a className="reduce">Reduce</a>
          <a className="offset">Offset</a>
-         <a className="dashboard">Dashboard</a>
+         <Link to="/Main">
+      <a className="dashboard">Dashboard</a>        </Link>
     <ToastContainer/>
        </div>
 

@@ -66,6 +66,7 @@ import Recommendation from './components/Clientpages/Recommendation';
 import Profile2 from "./components/Clientpages/profile";
 import Scope2 from "./components/Clientpages/Scope2";
 import Scope2dash from "./components/Clientpages/Scope2dash";
+import Mainpage from "./components/Clientpages/Maindash";
 
 
 
@@ -240,6 +241,7 @@ function App() {
     <Route path="/cli" element={<Clientlist/>}/>
     <Route path="/clidet" element={<Clientdetail/>}/>
     <Route path="/superadd" element={<Superadd/>}/>
+    <Route path="/Main" element={<Mainpage/>}/>
        
 
  

@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect, useState,useContext } from 'react';
 import { LoginContext } from "../ContextProvider/Context";
 import Header from './Header';
-
+import {Link} from "react-router-dom"
 function Recommendation(){
     const [usr, setTodos] = useState([]);
 
@@ -79,7 +79,8 @@ function Recommendation(){
       <a className="measure">Measure</a>
       <a className="reduce">Reduce</a>
       <a className="offset">Offset</a>
-      <a className="dashboard">Dashboard</a>
+      <Link to="/Main">
+      <a className="dashboard">Dashboard</a>        </Link>
   
 			<div className="comp">
             <h1 className='heading'>We Recommend........</h1>

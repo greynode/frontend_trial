@@ -356,7 +356,9 @@ setCalculation(() => count * 2);
       <a className={scope.measure}>Measure</a>
       <a className={scope.reduce}>Reduce</a>
       <a className={scope.offset}>Offset</a>
-      <a className={scope.dashboard}>Dashboard</a>
+     <Link to="/Main">
+     <Link to="/Main">
+      <a className="dashboard">Dashboard</a>        </Link> </Link>
       <ToastContainer />
     </div>
     

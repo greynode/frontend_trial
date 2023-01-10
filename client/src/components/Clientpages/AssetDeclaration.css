@@ -443,6 +443,7 @@ table.scrolldown {
   /* border-collapse: collapse; */
   border-spacing: 0;
   border: 1px solid black;
+  table-layout: auto;
 }
 
 /* To display the block as level element */
@@ -507,13 +508,15 @@ table.scrolldownp tbody {
   
   /* Hide the horizontal scroll */
   overflow-x: hidden;
+
 }
 table.scrolldownp {
-  width: 450px;
+  width: 420px;
 
   /* border-collapse: collapse; */
   border-spacing: 0;
   border: 1px solid black;
+  table-layout: auto;
 }
 table.scrolldownp tbody, table.scrolldownp thead {
   display: block;
@@ -534,11 +537,12 @@ table.scrolldowns tbody {
   overflow-x: hidden;
 }
 table.scrolldowns {
-  width: 450px;
+  width: 420px;
   
   /* border-collapse: collapse; */
   border-spacing: 0;
   border: 1px solid black;
+  table-layout: auto;
 }
 table,th,td{
  

@@ -496,7 +496,7 @@ useEffect(() => {
       >
         Next
       </Button>
-      <table class="scrolldown">
+      <table class="scrolldown" rules="all">
 
 	
 		<thead>
@@ -535,7 +535,7 @@ useEffect(() => {
 				
 		
 	</table>
-  <table class="scrolldownp">
+  <table class="scrolldownp" rules="all">
 		
 	
 		<thead>
@@ -570,9 +570,9 @@ useEffect(() => {
 				
 		
 	</table>
-  <table class="scrolldowns">
+  <table class="scrolldowns" rules="all">
 		
-	
+  
 		<thead>
 			<tr>
 				<th>S.NO</th>
@@ -589,7 +589,7 @@ useEffect(() => {
           {usrs.length > 0  ? usrs.map
 				(todo => (
 						<tr>
-						<td  key="{qaait}">{j=j+1}</td>
+						<td  key="{qaait}" className="trow1">{j=j+1}</td>
 						<td  key="{quantity}">{todo.serviceid}</td>
 						<td  key="quantity">{todo.servicedescription}</td>
 						

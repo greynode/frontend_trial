@@ -76,14 +76,14 @@ let i=0;
         <Link to="/sco">
         <a className="scope-2">Scope 2</a>
         </Link>
-        <Link to="/scope3good">
+        <Link to="/capital">
         <a className="scope-32">Scope 3</a>
         </Link>
          <section className="rectangle-section" />
          <Link to="/capital">
          <section className="rectangle-section" />
          <a className="stationary-c2"> Capital Goods</a>
-</Link>
+         </Link>
          <Link to="/franchise">
          <a className="mobile-combustion">
            <p className="mobile1">{`Franchise `}</p>
@@ -145,10 +145,6 @@ let i=0;
       </Link>
       <table class="down4">
 
-	
-
-
-
 <thead>
   <tr>
     <th>S.NO</th>
@@ -161,17 +157,15 @@ let i=0;
     <th>distance travelled </th>
     <th>material</th>
     <th>quantity</th>
-    <th>waste generated</th>
-    <th>method of dispose</th>
-    <th>quantity</th>
+    
+    
     <th>vehicle distance</th>
     <th>mode of transport:</th>
     <th>type of vehicle</th>
-    <th>size of building</th>
     <th>Location</th>
+    <th>size of building</th>
     <th>Energy consumption in kw</th>
-    
-     <th>date</th>
+    <th>date</th>
 
   </tr>
 </thead>
@@ -183,26 +177,25 @@ let i=0;
       {usrs.length > 0  ? usrs.map
     (todo => (
         <tr>
-        <td  key="{qaait}">{i=i+1}</td>
-        <td  key="{quantity}">{todo.code}</td>
-        <td  key="{quantit}">{todo.byername}</td>
-        <td  key="{quantity">{todo.byerlocation}</td>
-        <td  key="{quantit}">{todo.facility}</td>
-        <td  key="quantity">{todo.transport}</td>
-        <td  key="{quantt}">{todo.vehicle}</td>
-        <td  key="{quantit}">{todo.distance}</td>
-        <td  key="{quantity}">{todo.material}</td>
-        <td  key="{quantit}">{todo.quantity}</td>
-        <td  key="{quantity">{todo.quantity2}</td>
-        <td  key="{quantit}">{todo.transport2}</td>
-        <td  key="quantity">{todo.vehicle2}</td>
+        <td  key="1">{i=i+1}</td>
+        <td  key="2">{todo.code}</td>
+        <td  key="3">{todo.byername}</td>
+        <td  key="4">{todo.byerlocation}</td>
+        <td  key="5">{todo.facility}</td>
+        <td  key="6">{todo.transport}</td>
+        <td  key="7">{todo.vehicle}</td>
+        <td  key="8">{todo.distance}</td>
+        <td  key="9">{todo.material}</td>
+        <td  key="10">{todo.quantity}</td>
+        
 
-        <td  key="quantity">{todo.employeecode}</td>
-        <td  key="{quantt}">{todo.employeename}</td>
-        <td  key="{quantit}">{todo.energy}</td>
-   
-      
-        <td  key="quantity">{todo.date}</td>
+        <td  key="11">{todo.quantity2}</td>
+        <td  key="12">{todo.transport2}</td>
+        <td  key="13">{todo.vehicle2}</td>
+        <td  key="14">{todo.employeecode}</td>
+        <td  key="15">{todo.employeename}</td>
+        <td  key="16">{todo.energy}</td>
+        <td  key="17">{todo.date}</td>
     
     
         </tr>

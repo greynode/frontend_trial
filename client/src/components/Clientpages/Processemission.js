@@ -199,7 +199,7 @@ setCalculation(() => count * 2);
         <Link to="/sco">
         <a className="scope-2">Scope 2</a>
         </Link>
-        <Link to="/scope3good">
+        <Link to="/capital">
         <a className="scope-3">Scope 3</a>
         </Link>
       <section className="rectangle-section" />
@@ -302,7 +302,8 @@ setCalculation(() => count * 2);
       <a className="measure">Measure</a>
       <a className="reduce">Reduce</a>
       <a className="offset">Offset</a>
-      <a className="dashboard">Dashboard</a>
+      <Link to="/Main">
+      <a className="dashboard">Dashboard</a>        </Link>
  <ToastContainer/>
     </div>
    </>

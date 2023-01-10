@@ -2,7 +2,7 @@ import Header from './Header';
 import { Form, Button } from "react-bootstrap";
 
 import React, { Component ,useCallback ,useState,useContext, useEffect} from 'react';
-import { NavLink,useNavigate} from "react-router-dom"
+import { NavLink,useNavigate,Link} from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { LoginContext } from "../ContextProvider/Context";
@@ -305,7 +305,8 @@ setCalculation(() => count * 2);
       <a className="measure">Measure</a>
       <a className="reduce">Reduce</a>
       <a className="offset">Offset</a>
-      <a className="dashboard">Dashboard</a>
+      <Link to="/Main">
+      <a className="dashboard">Dashboard</a>        </Link>
 
       <table class="subusertable">
 

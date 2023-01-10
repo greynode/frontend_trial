@@ -666,3 +666,264 @@ table.down4 {
   border-spacing: 0;
   border: 1px solid black;
 }
+.total{
+  
+  position: absolute;
+  width: 405px;
+  height: 194px;
+  left: 1049px;
+  top: 311px;
+  
+  font-family: 'Sarabun';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 80px;
+  line-height: 156px;
+  
+  color: black;
+  }
+  .tonnes{
+    
+  position: absolute;
+  width: 20%;
+  height: 96px;
+  left: 1052px;
+  top: 427px;
+  
+  font-family: 'Sarabun';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 25px;
+  line-height: 32px;
+  
+  color: black;
+  }
+  .station-2{
+    
+    position: absolute;
+    width: 405px;
+    height: 194px;
+    left: 374px;
+    top: 817px;
+    
+    font-family: 'Sarabun';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 156px;
+    
+    color: black;
+    }
+  .station{  
+      position: absolute;
+      width: 20%;
+      height: 96px;
+      left: 379px;
+      top: 931px;
+      
+      font-family: 'Sarabun';
+      font-style: normal;
+      font-weight: 800;
+      font-size: 25px;
+      line-height: 32px;
+      
+      color: black;
+      }
+  .mobilemain{
+    position: absolute;
+    width: 20%;
+    height: 96px;
+    left: 839px;
+    top: 931px;
+    
+    font-family: 'Sarabun';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 25px;
+    line-height: 32px;
+    
+    color: black;
+  }
+  .mobile-2{
+    position: absolute;
+    width: 405px;
+    height: 194px;
+    left: 834px;
+    top: 817px;
+    
+    font-family: 'Sarabun';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 156px;
+    
+    color: black;
+  }
+  .fugitive{
+    position: absolute;
+    width: 20%;
+    height: 96px;
+    left: 839px;
+    top: 1241px;
+    
+    font-family: 'Sarabun';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 25px;
+    line-height: 32px;
+    
+    color: black;
+  }
+  .fugitive-2{
+    position: absolute;
+    width: 405px;
+    height: 194px;
+    left: 834px;
+    top: 1127px;
+    
+    font-family: 'Sarabun';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 156px;
+    
+    color: black;
+  }
+  .process{
+      position: absolute;
+      width: 20%;
+      height: 96px;
+      left: 384px;
+      top: 1241px;
+      
+      font-family: 'Sarabun';
+      font-style: normal;
+      font-weight: 800;
+      font-size: 25px;
+      line-height: 32px;
+      
+      color: black;
+  }
+  .process-2{
+    position: absolute;
+    width: 20%;
+    height: 194px;
+    left: 374px;
+    top: 1127px;
+    
+    font-family: 'Sarabun';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 156px;
+    
+    color: black;
+  }
+  .rect{
+    
+  position: absolute;
+  width: 1284px;
+  height: 390px;
+  left: 78px;
+  top: 224px;
+  
+  background: white;
+  border-radius: 15px;
+  }
+  .rectt{
+    
+    position: absolute;
+    width: 1284px;
+    height: 690px;
+    left: 78px;
+    top: 684px;
+    
+    background: white;
+    border-radius: 15px;
+    }
+  .scope1{
+    position: absolute;
+    width: 35%;
+    height: 194px;
+    left: 600px;
+    top: 684px;
+    
+    font-family: 'Sarabun';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 156px;
+    
+    color: black;
+  }
+  .amplifier{
+    background-color: #f4f6f9;
+  }
+  /* .pie{
+    position:absolute;
+    left:400px;
+    top: 400px;;
+  } */
+  .scope2{
+    
+      position: absolute;
+      width: 35%;
+      height: 194px;
+      left: 600px;
+      top: 1284px;
+      
+      font-family: 'Sarabun';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 156px;
+      
+      color: black;
+    
+  }
+  .electricity-2{
+    position: absolute;
+    width: 20%;
+    height: 194px;
+    left: 640px;
+    top: 1404px;
+    
+    font-family: 'Sarabun';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 156px;
+    
+    color: black;
+  }
+  .electricity{
+    position: absolute;
+    width: 20%;
+    height: 194px;
+    left: 605px;
+    top: 1460px;
+    
+    font-family: 'Sarabun';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 156px;
+    
+    color: black;
+  }
+  .colorled{
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    background-color: red;
+    width: 100px;
+    height:100px;
+  }
+  .rep{
+    width: 100px;
+ background-color: white;
+ border-radius: 2px;
+ position: absolute;
+ top: 150px;
+ left:1250px;
+  }

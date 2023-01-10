@@ -34,7 +34,7 @@ import Profile2 from "../Subuserpages/Subpro";
 import Scope2 from "../Subuserpages/Scope2";
 import Scope2dash from "../Subuserpages/Scope2dash";
 import CircularProgress from '@mui/material/CircularProgress';
-
+import Mainpage from "../Clientpages/Maindash";
     
 
 const Dashboard = () => {
@@ -146,6 +146,7 @@ const Dashboard = () => {
       <Route path="/downdash" element={<Downdash/>}/>
       <Route path="/updash" element={<Upstreamdashb/>}/>
       <Route path="/capdash" element={<Capdash/>}/>
+      <Route path="/Main" element={<Mainpage/>}/>
         </Routes>
 
   

@@ -73,7 +73,7 @@ let i=0;
         <Link to="/sco">
         <a className="scope-22">Scope 2</a>
         </Link>
-        <Link to="/scope3good">
+        <Link to="/capital">
         <a className="scope-3">Scope 3</a>
         </Link>
       <section className="rectangle-section" />
@@ -118,9 +118,8 @@ let i=0;
       <Link className="offset" to="/home1add">
         Offset
       </Link>
-      <Link className="dashboard" to="/home1add">
-        Dashboard
-      </Link>
+     <Link to="/Main">
+      <a className="dashboard">Dashboard</a>        </Link>
       <table class="infoo">
 
 	

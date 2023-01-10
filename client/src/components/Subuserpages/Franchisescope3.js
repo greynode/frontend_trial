@@ -186,7 +186,7 @@ const addCompanydata = async (e) => {
         <Link to="/sco">
         <a className="scope-2">Scope 2</a>
         </Link>
-        <Link to="/scope3good">
+        <Link to="/capital">
         <a className="scope-32">Scope 3</a>
         </Link>
          <section className="rectangle-section" />
@@ -360,7 +360,8 @@ const addCompanydata = async (e) => {
          <a className="measure">Measure</a>
          <a className="reduce">Reduce</a>
          <a className="offset">Offset</a>
-         <a className="dashboard">Dashboard</a>
+         <Link to="/Main">
+      <a className="dashboard">Dashboard</a>        </Link>
     <ToastContainer/>
        </div>
 
