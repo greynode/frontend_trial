@@ -5,12 +5,13 @@ require("./db/conn");
 const router = require("./routes/clientrouter");
 const cors = require("cors");
 const cookiParser = require("cookie-parser")
-const port = 8010;
+const port =  process.env.PORT || 80;
 const routers = require("./routes/companyroutes")
 const routeruser = require("./routes/subuser")
 
 const routerstation=require("./routes/emmisionroute");
 const superouter = require("./routes/superadmin");
+const path =require('path')
 
 
 
@@ -30,9 +31,10 @@ app.use(routerstation);
 
 
 
-
-
-
-app.listen(port,()=>{
-    
+app.use(express.static(path.join(__dirname,'build')));
+app.get('/*',function(req,res){
+    res.sendFile(path.join(__dirname,'build','index.html'))
 })
+
+
+app.listen(port);

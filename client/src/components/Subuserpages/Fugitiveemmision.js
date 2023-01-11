@@ -86,7 +86,7 @@ const [inpval, setInpval] = useState({
             });
             }else{
 //calculation
-console.log(inpval.f,inpval.g,inpval.h,inpval.i,inpval.j);
+
 const R401A=	16
 const R401B=	14
 const R401C=	19
