@@ -40,7 +40,7 @@ import Mainpage from "../Clientpages/Maindash";
 const Dashboard = () => {
 
     const { logindata, setLoginData } = useContext(LoginContext);
-    console.log(logindata);
+    
     let he="hello"
     const asuser = async()=>{he=(logindata.ValidUserOne.map);}
 

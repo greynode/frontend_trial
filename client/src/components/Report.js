@@ -61,7 +61,7 @@ const Report = () => {
 						<div className="text" key="{quantity}">{todo.quantity}</div>
 						<h2>fuel:</h2>
 						<div className="text" key="quantity">{todo.fuel}</div>
-						<h2>facility name:</h2>
+						<h2>Facility Name:</h2>
 						<div className="text" key="{quantity">{todo.facility}</div>
 						<h2>facility code:</h2>
 						<div className="text" key="{quantit}">{todo.code}</div>

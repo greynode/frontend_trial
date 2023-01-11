@@ -23,7 +23,7 @@
 //     const [count, setCount] = useState(0);
 //     const [calculation, setCalculation] = useState(0);
 //     const { logindata } = useContext(LoginContext);
-//     console.log(logindata);
+//     
 //     let he="hello"
 //     let person="hello"
 //     const asuser = async()=>{he=(logindata.ValidUserOne.map);
@@ -56,7 +56,7 @@
 //         })
 //     });
 //     const res1 = await datap1.json();
-//     console.log(res1);
+//     
 //     setTodoss1(res1);
 // /////
 
@@ -72,7 +72,7 @@
 //     })
 // });
 // const res2 = await datap2.json();
-// console.log(res2);
+// 
 // setTodoss2(res2);
 // ////
 // const datap3 = await fetch("/getstation", {
@@ -85,7 +85,7 @@
 //     })
 // });
 // const res3 = await datap3.json();
-// console.log(res3);
+// 
 // setTodoss3(res3);
 // ////
 
@@ -99,7 +99,7 @@
 //     })
 // });
 // const res4 = await datap4.json();
-// console.log(res4);
+// 
 // setTodoss4(res4);
 
 // ////
@@ -113,7 +113,7 @@
 //     })
 // });
 // const res5 = await datap5.json();
-// console.log(res5);
+// 
 // setTodoss5(res5);
 // ////
 // const datap6 = await fetch("/getstation", {
@@ -126,7 +126,7 @@
 //     })
 // });
 // const res6 = await datap6.json();
-// console.log(res6);
+// 
 // setTodoss6(res6);
 
 // ///////////////
@@ -140,7 +140,7 @@
 //     })
 // });
 // const res7 = await datap7.json();
-// console.log(res7);
+// 
 // setTodoss7(res7);
 
 
@@ -157,7 +157,7 @@
     
     
 //          element += (usrs[index].co2)
-//         console.log(index);
+//         
 //       }
 
 
@@ -172,7 +172,7 @@
         
         
 //              element1 += (usrs1[index].co2)
-//             console.log(index);
+//             
 //           }
          
 //       //////////////////////////////////////////////////////
@@ -184,7 +184,7 @@
 
 
 //      element2 += (usrs2[index].co2)
-//     console.log(index);
+//     
 //   }
 //   ///      //////////////////////////////////////////////////////
 
@@ -197,7 +197,7 @@
     
     
 //          element3 += (usrs3[index].co2)
-//         console.log(index);
+//         
 //       }
 //       ///      //////////////////////////////////////////////////////
 
@@ -211,7 +211,7 @@
         
         
 //              element4 += (usrs4[index].co2)
-//             console.log(index);
+//             
 //           }
 //           ///const hellos =async(e)=>{      //////////////////////////////////////////////////////
 
@@ -225,7 +225,7 @@
 
 
 //      element5 += (usrs5[index].co2)
-//     console.log(index);
+//     
 //   }
 //   ///      //////////////////////////////////////////////////////
 
@@ -239,7 +239,7 @@
     
     
 //          element6 += (usrs6[index].co2)
-//         console.log(index);
+//         
 //       }
 //       ///      //////////////////////////////////////////////////////
 
@@ -252,7 +252,7 @@
         
         
 //              element7 += (usrs7[index].co2)
-//             console.log(index);
+//             
 //           }
 //           em=element+element1+element2+element3+element4+element5+element6+element7
 

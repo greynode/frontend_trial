@@ -16,7 +16,7 @@ const Fugitive = () =>{
     const [count, setCount] = useState(0);
     const [calculation, setCalculation] = useState(0);
     const { logindata } = useContext(LoginContext);
-    console.log(logindata);
+    
     let he="hello"
     let person="hello"
     const asuser = async()=>{he=(logindata.ValidUserOne.map);
@@ -663,7 +663,7 @@ let vall=null
           });
 
           const res = await data.json();
-          console.log(res)
+          
           setCount((c) => c + 1)
                 if (res.status === 201) {
               toast.success(" Data saved 😃!", {
@@ -706,7 +706,7 @@ let vall=null
           })
       });
       const res = await datap.json();
-      console.log(res);
+      
       setTodoss(res);
   
       }
@@ -716,7 +716,7 @@ let vall=null
     
     
          element += (usrs[index].co2)
-        console.log(index);
+        
       }
 
     
@@ -838,7 +838,7 @@ let vall=null
               value={inpval.code}
               id="code"
             /></div>
-             <label className='lab'>facility name:</label>
+             <label className='lab'>Facility Name:</label>
             <div className='but'><input className='butw'
               type="text"
               placeholder="facility"

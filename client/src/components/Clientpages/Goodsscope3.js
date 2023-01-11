@@ -16,7 +16,7 @@ const Fugitive = () =>{
     const [count, setCount] = useState(0);
     const [calculation, setCalculation] = useState(0);
     const { logindata } = useContext(LoginContext);
-    console.log(logindata);
+    
     let he="hello"
     let person="hello"
     const asuser = async()=>{he=(logindata.ValidUserOne.map);
@@ -87,7 +87,7 @@ const Fugitive = () =>{
           });
 
           const res = await data.json();
-          console.log(res)
+          
 
 
           if (res.status === 201) {
@@ -118,7 +118,7 @@ const Fugitive = () =>{
           })
       });
       const res = await datap.json();
-      console.log(res);
+      
       setTodoss(res);
       }
       let element = 0 ;
@@ -127,7 +127,7 @@ const Fugitive = () =>{
     
     
          element += (usrs[index].co2)
-        console.log(index);
+        
       }
 
     
@@ -202,8 +202,9 @@ const Fugitive = () =>{
          <div className="di">{Math.round(element)}</div>
          <div className="tonnes-of">Tonnes of CO2eq</div>
          <p className="this-section-captures-any-emis">
-         Fugitive Emissions are the emissions that happen with the operation of HVAC systems and handling of refrigerants. This
-          section captures the refrigerant use in in the organization and calculates its corresponding emissions resulting from this activity. 
+         This
+          section captures the goods in in the organization and calculates its 
+          corresponding emissions resulting from this activity. 
          </p>
          <div className="activity-captured-fuel-use">
            Activity Captured : Capital Goods
@@ -232,7 +233,7 @@ const Fugitive = () =>{
               value={inpval.codegoods}
               id="codegoods"
             /></div>
-             <label className='lab'>facility name:</label>
+             <label className='lab'>Facility Name:</label>
         <div className='but'>    <input className='butw'
               type="text"
               placeholder=""
@@ -287,7 +288,7 @@ const Fugitive = () =>{
               value={inpval.code2}
               id="code2"
             /></div>
-            <label className='lab'>facility name:</label>
+            <label className='lab'>Facility Name:</label>
         <div className='but'>    <input className='butw'
               type="text"
               placeholder=""

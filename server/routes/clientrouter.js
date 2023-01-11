@@ -177,7 +177,7 @@ let map=email;
 // user Login
 
 router.post("/login", async (req, res) => {
-    console.log(req.body);
+    
 
     const { email, password } = req.body;
 
@@ -259,7 +259,7 @@ router.get("/logout",authenticate,async(req,res)=>{
 
 // send email Link For reset Password
 router.post("/sendpasswordlink",async(req,res)=>{
-    console.log(req.body)
+    
 
     const {email} = req.body;
 
@@ -314,7 +314,7 @@ router.get("/forgotpassword/:id/:token",async(req,res)=>{
         
         const verifyToken = jwt.verify(token,keysecret);
 
-        console.log(verifyToken)
+        
 
         if(validuser && verifyToken._id){
             res.status(201).json({status:201,validuser})

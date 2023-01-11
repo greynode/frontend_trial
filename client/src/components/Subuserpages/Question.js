@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function Questions() {
   const { logindata } = useContext(LoginContext);
-  console.log(logindata);
+  
   const {
     register,
     handleSubmit,
@@ -29,7 +29,7 @@ const onClickSubmit = async(res) => {
     )
    
 });
-console.log(res);
+
 toast.success("Thank you for your answer 😃!", {
   position: "top-center"
 });

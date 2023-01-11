@@ -14,12 +14,12 @@ const CompanyDetails = () => {
     navigate("/companyadd2");
   }, [navigate]);
   const { logindata } = useContext(LoginContext);
-  console.log(logindata);
+  
   let he="hello"
 const asuser = async()=>{he=(logindata.ValidUserOne.email)}
 
 asuser();
-console.log(he);
+
   const [inpval, setInpval] = useState({
      
     cname:"",
@@ -69,7 +69,7 @@ const addCompanydata = async (e) => {
         });
 
         const res = await data.json();
-        console.log(res)
+        
 
 
         if (res.status === 201) {

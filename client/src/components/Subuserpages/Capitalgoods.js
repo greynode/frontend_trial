@@ -16,7 +16,7 @@ const Fugitive = () =>{
     const [count, setCount] = useState(0);
     const [calculation, setCalculation] = useState(0);
     const { logindata } = useContext(LoginContext);
-    console.log(logindata);
+    
     let he="hello"
     let person="hello"
     const asuser = async()=>{he=(logindata.ValidUserOne.map);
@@ -105,7 +105,7 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
           });
 
           const res = await data.json();
-          console.log(res)
+          
 
           
           setCount((c) => c + 1)
@@ -140,7 +140,7 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
           })
       });
       const res = await datap.json();
-      console.log(res);
+      
       setTodoss(res);
       }
       let element = 0 ;
@@ -149,7 +149,7 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
     
     
          element += (usrs[index].co2)
-        console.log(index);
+        
       }
 
     
@@ -228,8 +228,9 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
          <div className="di">{Math.round(element)}</div>
          <div className="tonnes-of">Tonnes of CO2eq</div>
          <p className="this-section-captures-any-emis">
-         Fugitive Emissions are the emissions that happen with the operation of HVAC systems and handling of refrigerants. This
-          section captures the refrigerant use in in the organization and calculates its corresponding emissions resulting from this activity. 
+        This
+          section captures the Capital goods in in the organization and calculates its 
+          corresponding emissions resulting from this activity. 
          </p>
          <div className="activity-captured-fuel-use">
            Activity Captured : Capital Goods
@@ -249,7 +250,7 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
       
           
           
-          <label className='lab'>facality code:</label>
+          <label className='lab'>Facility code:</label>
  <div className="but">            <input className='butw'
               type="text"
               placeholder="Facility code"
@@ -277,7 +278,7 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
               value={inpval.byerlocation}
               id="byerlocation"
             /></div>
-             <label className='lab'>facility name:</label>
+             <label className='lab'>Facility Name:</label>
  <div className="but">            <input className='butw'
               type="text"
               placeholder="facility"
@@ -298,7 +299,7 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
        
       </select>
     
-    </div><label className='lab'>select type of vehicle:</label>
+    </div><label className='lab'>Select type of vehicle:</label>
                 <div className="but">
       <select className='butg' value={vehicle} onChange={setVals}>
         <option value="twowheelerpetrol">two wheeler petrol</option>
@@ -322,7 +323,7 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
       </select>
     
     </div>
-            <label className='lab'>distance travelled in KM:</label>
+            <label className='lab'>Distance travelled in KM:</label>
  <div className="but">            <input className='butw'
               type="number"
               placeholder="distance"
@@ -331,7 +332,7 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
               value={inpval.distance}
               id="distance"
             /></div>
-     <label className='lab'>material purchased:</label>
+     <label className='lab'>Material purchased:</label>
  <div className="but">            <input className='butw'
               type="text"
               placeholder="material"
@@ -340,7 +341,7 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
               value={inpval.material}
               id="material"
             /></div>
-             <label className='lab'>quantity:</label>
+             <label className='lab'>Quantity:</label>
  <div className="but">            <input className='butw'
               type="number"
               placeholder="quantity"
@@ -350,8 +351,8 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
               id="quantity"
             /></div>
           
-          <h1 className="hc">vehicles</h1>
-          <label className='lab'>facility name:</label>
+          <h1 className="hc">Vehicles</h1>
+          <label className='lab'>Facility Name:</label>
  <div className="but">            <input className='butw'
               type="text"
               placeholder="facility2"
@@ -360,7 +361,7 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
               value={inpval.facility2}
               id="pass2"
             /> </div>
-            <label className='lab'>facality code:</label>
+            <label className='lab'>Facility code:</label>
  <div className="but">            <input className='butw'
               type="text"
               placeholder="Facility code"
@@ -370,7 +371,7 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
               id="code2"
             /></div>
              
-            <label className='lab'>distance travelled in KM:</label>
+            <label className='lab'>Distance travelled in KM:</label>
  <div className="but">            <input className='butw'
               type="number"
               placeholder="distance travelled in KM:"
@@ -379,7 +380,7 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
               value={inpval.quantity2}
               id="quantity2"
             /></div>
-                  <label className='lab'>select mode of transport:</label>
+                  <label className='lab'>Select mode of transport:</label>
                 <div className="but">
       <select className='butg' value={transport2} onChange={setValss2}>
         <option value="road">Road</option>
@@ -391,7 +392,7 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
        
       </select>
     
-    </div><label className='lab'>select type of vehicle:</label>
+    </div><label className='lab'>Select type of vehicle:</label>
                 <div className="but">
       <select className='butg' value={vehicle2} onChange={setVals2}>
         <option value="twowheelerpetrol">two wheeler petrol</option>
@@ -416,7 +417,7 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
     
     </div>
           <h1 className="hc">building as facilities</h1>
-          <label className='lab'>facility name:</label>
+          <label className='lab'>Facility Name:</label>
  <div className="but">            <input className='butw'
               type="text"
               placeholder="facility"
@@ -425,7 +426,7 @@ quantity,material,distance,vehicle,transport,facility,byerlocation,byername,code
               value={inpval.facility3}
               id="pass3"
             /> </div>
-            <label className='lab'>facality code:</label>
+            <label className='lab'>Facility code:</label>
  <div className="but">            <input className='butw'
               type="text"
               placeholder="Facility code"

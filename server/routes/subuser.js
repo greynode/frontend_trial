@@ -152,7 +152,7 @@ routeruser.post("/subuserregister", async (req, res) => {
 // user Login
 
 routeruser.post("/subuserlogin", async (req, res) => {
-    console.log(req.body);
+    
 
     const { email, password } = req.body;
 
@@ -233,7 +233,7 @@ routeruser.get("/subuserlogout",sauthenticate,async(req,res)=>{
 
 // send email Link For reset Password
 routeruser.post("/subusersendpasswordlink",async(req,res)=>{
-    console.log(req.body)
+    
 
     const {email} = req.body;
 
@@ -288,7 +288,7 @@ routeruser.get("/subuserforgotpassword/:id/:token",async(req,res)=>{
         
         const verifyToken = jwt.verify(token,keysecret);
 
-        console.log(verifyToken)
+        
 
         if(validuser && verifyToken._id){
             res.status(201).json({status:201,validuser})

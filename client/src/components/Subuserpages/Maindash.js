@@ -41,7 +41,7 @@ function Recommendation(){
 
 
 const { logindata } = useContext(LoginContext);
-console.log(logindata);
+
 let he="hello"
 let person="hello"
 const asuser = async()=>{he=(logindata.ValidUserOne.map);
@@ -63,7 +63,7 @@ const hellos =async(e)=>{
           })
       });
       const res = await datap.json();
-      console.log(res);
+      
       setTodoss(res);
       }
       let element = 0 ;
@@ -89,7 +89,7 @@ const hellos =async(e)=>{
             })
         });
         const res = await datap.json();
-        console.log(res);
+        
         setTodos1(res);
         }
         let element1 = 0 ;
@@ -115,7 +115,7 @@ const hellos =async(e)=>{
             })
         });
         const res = await datap.json();
-        console.log(res);
+        
         setTodos2(res);
         }
         let element2 = 0 ;
@@ -139,7 +139,7 @@ const hellos =async(e)=>{
                 })
             });
             const res = await datap.json();
-            console.log(res);
+            
             setTodos3(res);
             }
             let element3 = 0 ;

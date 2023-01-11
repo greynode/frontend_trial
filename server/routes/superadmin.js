@@ -238,7 +238,7 @@ superouter.post("/superregister", async (req, res) => {
 // user Login
 
 superouter.post("/superlogin", async (req, res) => {
-    console.log(req.body);
+    
 
     const { email, password } = req.body;
 
@@ -319,7 +319,7 @@ superouter.get("/superlogout",aauthenticate,async(req,res)=>{
 
 // send email Link For reset Password
 superouter.post("/supersendpasswordlink",async(req,res)=>{
-    console.log(req.body)
+    
 
     const {email} = req.body;
 
@@ -374,7 +374,7 @@ superouter.get("/superforgotpassword/:id/:token",async(req,res)=>{
         
         const verifyToken = jwt.verify(token,keysecret);
 
-        console.log(verifyToken)
+        
 
         if(validuser && verifyToken._id){
             res.status(201).json({status:201,validuser})

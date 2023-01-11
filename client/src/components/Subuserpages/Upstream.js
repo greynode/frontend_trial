@@ -15,7 +15,7 @@ const Scomp = () =>{
   const [count, setCount] = useState(0);
   const [calculation, setCalculation] = useState(0);
   const { logindata } = useContext(LoginContext);
-  console.log(logindata);
+  
   let he="hello"
   let person="hello"
   const asuser = async()=>{he=(logindata.ValidUserOne.map);
@@ -113,7 +113,7 @@ let date=(dte.toLocaleDateString());
           });
 
           const res = await data.json();
-          console.log(res)
+          
 
           setCount((c) => c + 1)
 
@@ -150,7 +150,7 @@ const map=he
       })
   });
   const res = await datap.json();
-  console.log(res);
+  
   setTodoss(res);
   }
   let element = 0 ;
@@ -159,7 +159,7 @@ const map=he
 
 
      element += (usrs[index].co2)
-    console.log(index);
+    
   }
 
 
@@ -237,8 +237,9 @@ setCalculation(() => count * 2);
       <div className="di">0.00</div>
       <div className="tonnes-of">Tonnes of CO2eq</div>
       <p className="this-section-captures-any-emis">
-      Process Emissions are the emissions that enter the atmosphere as a result of venting or flaring activities. 
-      Theses emissions are captured by collected details on the type of gas emitted and the quantity emitted. 
+      This
+          section captures the Upstream in in the organization and calculates its 
+          corresponding emissions resulting from this activity. 
       </p>
       <div className="activity-captured-fuel-use">
         Activity Captured : Gas vent/Flare
@@ -287,7 +288,7 @@ setCalculation(() => count * 2);
               value={inpval.byerlocation}
               id="byerlocation"
             /></div>
-             <label className="lab">facility name:</label>
+             <label className="lab">Facility Name:</label>
             <div className="but"><input className="butw"
               type="text"
               placeholder="facility"
@@ -361,7 +362,7 @@ setCalculation(() => count * 2);
             /></div>
           
           <h1 className="hc">waste generated</h1>
-          <label className="lab">facility name:</label>
+          <label className="lab">Facility Name:</label>
             <div className="but"><input className="butw"
               type="text"
               placeholder="facility2"
@@ -407,7 +408,7 @@ setCalculation(() => count * 2);
               id="quantity2"
             /></div>
           <h1 className="hc">Business travel </h1>
-          <label className="lab">facility name:</label>
+          <label className="lab">Facility Name:</label>
             <div className="but"><input className="butw"
               type="text"
               placeholder="facility"
@@ -507,7 +508,7 @@ setCalculation(() => count * 2);
     
     </div>
     <h1 className="hc">Employee commuting</h1>
-    <label className="lab">facility name:</label>
+    <label className="lab">Facility Name:</label>
             <div className="but"><input className="butw"
               type="text"
               placeholder="facility"

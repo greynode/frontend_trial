@@ -23,13 +23,13 @@ const AssetDeclaration = () => {
 
 
   const { logindata } = useContext(LoginContext);
-  console.log(logindata);
+  
   let he="hello"
   const asuser = async()=>{he=(logindata.ValidUserOne.email)}
 
 asuser();
 const email=he
-  console.log(he);
+  
 
 
   const [inpval, setInpval] = useState({
@@ -101,7 +101,7 @@ const setValp = (e) => {
         });
 
         const res = await data.json();
-        console.log(res)
+        
 
 
         if (res.status === 201) {
@@ -141,7 +141,7 @@ const setValp = (e) => {
         });
 
         const res = await data.json();
-        console.log(res)
+        
 
 
         if (res.status === 201) {
@@ -181,7 +181,7 @@ const setValp = (e) => {
         });
 
         const res = await data.json();
-        console.log(res)
+        
 
 
         if (res.status === 201) {
@@ -217,7 +217,7 @@ const setValp = (e) => {
     })
 });
 const res = await data.json();
-console.log(res);
+
 setTodos(res);
 }
 const hellop =async(e)=>{
@@ -232,7 +232,7 @@ const hellop =async(e)=>{
     })
 });
 const res = await datap.json();
-console.log(res);
+
 setTodosp(res);
 }
 const hellos =async(e)=>{
@@ -247,7 +247,7 @@ const hellos =async(e)=>{
     })
 });
 const res = await datap.json();
-console.log(res);
+
 setTodoss(res);
 }
 let i=0;

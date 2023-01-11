@@ -11,7 +11,7 @@ const Home1View = () => {
   const [count, setCount] = useState(0);
   const [calculation, setCalculation] = useState(0);
   const { logindata } = useContext(LoginContext);
-  console.log(logindata);
+  
   let he="hello"
 const asuser = async()=>{he=(logindata.ValidUserOne.map)}
 
@@ -34,7 +34,7 @@ asuser();
           })
       });
       const res = await datap.json();
-      console.log(res);
+      
       setTodoss(res);
       }
       let element=0;
@@ -42,7 +42,7 @@ asuser();
 
 
     element += (usrs[index].co2)
-   console.log(index);
+   
  }
  useEffect(() => {
  

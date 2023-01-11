@@ -14,7 +14,7 @@ const Scope2 = () => {
   const [count, setCount] = useState(0);
   const [calculation, setCalculation] = useState(0);
   const { logindata } = useContext(LoginContext);
-  console.log(logindata);
+  
   let he="hello"
   let person="hello"
   const asuser = async()=>{he=(logindata.ValidUserOne.map);
@@ -164,7 +164,7 @@ asuser();
               });
     
               const res = await data.json();
-              console.log(res)
+              
               
               
     
@@ -212,7 +212,7 @@ asuser();
           })
       });
       const res = await datap.json();
-      console.log(res);
+      
       setTodoss(res);
       setCount((c) => c + 1) 
       }

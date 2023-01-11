@@ -5,7 +5,7 @@ const mobiledb=require("../models/mobile")
 // const mobiledistancedb=require("../models/mobiledistance")
 // const freightdb=require("../models/freight")
 const energydb=require("../models/scope2energy")
-const Mcdb=require("../models/mc1")
+
 const fugitiveDB= require("../models/fugitive")
 const scope3db=require("../models/scope3")
 const scope3goodsdb=require("../models/scope3goods")

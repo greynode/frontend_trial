@@ -14,7 +14,7 @@ const Scomp = () =>{
   const [count, setCount] = useState(0);
 
   const { logindata } = useContext(LoginContext);
-  console.log(logindata);
+  
 
        
   

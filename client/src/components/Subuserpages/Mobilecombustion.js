@@ -16,7 +16,7 @@ const Mcomp = () =>{
     const [count, setCount] = useState(0);
     const [calculation, setCalculation] = useState(0);
     const { logindata } = useContext(LoginContext);
-    console.log(logindata);
+    
     let he="hello"
     let person="hello"
     const asuser = async()=>{he=(logindata.ValidUserOne.map);
@@ -426,7 +426,7 @@ let date=(dte.toLocaleDateString());
           });
 
           const res = await data.json();
-          console.log(res)
+          
          
           setCount((c) => c + 1)
 
@@ -468,7 +468,7 @@ let date=(dte.toLocaleDateString());
           })
       });
       const res = await datap.json();
-      console.log(res);
+      
       setTodoss(res);
       }
       let element = 0 ;
@@ -477,7 +477,7 @@ let date=(dte.toLocaleDateString());
     
     
          element += (usrs[index].co2)
-        console.log(index);
+        
       }
       const current = new Date();
       const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;

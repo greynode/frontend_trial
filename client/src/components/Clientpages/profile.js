@@ -10,7 +10,7 @@ const Profile = () => {
   const [usr, setTodos] = useState([]);
 
   const { logindata } = useContext(LoginContext);
-  console.log(logindata);
+  
   let he="hello"
 const asuser = async()=>{he=(logindata.ValidUserOne.map)}
 
@@ -60,7 +60,7 @@ asuser();
           })
       });
       const res = await datap.json();
-      console.log(res);
+      
       setTodos(res);
       }
 

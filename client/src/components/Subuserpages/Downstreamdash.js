@@ -10,7 +10,7 @@ const Home1View = () => {
   const [count, setCount] = useState(0);
   const [calculation, setCalculation] = useState(0);
   const { logindata } = useContext(LoginContext);
-  console.log(logindata);
+  
   let he="hello"
 const asuser = async()=>{he=(logindata.ValidUserOne.map)}
 
@@ -33,7 +33,7 @@ asuser();
           })
       });
       const res = await datap.json();
-      console.log(res);
+      
       setTodoss(res);
       }
       let element=0;
@@ -154,7 +154,7 @@ let i=0;
     <th>facality code</th>
     <th>buyername</th>
     <th>buyer location</th>
-    <th>facility name:</th>
+    <th>Facility Name:</th>
     <th>distance travelled in KM</th>
     <th>material</th>
     <th>quantity</th>
@@ -209,7 +209,7 @@ let i=0;
     <th>facality code</th>
     <th>buyername</th>
     <th>buyer location</th>
-    <th>facility name:</th>
+    <th>Facility Name:</th>
    
     <th>material</th>
     <th>quantity</th>

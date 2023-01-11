@@ -12,7 +12,7 @@ const Dashboard = () => {
  
 
     const { logindata, setLoginData } = useContext(LoginContext);
-    console.log(logindata);
+    
 
     const [data, setData] = useState(false);
 
