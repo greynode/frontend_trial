@@ -24,13 +24,15 @@
     "react-to-print": "^2.14.10",
     "react-toastify": "^9.0.7",
     "recharts": "^2.2.0",
+     "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
     "sass": "^1.57.1",
     "web-vitals": "^2.1.4",
     "yarn": "^1.22.19"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "webpack --config webpack.config.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
