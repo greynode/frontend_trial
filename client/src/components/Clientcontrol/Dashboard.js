@@ -86,23 +86,7 @@ asuser();
 
      
 
-            if (data.status === 201 ) {
-              console.log("user verify");
-              setLoginData(data)
-              history("/dash");
-              
-            }else if(sdata.status == 201){
-              console.log("user verify");
-              setLoginData(sdata)
-              history("/subdash");
-            }else if(adata.status == 201){
-              console.log("user verify");
-              setLoginData(adata)
-              history("/superdash");
-            }  else {
-             
-                history("/")
-            }
+    
     }
 
 
